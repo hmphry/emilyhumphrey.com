@@ -16,11 +16,11 @@ export default function Home() {
             <li><LinkButton text="Save Contact" href="/emilyhumphrey.vcf" Icon={RiContactsBook3Fill} download /></li>
             <li><LinkButton text="Linked In" href="https://www.linkedin.com/in/heyhmphry/" Icon={FaLinkedin} /></li>
             <li><LinkButton text="Github" href="https://github.com/hmphry" Icon={FaGithubAlt} /></li>
-            <li><LinkButton text="BlueSky" href="https://bsky.app/profile/hmphry.com" Icon={FaBluesky} /></li>
-            {/* <li><LinkButton text="Portfolio" href="/" Icon={FaPaintbrush } /></li> */}
             <li><LinkButton text="Blog" href="https://hmphry.com" Icon={FaCode} /></li>
+            <li><LinkButton text="BlueSky" href="https://bsky.app/profile/hmphry.com" Icon={FaBluesky} /></li>
+            <li><LinkButton text="Codepen" href="https://codepen.io/hmphry" Icon={FaCodepen} /></li>
+            {/* <li><LinkButton text="Portfolio" href="/" Icon={FaPaintbrush } /></li> */}
             {/* <li><LinkButton text="Compendium" href="/" Icon={FaBook} /></li> */}
-            {/* <li><LinkButton text="Codepen" href="/" Icon={FaCodepen} /></li> */}
         </ul>
             </div>
   );
