@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --emerald: hsl(152, 56%, 39%);
+    --bronze: hsl(36, 63%, 45%);
+    --black: hsl(0, 0%, 6%);
+    --white: hsl(0, 0%, 94%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {    
+    --surface-0: var(--white);
+    --surface-1: hsl( from var(--white) h s calc(l - 5) );
+    --surface-2: hsl( from var(--white) h s calc(l - 10) );
+    --surface-3: hsl( from var(--white) h s calc(l - 15) );
+    --surface-4: hsl( from var(--white) h s calc(l - 20) );
+    --content: var(--black);
+    --content-1: hsl( from var(--black) h s calc(l + 5) );
+    --content-2: hsl( from var(--black) h s calc(l + 10) );
+    --content-3: hsl( from var(--black) h s calc(l + 15) );
+    --content-4: hsl( from var(--black) h s calc(l + 20) );
+    --emerald-surface: hsl( from var(--emerald) h s calc(l + 20) );
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --surface-0: var(--black);
+        --surface-1: hsl( from var(--black) h s calc(l + 5) );
+        --surface-2: hsl( from var(--black) h s calc(l + 10) );
+        --surface-3: hsl( from var(--black) h s calc(l + 15) );
+        --surface-4: hsl( from var(--black) h s calc(l + 20) );
+        --content-0: var(--white);
+        --content-1: hsl( from var(--white) h s calc(l - 5) );
+        --content-2: hsl( from var(--white) h s calc(l - 10) );
+        --content-3: hsl( from var(--white) h s calc(l - 15) );
+        --content-4: hsl( from var(--white) h s calc(l - 20) );
+    --emerald-surface: hsl( from var(--emerald) h s calc(l - 20) );
+    }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme inline {
+
+    --color-emerald:var(--emerald);
+    --color-emerald-surface: var(--emerald-surface);
+    --color-bronze: var(--bronze);
+    --color-black: var(--black);
+    --color-white: var(--white);
+
+    --color-surface: var(--surface-0);
+    --color-surface-0: var(--surface-0);
+    --color-surface-1: var(--surface-1);
+    --color-surface-2: var(--surface-2);
+    --color-surface-3: var(--surface-3);
+    --color-surface-4: var(--surface-4);
+    --color-content: var(--content-0);
+    --color-content-0: var(--content-0);
+    --color-content-1: var(--content-1);
+    --color-content-2: var(--content-2);
+    --color-content-3: var(--content-3);
+    --color-content-4: var(--content-4);
 }
