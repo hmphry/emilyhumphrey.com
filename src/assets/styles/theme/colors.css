@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+    --emerald: hsl(153, 70%, 40%);
+    --bronze: hsl(36, 63%, 45%);
+    --black: hsl(0, 0%, 6%);
+    --white: hsl(0, 0%, 94%);
+}
+
+:root {
+    --emerald-light-0: hsl( from var(--emerald) h s calc(l + 5) );
+    --emerald-light-1: hsl( from var(--emerald) h s calc(l + 10) );
+    --emerald-light-2: hsl( from var(--emerald) h s calc(l + 20) );
+    --emerald-light-3: hsl( from var(--emerald) h s calc(l + 30) );
+    --emerald-light-4: hsl( from var(--emerald) h s calc(l + 40) );
+
+    --emerald-dark-0: hsl( from var(--emerald) h s calc(l - 5) );
+    --emerald-dark-1: hsl( from var(--emerald) h s calc(l - 10) );
+    --emerald-dark-2: hsl( from var(--emerald) h s calc(l - 20) );
+    --emerald-dark-3: hsl( from var(--emerald) h s calc(l - 30) );
+    --emerald-dark-4: hsl( from var(--emerald) h s calc(l - 40) );
+
+    --light-0: var(--white);
+    --light-1: hsl( from var(--white) h s calc(l - 5) );
+    --light-2: hsl( from var(--white) h s calc(l - 10) );
+    --light-3: hsl( from var(--white) h s calc(l - 15) );
+    --light-4: hsl( from var(--white) h s calc(l - 20) );
+
+    --dark-0: var(--black);
+    --dark-1: hsl( from var(--black) h s calc(l + 5) );
+    --dark-2: hsl( from var(--black) h s calc(l + 10) );
+    --dark-3: hsl( from var(--black) h s calc(l + 15) );
+    --dark-4: hsl( from var(--black) h s calc(l + 20) );
+}
+
+/* light mode */
+:root {
+    --surface-0: var(--light-0);
+    --surface-1: var(--light-1);
+    --surface-2: var(--light-2);
+    --surface-3: var(--light-3);
+    --surface-4: var(--light-4);
+    
+    --content-0: var(--dark-0);
+    --content-1: var(--dark-1);
+    --content-2: var(--dark-2);
+    --content-3: var(--dark-3);
+    --content-4: var(--dark-4);
+
+    --emerald-surface-0: var(--emerald-light-0);
+    --emerald-surface-1: var(--emerald-light-1);
+    --emerald-surface-2: var(--emerald-light-2);
+    --emerald-surface-3: var(--emerald-light-3);
+    --emerald-surface-4: var(--emerald-light-4);
+    
+    --emerald-content-0: var(--emerald-dark-0);
+    --emerald-content-1: var(--emerald-dark-1);
+    --emerald-content-2: var(--emerald-dark-2);
+    --emerald-content-3: var(--emerald-dark-3);
+    --emerald-content-4: var(--emerald-dark-4);
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --surface-0: var(--dark-0);
+        --surface-1: var(--dark-1);
+        --surface-2: var(--dark-2);
+        --surface-3: var(--dark-3);
+        --surface-4: var(--dark-4);
+        
+        --content-0: var(--light-0);
+        --content-1: var(--light-1);
+        --content-2: var(--light-2);
+        --content-3: var(--light-3);
+        --content-4: var(--light-4);
+
+        --emerald-surface-0: var(--emerald-dark-0);
+        --emerald-surface-1: var(--emerald-dark-1);
+        --emerald-surface-2: var(--emerald-dark-2);
+        --emerald-surface-3: var(--emerald-dark-3);
+        --emerald-surface-4: var(--emerald-dark-4);
+        
+        --emerald-content-0: var(--emerald-light-0);
+        --emerald-content-1: var(--emerald-light-1);
+        --emerald-content-2: var(--emerald-light-2);
+        --emerald-content-3: var(--emerald-light-3);
+        --emerald-content-4: var(--emerald-light-4);
+    }
+}
+
+/* tailwind implementation */
+@theme inline {
+    --color-*: initial;
+
+    --color-emerald: var(--emerald);
+    --color-emerald-light: var(--emerald-light-0);
+    --color-emerald-lighter: var(--emerald-light-1);
+    --color-emerald-lightest: var(--emerald-light-2);
+    --color-emerald-dark: var(--emerald-dark-0);
+    --color-emerald-darker: var(--emerald-dark-1);
+    --color-emerald-darkest: var(--emerald-dark-2);
+
+    --color-emerald-content-0:  var(--emerald-content-0);
+    --color-emerald-content-1:  var(--emerald-content-1);
+    --color-emerald-content-2:  var(--emerald-content-2);
+    --color-emerald-content-3:  var(--emerald-content-3);
+    --color-emerald-content-4:  var(--emerald-content-4);
+
+    --color-emerald-surface-0:  var(--emerald-surface-0);
+    --color-emerald-surface-1:  var(--emerald-surface-1);
+    --color-emerald-surface-2:  var(--emerald-surface-2);
+    --color-emerald-surface-3:  var(--emerald-surface-3);
+    --color-emerald-surface-4:  var(--emerald-surface-4);
+
+    --color-bronze: var(--bronze);
+    --color-black: var(--black);
+    --color-white: var(--white);
+
+    --color-surface: var(--surface-0);
+    --color-surface-0: var(--surface-0);
+    --color-surface-1: var(--surface-1);
+    --color-surface-2: var(--surface-2);
+    --color-surface-3: var(--surface-3);
+    --color-surface-4: var(--surface-4);
+
+    --color-content: var(--content-0);
+    --color-content-0: var(--content-0);
+    --color-content-1: var(--content-1);
+    --color-content-2: var(--content-2);
+    --color-content-3: var(--content-3);
+    --color-content-4: var(--content-4);
+}

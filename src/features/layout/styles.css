@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+.layout-grid {
+    @apply grid;
+    grid-template-areas: 
+        "sidebar bar main";
+    grid-template-columns: theme(spacing.16)  theme(spacing.1) 1fr;
+} 
+.sidebar {
+    grid-area: sidebar;
+}
+.bar {
+    grid-area: bar;
+}
+.main {
+    @apply px-4;
+    grid-area: main;
+}
