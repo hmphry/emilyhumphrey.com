@@ -3,7 +3,7 @@
 .article {
     @apply grid grid-cols-1 gap-4;
     h2, h3, h4, h5, h6, p, eyebrow {
-        max-width: 600px;
+        max-width: 800px;
     }
     h2 {
         font-size: 2.027rem;

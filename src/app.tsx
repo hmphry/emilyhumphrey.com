@@ -5,8 +5,6 @@ import Router from "./features/router/index.tsx"
 import MoreButton from "./features/more-button/index.tsx"
 import Footer from "./features/footer/index.tsx"
 
-import Article from "./features/article/index.tsx"
-
 function App() {
     return (
         <BrowserRouter>

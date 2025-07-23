@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+.loading-icon {
+    @apply grid w-8 aspect-square border-2 box-border;
+    color: var(--bronze);
+    animation: square-turn 4s infinite linear;
+
+    &::before,
+    &::after {
+        @apply border-2 m-auto aspect-square box-content;
+        content: "";
+        grid-area: 1/1;
+        width: 70.7%;
+        animation: inherit;
+    }
+
+    &::after {
+        @apply aspect-square border-2;
+        width: 50%;
+        animation-duration: 2s;
+    }
+}
+.ellipses {
+    &::before {
+        @apply absolute text-left left-0;
+        content: "";
+        animation: ellipses 2s infinite;
+    }
+}
+
+@keyframes ellipses {
+    0% {
+        content: ""
+    }
+    25% {
+        content: "."
+    }
+    50% {
+        content: ".."
+    }
+    75% {
+        content: "..."
+    }
+}
+
+@keyframes square-turn {
+    100% {
+        transform: rotate(1turn)
+    }
+}

@@ -4,54 +4,61 @@ import { lazy } from "react"
 const ArticleList = lazy(() => import("@/features/article-list/index.tsx"))
 const Article = lazy(() => import("@/features/article/index.tsx"))
 
+import articleRoutes from "@/content/articles/index"
+
 interface RouteConfig {
-    component: React.ReactElement
-    slug: string
+    element: React.ReactElement
+    path: string
     title?: string
     children?: RouteConfig[]
 }
 
 export const routes: RouteConfig[] = [
     {
-        component: <div>Home</div>,
-        slug: "/",
-        title: "Home",
+        element: <div>Home</div>,
+        path: "/",
     },
     {
-        component: <div>Compendium</div>,
-        slug: "/compendium",
+        element: <div>Compendium</div>,
+        path: "/compendium",
         title: "Compendium",
     },
     {
-        component: <div>Projects</div>,
-        slug: "/projects",
+        element: <div>Projects</div>,
+        path: "/projects",
         title: "Projects",
     },
     {
-        component: <ArticleList />,
-        slug: "/articles",
+        element: <div>Tools</div>,
+        path: "/tools",
+        title: "Tools",
+    },
+    {
+        element: <ArticleList />,
+        path: "/articles",
         title: "Articles",
     },
     {
-        component: <Article />,
-        slug: "/articles/:id",
+        element: <Article />,
+        path: "/articles",
+        children: articleRoutes,
     },
-    {
-        component: <div>About</div>,
-        slug: "/about",
-        title: "About",
-    },
-    {
-        component: <div>Contact</div>,
-        slug: "/contact",
-        title: "Contact",
-    },
+    // {
+    //     element: <div>About</div>,
+    //     path: "/about",
+    //     title: "About",
+    // },
+    // {
+    //     element: <div>Contact</div>,
+    //     path: "/contact",
+    //     title: "Contact",
+    // },
 ]
 
 export const createRoutes = (routes: RouteConfig[]): RouteObject[] => {
     return routes.map((route) => ({
-        path: route.slug,
-        element: route.component,
+        path: route.path,
+        element: route.element,
         children: route.children ? createRoutes(route.children) : undefined,
     }))
 }
