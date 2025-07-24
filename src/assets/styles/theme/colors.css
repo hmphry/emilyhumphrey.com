@@ -1,91 +1,91 @@
 @import "tailwindcss";
 
-:root {
-    --emerald: hsl(153, 70%, 40%);
-    --bronze: hsl(36, 63%, 45%);
-    --black: hsl(0, 0%, 6%);
-    --white: hsl(0, 0%, 94%);
-}
-
-:root {
-    --emerald-light-0: hsl( from var(--emerald) h s calc(l + 5) );
-    --emerald-light-1: hsl( from var(--emerald) h s calc(l + 10) );
-    --emerald-light-2: hsl( from var(--emerald) h s calc(l + 20) );
-    --emerald-light-3: hsl( from var(--emerald) h s calc(l + 30) );
-    --emerald-light-4: hsl( from var(--emerald) h s calc(l + 40) );
-
-    --emerald-dark-0: hsl( from var(--emerald) h s calc(l - 5) );
-    --emerald-dark-1: hsl( from var(--emerald) h s calc(l - 10) );
-    --emerald-dark-2: hsl( from var(--emerald) h s calc(l - 20) );
-    --emerald-dark-3: hsl( from var(--emerald) h s calc(l - 30) );
-    --emerald-dark-4: hsl( from var(--emerald) h s calc(l - 40) );
-
-    --light-0: var(--white);
-    --light-1: hsl( from var(--white) h s calc(l - 5) );
-    --light-2: hsl( from var(--white) h s calc(l - 10) );
-    --light-3: hsl( from var(--white) h s calc(l - 15) );
-    --light-4: hsl( from var(--white) h s calc(l - 20) );
-
-    --dark-0: var(--black);
-    --dark-1: hsl( from var(--black) h s calc(l + 5) );
-    --dark-2: hsl( from var(--black) h s calc(l + 10) );
-    --dark-3: hsl( from var(--black) h s calc(l + 15) );
-    --dark-4: hsl( from var(--black) h s calc(l + 20) );
-}
-
-/* light mode */
-:root {
-    --surface-0: var(--light-0);
-    --surface-1: var(--light-1);
-    --surface-2: var(--light-2);
-    --surface-3: var(--light-3);
-    --surface-4: var(--light-4);
-    
-    --content-0: var(--dark-0);
-    --content-1: var(--dark-1);
-    --content-2: var(--dark-2);
-    --content-3: var(--dark-3);
-    --content-4: var(--dark-4);
-
-    --emerald-surface-0: var(--emerald-light-0);
-    --emerald-surface-1: var(--emerald-light-1);
-    --emerald-surface-2: var(--emerald-light-2);
-    --emerald-surface-3: var(--emerald-light-3);
-    --emerald-surface-4: var(--emerald-light-4);
-    
-    --emerald-content-0: var(--emerald-dark-0);
-    --emerald-content-1: var(--emerald-dark-1);
-    --emerald-content-2: var(--emerald-dark-2);
-    --emerald-content-3: var(--emerald-dark-3);
-    --emerald-content-4: var(--emerald-dark-4);
-}
-
-/* dark mode */
-@media (prefers-color-scheme: dark) {
+@layer base {
     :root {
-        --surface-0: var(--dark-0);
-        --surface-1: var(--dark-1);
-        --surface-2: var(--dark-2);
-        --surface-3: var(--dark-3);
-        --surface-4: var(--dark-4);
+        --emerald: hsl(153, 70%, 40%);
+        --bronze: hsl(36, 63%, 45%);
+        --black: hsl(0, 0%, 6%);
+        --white: hsl(0, 0%, 94%);
         
-        --content-0: var(--light-0);
-        --content-1: var(--light-1);
-        --content-2: var(--light-2);
-        --content-3: var(--light-3);
-        --content-4: var(--light-4);
+        --emerald-light-0: hsl( from var(--emerald) h s calc(l + 5) );
+        --emerald-light-1: hsl( from var(--emerald) h s calc(l + 10) );
+        --emerald-light-2: hsl( from var(--emerald) h s calc(l + 20) );
+        --emerald-light-3: hsl( from var(--emerald) h s calc(l + 30) );
+        --emerald-light-4: hsl( from var(--emerald) h s calc(l + 40) );
 
-        --emerald-surface-0: var(--emerald-dark-0);
-        --emerald-surface-1: var(--emerald-dark-1);
-        --emerald-surface-2: var(--emerald-dark-2);
-        --emerald-surface-3: var(--emerald-dark-3);
-        --emerald-surface-4: var(--emerald-dark-4);
+        --emerald-dark-0: hsl( from var(--emerald) h s calc(l - 5) );
+        --emerald-dark-1: hsl( from var(--emerald) h s calc(l - 10) );
+        --emerald-dark-2: hsl( from var(--emerald) h s calc(l - 20) );
+        --emerald-dark-3: hsl( from var(--emerald) h s calc(l - 30) );
+        --emerald-dark-4: hsl( from var(--emerald) h s calc(l - 40) );
+
+        --light-0: var(--white);
+        --light-1: hsl( from var(--white) h s calc(l - 5) );
+        --light-2: hsl( from var(--white) h s calc(l - 10) );
+        --light-3: hsl( from var(--white) h s calc(l - 15) );
+        --light-4: hsl( from var(--white) h s calc(l - 20) );
+
+        --dark-0: var(--black);
+        --dark-1: hsl( from var(--black) h s calc(l + 5) );
+        --dark-2: hsl( from var(--black) h s calc(l + 10) );
+        --dark-3: hsl( from var(--black) h s calc(l + 15) );
+        --dark-4: hsl( from var(--black) h s calc(l + 20) );
+    }
+
+    /* light mode */
+    :root {
+        --surface-0: var(--light-0);
+        --surface-1: var(--light-1);
+        --surface-2: var(--light-2);
+        --surface-3: var(--light-3);
+        --surface-4: var(--light-4);
         
-        --emerald-content-0: var(--emerald-light-0);
-        --emerald-content-1: var(--emerald-light-1);
-        --emerald-content-2: var(--emerald-light-2);
-        --emerald-content-3: var(--emerald-light-3);
-        --emerald-content-4: var(--emerald-light-4);
+        --content-0: var(--dark-0);
+        --content-1: var(--dark-1);
+        --content-2: var(--dark-2);
+        --content-3: var(--dark-3);
+        --content-4: var(--dark-4);
+
+        --emerald-surface-0: var(--emerald-light-0);
+        --emerald-surface-1: var(--emerald-light-1);
+        --emerald-surface-2: var(--emerald-light-2);
+        --emerald-surface-3: var(--emerald-light-3);
+        --emerald-surface-4: var(--emerald-light-4);
+        
+        --emerald-content-0: var(--emerald-dark-0);
+        --emerald-content-1: var(--emerald-dark-1);
+        --emerald-content-2: var(--emerald-dark-2);
+        --emerald-content-3: var(--emerald-dark-3);
+        --emerald-content-4: var(--emerald-dark-4);
+    }
+
+    /* dark mode */
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --surface-0: var(--dark-0);
+            --surface-1: var(--dark-1);
+            --surface-2: var(--dark-2);
+            --surface-3: var(--dark-3);
+            --surface-4: var(--dark-4);
+            
+            --content-0: var(--light-0);
+            --content-1: var(--light-1);
+            --content-2: var(--light-2);
+            --content-3: var(--light-3);
+            --content-4: var(--light-4);
+
+            --emerald-surface-0: var(--emerald-dark-0);
+            --emerald-surface-1: var(--emerald-dark-1);
+            --emerald-surface-2: var(--emerald-dark-2);
+            --emerald-surface-3: var(--emerald-dark-3);
+            --emerald-surface-4: var(--emerald-dark-4);
+            
+            --emerald-content-0: var(--emerald-light-0);
+            --emerald-content-1: var(--emerald-light-1);
+            --emerald-content-2: var(--emerald-light-2);
+            --emerald-content-3: var(--emerald-light-3);
+            --emerald-content-4: var(--emerald-light-4);
+        }
     }
 }
 

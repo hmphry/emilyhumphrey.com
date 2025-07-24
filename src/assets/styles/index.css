@@ -1,13 +1,6 @@
 @import "tailwindcss";
-@import "@fontsource/outfit/400.css";
-@import "@fontsource/outfit/700.css";
 @import "./theme/colors.css";
-
-@layer base {
-  :root {
-    --font-sans: 'Outfit', sans-serif;
-  }
-}
+@import "./theme/fonts.css";
 
 body {
     @apply overflow-y-scroll

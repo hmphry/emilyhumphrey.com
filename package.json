@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@fontsource/outfit": "^5.2.6",
+    "@fontsource/space-grotesk": "^5.2.8",
     "@tailwindcss/vite": "^4.1.11",
     "clsx": "^2.1.1",
     "eslint-plugin-unicorn": "^59.0.1",
