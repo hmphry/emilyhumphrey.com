@@ -1,12 +1,18 @@
-import { Link } from "react-router-dom"
+import articleRoutes from "@/content/articles/index.tsx"
+import Article from "./article"
 
-function Article() {
+function ArticleList() {
     return (
-        <div>
-            <Link to="top-5-wcag-mistakes">Go To Article</Link>
-            <Link to="5-vue-features-react-nails">Go To Article 2</Link>
+        <div className="content-container">
+            <h2 className="font-display text-4xl">Articles</h2>
+            <p>Some text here</p>
+            <ul className="grid max-w-4xl gap-10 pt-12">
+                {articleRoutes.map((a) => (
+                    <Article key={a.path} {...a} />
+                ))}
+            </ul>
         </div>
     )
 }
 
-export default Article
+export default ArticleList

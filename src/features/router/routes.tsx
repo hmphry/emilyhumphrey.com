@@ -18,21 +18,21 @@ export const routes: RouteConfig[] = [
         element: <div>Home</div>,
         path: "/",
     },
-    {
-        element: <div>Compendium</div>,
-        path: "/compendium",
-        title: "Compendium",
-    },
-    {
-        element: <div>Projects</div>,
-        path: "/projects",
-        title: "Projects",
-    },
-    {
-        element: <div>Tools</div>,
-        path: "/tools",
-        title: "Tools",
-    },
+    // {
+    //     element: <div>Compendium</div>,
+    //     path: "/compendium",
+    //     title: "Compendium",
+    // },
+    // {
+    //     element: <div>Projects</div>,
+    //     path: "/projects",
+    //     title: "Projects",
+    // },
+    // {
+    //     element: <div>Tools</div>,
+    //     path: "/tools",
+    //     title: "Tools",
+    // },
     {
         element: <ArticleList />,
         path: "/articles",

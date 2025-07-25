@@ -5,7 +5,7 @@ import { routes } from "@/features/router/routes.tsx"
 
 function Navigation() {
     return (
-        <div className="layout-grid fixed inset-x-0 top-0 items-center">
+        <div className="layout-grid fixed inset-x-0 top-0 z-30 items-center">
             <Link to="/" className="sidebar p-3">
                 <Logo className="w-full" />
             </Link>

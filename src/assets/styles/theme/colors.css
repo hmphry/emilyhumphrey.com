@@ -20,16 +20,16 @@
         --emerald-dark-4: hsl( from var(--emerald) h s calc(l - 40) );
 
         --light-0: var(--white);
-        --light-1: hsl( from var(--white) h s calc(l - 5) );
-        --light-2: hsl( from var(--white) h s calc(l - 10) );
-        --light-3: hsl( from var(--white) h s calc(l - 15) );
-        --light-4: hsl( from var(--white) h s calc(l - 20) );
+        --light-1: hsl( from var(--white) h s calc(l - 10) );
+        --light-2: hsl( from var(--white) h s calc(l - 20) );
+        --light-3: hsl( from var(--white) h s calc(l - 30) );
+        --light-4: hsl( from var(--white) h s calc(l - 40) );
 
         --dark-0: var(--black);
-        --dark-1: hsl( from var(--black) h s calc(l + 5) );
-        --dark-2: hsl( from var(--black) h s calc(l + 10) );
-        --dark-3: hsl( from var(--black) h s calc(l + 15) );
-        --dark-4: hsl( from var(--black) h s calc(l + 20) );
+        --dark-1: hsl( from var(--black) h s calc(l + 10) );
+        --dark-2: hsl( from var(--black) h s calc(l + 20) );
+        --dark-3: hsl( from var(--black) h s calc(l + 30) );
+        --dark-4: hsl( from var(--black) h s calc(l + 40) );
     }
 
     /* light mode */

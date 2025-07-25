@@ -2,6 +2,4 @@
 @import "./theme/colors.css";
 @import "./theme/fonts.css";
 
-body {
-    @apply overflow-y-scroll
-}
+@import "./components/content-elements.css"
