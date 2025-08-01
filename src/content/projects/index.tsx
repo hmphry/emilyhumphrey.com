@@ -1,5 +1,5 @@
 import { lazy } from "react"
-import articlesData from "./article-data.json"
+import data from "./data.json"
 
 export interface ArticleConfig {
     eyebrow?: string
@@ -13,14 +13,14 @@ export interface ArticleConfig {
 
 // Dynamic component loader
 const loadComponent = (componentName: string) => {
-    return lazy(() => import(`@/content/articles/${componentName}/index.tsx`))
+    return lazy(() => import(`./${componentName}/index.tsx`))
 }
 
 // Transform JSON data into ArticleConfig with dynamically loaded components
-const articleRoutes: ArticleConfig[] = articlesData.map((article) => {
-    const Component = loadComponent(article.element)
+const articleRoutes: ArticleConfig[] = data.map((project) => {
+    const Component = loadComponent(project.element)
     return {
-        ...article,
+        ...project,
         element: <Component />,
     }
 })

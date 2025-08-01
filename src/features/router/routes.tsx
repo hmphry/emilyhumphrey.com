@@ -4,6 +4,8 @@ import { lazy } from "react"
 const ArticleList = lazy(() => import("@/features/article-list/index.tsx"))
 const Article = lazy(() => import("@/features/article/index.tsx"))
 
+const ProjectList = lazy(() => import("@/features/project-list/index.tsx"))
+
 import articleRoutes from "@/content/articles/index"
 
 interface RouteConfig {
@@ -24,11 +26,6 @@ export const routes: RouteConfig[] = [
     //     title: "Compendium",
     // },
     // {
-    //     element: <div>Projects</div>,
-    //     path: "/projects",
-    //     title: "Projects",
-    // },
-    // {
     //     element: <div>Tools</div>,
     //     path: "/tools",
     //     title: "Tools",
@@ -42,6 +39,11 @@ export const routes: RouteConfig[] = [
         element: <Article />,
         path: "/articles",
         children: articleRoutes,
+    },
+    {
+        element: <ProjectList />,
+        path: "/projects",
+        title: "Projects",
     },
     // {
     //     element: <div>About</div>,

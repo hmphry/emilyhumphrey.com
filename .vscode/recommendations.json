@@ -1,0 +1,24 @@
+{
+    "recommendations": [
+        "streetsidesoftware.code-spell-checker",
+        "ysemeniuk.emmet-live",
+        "wix.vscode-import-cost",
+        "johnpapa.vscode-peacock",
+        "AlDuncanson.react-hooks-snippets",
+        "bradlc.vscode-tailwindcss",
+        "Gruntfuggly.todo-tree",
+        "Ayc0.vscode-wrap-in-fragment",
+        "abhishekmg.px-comment",
+        "alefragnani.Bookmarks",
+        "aaron-bond.better-comments",
+        "ms-vscode.vscode-typescript-next",
+        "formulahendry.auto-rename-tag",
+        "christian-kohler.path-intellisense",
+        "ms-vscode.vscode-json",
+        "usernamehw.errorlens",
+        "VirejDasani.in-your-face"
+    ],
+    "unwantedRecommendations": [
+        "ms-vscode.vscode-typescript"
+    ]
+}
