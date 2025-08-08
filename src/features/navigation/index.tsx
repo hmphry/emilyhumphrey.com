@@ -13,7 +13,7 @@ function Navigation() {
                 <Link to="/">
                     <div className="text-lg font-bold">Emily Humphrey</div>
                     <div className="text-content-4 text-sm">
-                        Front End Developer
+                        Front End Engineer
                     </div>
                 </Link>
                 <nav className="text-content-4 flex gap-4">
