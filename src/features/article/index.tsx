@@ -3,7 +3,7 @@ import "./styles.css"
 
 function Article() {
     return (
-        <article className="article">
+        <article className="article pb-10">
             <Outlet />
         </article>
     )

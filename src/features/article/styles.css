@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "@/assets/styles/index.css";
 
 .article {
     @apply grid grid-cols-1 gap-4;
@@ -6,6 +6,7 @@
         max-width: 800px;
     }
     h2 {
+        @apply font-display;
         font-size: 2.027rem;
     }
     h3{
