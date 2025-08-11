@@ -36,7 +36,7 @@ function Article() {
                 from React's. Proceed with caution when under its hood.
             </p>
 
-            <h3>1. Provide/Inject for Scoped Dependency Sharing</h3>
+            <h3>3. Directives</h3>
             <p>
                 Vue’s directives like v-if, v-for, and v-bind keep logic
                 declarative and markup readable. Conditional rendering and list
@@ -64,7 +64,7 @@ function Article() {
                 putting that out there.
             </p>
 
-            <h3>Template-Driven Composition</h3>
+            <h3>4. Template-Driven Composition</h3>
             <p>
                 JSX is powerful because it allows you to mix logic and markup.
                 But it can also feel directionless due to that. Of course, you
@@ -75,7 +75,7 @@ function Article() {
                 layers clean and reduces the friction of scaling a component.
             </p>
 
-            <h3>CSS and Scoped styles</h3>
+            <h3>5. CSS and Scoped styles</h3>
             <p>
                 Tailwind has made utility-first styling the default in many
                 teams. But scoped styles still matter, and Vue supports them out
@@ -91,7 +91,7 @@ function Article() {
                 collisions.
             </p>
 
-            <h3>Conclusion</h3>
+            <h3>Final Thoughts</h3>
             <p>
                 Framework loyalty is common. But it can be limiting. Vue and
                 React take different approaches to solving real-world UI
