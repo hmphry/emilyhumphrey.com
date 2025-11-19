@@ -28,4 +28,13 @@
     .eyebrow {
         font-size: 0.889rem;
     }
+    p a {
+        @apply text-emerald-content-0;
+        &:hover {
+            @apply underline text-emerald-content-2;  
+        }
+    }
+    pre {
+        @apply text-content-4;
+    }
 }

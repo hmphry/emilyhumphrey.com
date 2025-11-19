@@ -91,7 +91,7 @@
         "subtitle": "What is hoisting and why",
         "description": "",
         "publishDate": "6/29/2025",
-        "element": "top-5-accessibility-issues-2025/index.tsx",
+        "element": "top-5-accessibility-issues-2025",
         "path": "hoisting-in-js"
     },
     {
@@ -99,7 +99,7 @@
         "subtitle": "Understanding the JavaScript Engine",
         "description": "",
         "publishDate": "6/29/2025",
-        "element": "top-5-accessibility-issues-2025/index.tsx",
+        "element": "top-5-accessibility-issues-2025",
         "path": "the-js-engine"
     },
     {
@@ -107,7 +107,7 @@
         "subtitle": "When to use var, let, and const.",
         "description": "",
         "publishDate": "8/28/2019",
-        "element": "top-5-accessibility-issues-2025/index.tsx",
+        "element": "top-5-accessibility-issues-2025",
         "path": "javascript-variables"
     },
     {
@@ -115,7 +115,7 @@
         "subtitle": "Examining annoying pitfalls within CSS",
         "description": "",
         "publishDate": "7/15/2015",
-        "element": "top-5-accessibility-issues-2025/index.tsx",
+        "element": "top-5-accessibility-issues-2025",
         "path": "css-kind-of-hates-you"
     },
     {
@@ -123,7 +123,7 @@
         "subtitle": "How I Learned To Stop Worrying and Love The Map",
         "description": "",
         "publishDate": "7/15/2015",
-        "element": "top-5-accessibility-issues-2025",
+        "element": "reddit-nfl-sass-maps",
         "path": "reddit-nfl-sass-maps"
     }
 ]
