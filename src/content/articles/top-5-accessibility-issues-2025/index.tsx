@@ -1,21 +1,36 @@
 function Article() {
     return (
         <article className="article">
-            <h2>Vue vs React: 5 Features Vue Nails</h2>
+            <h2>Top 5 Accessibility Errors</h2>
             <p>
-                I enjoy working in React. But Vue has some great, unique
-                features. These features help make component logic cleaner,
-                encapsulation easier and reusability more natural. Here are five
-                Vue features I love:
+                Accessibility is the foundation of usable design. If your app
+                only works for some users, it isn’t a complete interface... it’s
+                a broken one. When accessibility fails, real people get locked
+                out. Blind users can’t navigate. Keyboard users get stuck. Poor
+                contrast makes content unreadable. These are barriers that block
+                real users.
+            </p>
+            <p>
+                This post breaks down five of the most common accessibility
+                issues in modern web apps. They’re easy to miss... but just as
+                easy to fix. Addressing them makes your interface usable for
+                more people.
             </p>
 
-            <h3>1. Provide/Inject for Scoped Dependency Sharing</h3>
+            <h3>1. Images without alt text</h3>
             <p>
-                Provide and inject allow you to pass data deep into the
-                component tree. No Context, no Zustand, no props. Define a
-                value, and provide it to that component's entire tree. Yes, it
-                can lead to ambiguous scopes if misused. But when applied
-                thoughtfully it's an elegant solution to passing down data.
+                It’s an easy mistake with serious consequences. Adding an image
+                without alt text means screen readers have nothing to announce.
+                For blind users, the content is invisible.
+            </p>
+            <p>Who it affects:</p>
+            <p>Blind users and screen reader users.</p>
+            <p>How to detect:</p>
+            <p>{`Check for missing or empty alt attributes on <img> tags and unlabeled icons/buttons.`}</p>
+            <p>How to fix:</p>
+            <p>
+                Add clear, concise alt text to images. Use aria-label,
+                aria-labelledby, or visible text for interactive elements.
             </p>
 
             <h3>2. Reactivity Without Boilerplate</h3>

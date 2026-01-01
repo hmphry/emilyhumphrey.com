@@ -17,7 +17,7 @@ interface RouteConfig {
 
 export const routes: RouteConfig[] = [
     {
-        element: <div>Home</div>,
+        element: <ArticleList />,
         path: "/",
     },
     // {
@@ -40,11 +40,11 @@ export const routes: RouteConfig[] = [
         path: "/articles",
         children: articleRoutes,
     },
-    {
-        element: <ProjectList />,
-        path: "/projects",
-        title: "Projects",
-    },
+    // {
+    //     element: <ProjectList />,
+    //     path: "/projects",
+    //     title: "Projects",
+    // },
     // {
     //     element: <div>About</div>,
     //     path: "/about",
