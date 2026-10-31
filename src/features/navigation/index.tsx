@@ -1,7 +1,7 @@
 import Logo from "@/assets/images/logo.svg?react"
 import { Link, NavLink } from "react-router-dom"
 import cn from "@/utils/cn.ts"
-import { routes } from "@/features/router/routes.tsx"
+import { sections } from "./sections.ts"
 
 function Navigation() {
     return (
@@ -17,22 +17,20 @@ function Navigation() {
                     </div>
                 </Link>
                 <nav className="text-content-4 flex gap-4">
-                    {routes
-                        .filter((i) => i.title)
-                        .map((route) => (
-                            <NavLink
-                                key={route.path}
-                                to={route.path}
-                                className={({ isActive }) =>
-                                    cn(
-                                        "hover:text-emerald-content-2",
-                                        isActive && "text-emerald-content-1",
-                                    )
-                                }
-                            >
-                                {route.title}
-                            </NavLink>
-                        ))}
+                    {sections.map((section) => (
+                        <NavLink
+                            key={section.path}
+                            to={section.path}
+                            className={({ isActive }) =>
+                                cn(
+                                    "hover:text-emerald-content-2",
+                                    isActive && "text-emerald-content-1",
+                                )
+                            }
+                        >
+                            {section.title}
+                        </NavLink>
+                    ))}
                 </nav>
             </div>
         </div>

@@ -9,7 +9,7 @@ import prettier from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
 
 export default tseslint.config([
-  globalIgnores(['dist']),
+  globalIgnores(['dist', 'build', '.react-router']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
@@ -28,7 +28,13 @@ export default tseslint.config([
       prettier,
 		},
     rules: {
-      'prettier/prettier': 'error'
+      'prettier/prettier': 'error',
+      'react-refresh/only-export-components': [
+        'error',
+        {
+          allowExportNames: ['meta', 'links', 'loader', 'action', 'headers'],
+        },
+      ],
     },
   },
 ])

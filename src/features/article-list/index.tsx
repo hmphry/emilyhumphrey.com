@@ -5,7 +5,7 @@ function ArticleList() {
     return (
         <div className="content-container">
             <h2 className="font-display text-4xl">Articles</h2>
-            <p>And other random thoughts on code.</p>
+            <p className="text-content-4">And other random thoughts on code.</p>
             <ul className="grid max-w-4xl gap-10 pt-12">
                 {articleRoutes.map((a) => (
                     <Article key={a.path} {...a} />

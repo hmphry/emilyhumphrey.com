@@ -1,4 +1,3 @@
-import { lazy } from "react"
 import articlesData from "./article-data.json"
 
 export interface ArticleConfig {
@@ -8,21 +7,9 @@ export interface ArticleConfig {
     description: string
     publishDate: string
     path: string
-    element: React.ReactElement
+    element: string
 }
 
-// Dynamic component loader
-const loadComponent = (componentName: string) => {
-    return lazy(() => import(`@/content/articles/${componentName}/index.tsx`))
-}
+const articles: ArticleConfig[] = articlesData
 
-// Transform JSON data into ArticleConfig with dynamically loaded components
-const articleRoutes: ArticleConfig[] = articlesData.map((article) => {
-    const Component = loadComponent(article.element)
-    return {
-        ...article,
-        element: <Component />,
-    }
-})
-
-export default articleRoutes
+export default articles

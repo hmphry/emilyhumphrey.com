@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom"
 import type { ArticleConfig } from "@/content/articles"
 
+type ArticleCardProps = Omit<ArticleConfig, "element">
+
 const Article = ({
     eyebrow,
     path,
     title,
     publishDate,
     description,
-}: ArticleConfig) => (
+}: ArticleCardProps) => (
     <li className="grid gap-1">
         {eyebrow && <p className="text-content text-sm">{eyebrow}</p>}
         <h3 className="text-3xl font-bold">
