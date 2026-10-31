@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en" class="bg-surface text-content h-full w-full font-sans"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="modulepreload" href="/assets/manifest-eadf4de7.js"/><link rel="modulepreload" href="/assets/entry.client-DdeeK6H6.js"/><link rel="modulepreload" href="/assets/chunk-EF7DTUVF-C4xvGfCF.js"/><link rel="modulepreload" href="/assets/root-CzlNjLET.js"/><link rel="modulepreload" href="/assets/index-4B5qYQum.js"/><link rel="modulepreload" href="/assets/page-D9FkMrbk.js"/><link rel="icon" type="image/svg+xml" href="/vite.svg"/><title>JavaScript Variables · Emily Humphrey</title><meta name="description" content="When to use var, let, and const."/><link rel="stylesheet" href="/assets/root-CU4-VxOl.css"/><link rel="stylesheet" href="/assets/index-49X-KxYH.css"/></head><body class="h-full w-full overflow-y-scroll"><div class="layout-grid fixed inset-x-0 top-0 z-30 items-center"><a class="sidebar p-3" href="/" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 60" class="w-full"><defs><style>
+      .st0 {
+        fill: var(--bronze);
+      }
+
+      .st1 {
+        fill: var(--white);
+      }
+    </style></defs><path class="st0" d="M48,0H0s-.02,27.7.02,30.66c.06,4.93,1.46,9.66,4.15,14.06,2.57,4.2,6.24,7.8,11.23,11.03,1.76,1.14,3.65,2.06,5.47,2.96.71.35,1.44.71,2.14,1.07.29.15.63.23.98.23.35,0,.69-.08.98-.23.71-.36,1.44-.72,2.14-1.07,1.82-.9,3.71-1.82,5.47-2.96,4.99-3.22,8.66-6.83,11.23-11.03,2.69-4.4,4.09-9.13,4.15-14.06.04-2.96.02-30.66.02-30.66ZM43.49,30.6c-.05,4.11-1.22,8.06-3.49,11.76-2.21,3.61-5.43,6.75-9.84,9.6-1.54,1-3.31,1.86-5.01,2.7h0c-.38.19-.76.38-1.15.57-.39-.19-.78-.38-1.15-.57-1.71-.84-3.47-1.71-5.01-2.7-4.41-2.85-7.63-5.99-9.84-9.6-2.26-3.7-3.44-7.65-3.49-11.76-.03-2.16-.02-17.94-.02-26.1h39.03c0,8.16,0,23.93-.02,26.1Z"></path><path class="st1" d="M25.35,43.93h0v-15.34h.55v-2.34l-.55-1.69v-5.09c2.99-.5,5.23-2.62,5.23-5.16,0-2.91-2.95-5.27-6.59-5.27s-6.59,2.36-6.59,5.27c0,2.54,2.25,4.66,5.23,5.16v5.09l-.55,1.69v2.34h.55v7.98h-4.03v.84h.6v1.11h.9v2.11h-.9v1.11h-.6v.84h4.03v1.35h0c.01.74.61,1.34,1.35,1.34s1.34-.6,1.35-1.34ZM22.68,11.85c0-.73.59-1.32,1.32-1.32s1.32.59,1.32,1.32-.59,1.32-1.32,1.32-1.32-.59-1.32-1.32Z"></path></svg></a><div class="main bg-surface-0/80 flex h-20 items-center justify-between backdrop-blur-xs"><a href="/" data-discover="true"><div class="text-lg font-bold">Emily Humphrey</div><div class="text-content-4 text-sm">Senior Software Engineer</div></a><nav class="text-content-4 flex gap-4"><a aria-current="page" class="hover:text-emerald-content-2 text-emerald-content-1" href="/articles" data-discover="true">Articles</a></nav></div></div><div class="layout-grid h-full w-full"><div class="sidebar bg-emerald-darkest"></div><div class="bar bg-emerald"></div><div class="main pt-30"><article class="article pb-10"><article class="article"><h2>JavaScript Variables</h2><p class="eyebrow">Originally Published on August 28th, 2019</p><p>Variables are a pretty simple concept. For most of JavaScript’s life, the only difficult decision about variables was what to call them. Then ES6 came out and all of a sudden, we have three variable options. Each with different names and properties. So what is the difference? Also, more importantly, when should you use which?</p><h3>Readability</h3><p>Const is the most readable of the three. That’s because const can never be reassigned in a scope. It has a quite specific and narrow use case. Const is so readable it gives context to let simply by existing. Let value can be reassigned and therefore has an entirely different use case than const. Var, on the other hand, tells you nothing about how the data was intended to be handled. It could be reassigned, and it could not be. Let can indeed suffer from this problem as well, const + let architecture is much more common than const + var because const and let have the same behavior. So while let has the same weakness as var, let was made to be paired with const, which var was not.</p><h3>Scope</h3><p>Both let and const are block-scoped. Meaning, values initiated inside blocks can not be accessed outside those blocks:</p><pre>if(&quot;apples&quot; != &quot;oranges&quot;){
+  let a = &quot;apples&quot;;
+  const b = &quot;oranges&quot;
+}
+
+console.log(a) // reference error
+console.log(b) // reference error</pre><p>This is a huge behavioral change from var, which is function-scoped:</p><pre>if(&quot;apples&quot; != &quot;oranges&quot;){
+  var a = &quot;apples&quot;;
+  var b = &quot;oranges&quot;
+}
+
+console.log(a) // &quot;apples&quot;
+console.log(b) // &quot;oranges&quot;</pre><p>However, the remarkable thing is, let and const can only be initialized once per scope. That means tracing let and const to their sources is much easier than var, which can be initialized anywhere and reinitialized anywhere!</p><pre>var emergencyActive = true;
+var systemOn = emergencyActive ? false : true; // system should always be on unless emergency
+
+function runSystem(){
+  console.log(systemOn ? &quot;System is running&quot; : &quot;System is unable to run while emergency is declared&quot;);
+}
+
+/// five hundred lines later...
+
+var systemOn = true;
+
+
+runSystem() // logs &quot;System is running&quot;</pre><p>If we had used let, or even better: const, we would have gotten a syntax error. Instead, we got a system, which was designed not to run when an emergency was declared, running when a freaking emergency was declared! Due to this behavior, I think let and const are more reliable than var to hold data.</p><h3>Hoisting</h3><p>Contrary to popular believe, const and let are indeed hoisted!</p><pre>let favoriteFood = &quot;mac and cheese&quot;;
+
+function healthyFood(){
+  console.log(favoriteFood)
+  let favoriteFood = &quot;Zuchini spirals and cheese&quot;
+}
+
+healthyFood() //logs ReferenceError</pre><p>If let and const were not hoisted, than favoriteFoods should have logged Mac and Cheese. Instead, it results in a reference error. This result isn’t because the variable doesn’t exist; it’s because the variable wasn’t initialized! When called before being initialized, let and const exist within something called the Temporal Dead Zone(TDZ). The TDZ isn’t particularly important to understand right now, but instead of resolving as “undefined,” it emits an error. This behavior produces higher visibility of bugs. There are not many reasons to intentionally call a variable before it is initialized.</p><h3>In Conclusion</h3><p>In my opinion, there isn’t a particularly strong reason to use “var” over “let” or “const.” It’s an unreliable form of data that is less readable, which can cause hard to debug problems and is notoriously difficult to track. So I suggest removing var from your lexicon entirely. This decision also makes the “what declaration to use when” extremely simple going forward: if you plan to reassign, use let. If not, use const.</p></article></article><div class="text-content-4 grid grid-cols-2 pt-10 pb-4 text-sm"><div class="">Copyright © <!-- -->2026</div><ul class="flex justify-end gap-4"><li><a class="hover:text-content" title="LinkedIn" rel="noopener noreferrer" href="https://www.linkedin.com/in/heyhmphry/" target="_blank">LinkedIn</a></li><li><a class="hover:text-content" title="Github" rel="noopener noreferrer" href="https://github.com/hmphry/" target="_blank">Github</a></li></ul></div></div></div><div class="layout-grid fixed bottom-0 w-16"><div class="p-2 pb-4"><button class="text-content-4 text-emerald-light hover:text-emerald-lightest flex w-full cursor-pointer items-center justify-between p-2" title="more"><span class="size-1 rounded-full bg-current"></span><span class="size-1 rounded-full bg-current"></span><span class="size-1 rounded-full bg-current"></span></button></div></div><script>((storageKey2, restoreKey) => {
+    if (!window.history.state || !window.history.state.key) {
+      let key = Math.random().toString(32).slice(2);
+      window.history.replaceState({ key }, "");
+    }
+    try {
+      let positions = JSON.parse(sessionStorage.getItem(storageKey2) || "{}");
+      let storedY = positions[restoreKey || window.history.state.key];
+      if (typeof storedY === "number") {
+        window.scrollTo(0, storedY);
+      }
+    } catch (error) {
+      console.error(error);
+      sessionStorage.removeItem(storageKey2);
+    }
+  })("react-router-scroll-positions", null)</script><script>window.__reactRouterContext = {"basename":"/","future":{"unstable_middleware":false,"unstable_optimizeDeps":false,"unstable_splitRouteModules":false,"unstable_subResourceIntegrity":false,"unstable_viteEnvironmentApi":false},"routeDiscovery":{"mode":"initial"},"ssr":false,"isSpaMode":false};window.__reactRouterContext.stream = new ReadableStream({start(controller){window.__reactRouterContext.streamController = controller;}}).pipeThrough(new TextEncoderStream());</script><script type="module" async="">import "/assets/manifest-eadf4de7.js";
+import * as route0 from "/assets/root-CzlNjLET.js";
+import * as route1 from "/assets/index-4B5qYQum.js";
+import * as route2 from "/assets/page-D9FkMrbk.js";
+  
+  window.__reactRouterRouteModules = {"root":route0,"features/article/index":route1,"content/articles/page":route2};
+
+import("/assets/entry.client-DdeeK6H6.js");</script><!--$?--><template id="B:0"></template><!--/$--><div hidden id="S:0"><script>window.__reactRouterContext.streamController.enqueue("[{\"_1\":2,\"_15\":-5,\"_16\":-5},\"loaderData\",{\"_3\":4},\"content/articles/page\",{\"_5\":6,\"_7\":8,\"_9\":10,\"_11\":12,\"_13\":14},\"title\",\"JavaScript Variables\",\"description\",\"When to use var, let, and const.\",\"publishDate\",\"8/28/2019\",\"element\",\"javascript-variables\",\"path\",\"/articles/javascript-variables\",\"actionData\",\"errors\"]\n");</script><!--$?--><template id="B:1"></template><!--/$--></div><script>$RC=function(b,c,e){c=document.getElementById(c);c.parentNode.removeChild(c);var a=document.getElementById(b);if(a){b=a.previousSibling;if(e)b.data="$!",a.setAttribute("data-dgst",e);else{e=b.parentNode;a=b.nextSibling;var f=0;do{if(a&&8===a.nodeType){var d=a.data;if("/$"===d)if(0===f)break;else f--;else"$"!==d&&"$?"!==d&&"$!"!==d||f++}d=a.nextSibling;e.removeChild(a);a=d}while(a);for(;c.firstChild;)e.insertBefore(c.firstChild,a);b.data="$"}b._reactRetry&&b._reactRetry()}};$RC("B:0","S:0")</script><div hidden id="S:1"><script>window.__reactRouterContext.streamController.close();</script></div><script>$RC("B:1","S:1")</script></body></html>

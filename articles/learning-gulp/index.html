@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en" class="bg-surface text-content h-full w-full font-sans"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="modulepreload" href="/assets/manifest-eadf4de7.js"/><link rel="modulepreload" href="/assets/entry.client-DdeeK6H6.js"/><link rel="modulepreload" href="/assets/chunk-EF7DTUVF-C4xvGfCF.js"/><link rel="modulepreload" href="/assets/root-CzlNjLET.js"/><link rel="modulepreload" href="/assets/index-4B5qYQum.js"/><link rel="modulepreload" href="/assets/page-D9FkMrbk.js"/><link rel="icon" type="image/svg+xml" href="/vite.svg"/><title>Learning Gulp · Emily Humphrey</title><meta name="description" content="Getting Started With The Front End Factory"/><link rel="stylesheet" href="/assets/root-CU4-VxOl.css"/><link rel="stylesheet" href="/assets/index-49X-KxYH.css"/></head><body class="h-full w-full overflow-y-scroll"><div class="layout-grid fixed inset-x-0 top-0 z-30 items-center"><a class="sidebar p-3" href="/" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 60" class="w-full"><defs><style>
+      .st0 {
+        fill: var(--bronze);
+      }
+
+      .st1 {
+        fill: var(--white);
+      }
+    </style></defs><path class="st0" d="M48,0H0s-.02,27.7.02,30.66c.06,4.93,1.46,9.66,4.15,14.06,2.57,4.2,6.24,7.8,11.23,11.03,1.76,1.14,3.65,2.06,5.47,2.96.71.35,1.44.71,2.14,1.07.29.15.63.23.98.23.35,0,.69-.08.98-.23.71-.36,1.44-.72,2.14-1.07,1.82-.9,3.71-1.82,5.47-2.96,4.99-3.22,8.66-6.83,11.23-11.03,2.69-4.4,4.09-9.13,4.15-14.06.04-2.96.02-30.66.02-30.66ZM43.49,30.6c-.05,4.11-1.22,8.06-3.49,11.76-2.21,3.61-5.43,6.75-9.84,9.6-1.54,1-3.31,1.86-5.01,2.7h0c-.38.19-.76.38-1.15.57-.39-.19-.78-.38-1.15-.57-1.71-.84-3.47-1.71-5.01-2.7-4.41-2.85-7.63-5.99-9.84-9.6-2.26-3.7-3.44-7.65-3.49-11.76-.03-2.16-.02-17.94-.02-26.1h39.03c0,8.16,0,23.93-.02,26.1Z"></path><path class="st1" d="M25.35,43.93h0v-15.34h.55v-2.34l-.55-1.69v-5.09c2.99-.5,5.23-2.62,5.23-5.16,0-2.91-2.95-5.27-6.59-5.27s-6.59,2.36-6.59,5.27c0,2.54,2.25,4.66,5.23,5.16v5.09l-.55,1.69v2.34h.55v7.98h-4.03v.84h.6v1.11h.9v2.11h-.9v1.11h-.6v.84h4.03v1.35h0c.01.74.61,1.34,1.35,1.34s1.34-.6,1.35-1.34ZM22.68,11.85c0-.73.59-1.32,1.32-1.32s1.32.59,1.32,1.32-.59,1.32-1.32,1.32-1.32-.59-1.32-1.32Z"></path></svg></a><div class="main bg-surface-0/80 flex h-20 items-center justify-between backdrop-blur-xs"><a href="/" data-discover="true"><div class="text-lg font-bold">Emily Humphrey</div><div class="text-content-4 text-sm">Senior Software Engineer</div></a><nav class="text-content-4 flex gap-4"><a aria-current="page" class="hover:text-emerald-content-2 text-emerald-content-1" href="/articles" data-discover="true">Articles</a></nav></div></div><div class="layout-grid h-full w-full"><div class="sidebar bg-emerald-darkest"></div><div class="bar bg-emerald"></div><div class="main pt-30"><article class="article pb-10"><article class="article"><h2>Learning Gulp</h2><p class="eyebrow">Originally Published on June 11th, 2014</p><p><strong>This post is not updated and may not reflect current best practices.</strong></p><p>Gulp is a JavaScript based automatic task runner. With it, you can compile sass, include &amp; concat files, package JavaScript, upload files to servers and much more. You can, of course, do all that without Gulp, but it’s a lot easier with it. In his gitbook, David Nowinsky described Gulp as a factory. I really like this description. Gulp, much like a factory, takes files and turns them into other files with very minimal effort. In this guide, we will learn the basics of gulp.js, how to avoid some common pitfalls, and build our own gulp system.</p><h3>The Basics</h3><h3>Plugins</h3><p>Plugins extend the functionality of Gulp. Gulp’s philosophy is that plugins should only perform one action, this way it is easy to combine plugins to create complicated functionality easily. All approved plugins are listing on Gulp’s plugin page. Gulp curates their plugins to ensure high quality. It’s suggested you use the official Gulp plugin database so you do not use harmful or non-working plugins.</p><h3>Streams</h3><p>Gulp uses streams to link programs, or in this case plugins, together. This relieves your system of temporary files while providing blazing fast functionality. Going back to the factory analogy, they are the conveyor belts, moving from one program to the other.</p><h3>Tasks</h3><p>Tasks are how you control Gulp and are defined with gulp.task function. Tasks can do many things, including interacting with plugins and streams. You can link tasks together and create dependencies. If streams are the conveyor belt, then tasks are the assembly line.</p><h3>Getting Started</h3><h3>Installation</h3><p>Installation for macs are pretty simple, however there are a few dependencies you’ll need. The first thing you’ll need is node.js. After that, you’ll need Node Package Manager, or NPM for short. NPM will handle your plugins for gulp and gulp itself, but it does many awesome things on its own. To install npm, open up your console and enter <code>sudo curl -L https://npmjs.org/install.sh | sh</code>. You’ll be prompted for your password. Once you have NPM, run <code>npm install gulp -g</code> to install gulp globally.</p><h3>Building Your Gulpfile</h3><p>Now that you have a grasp on the basics and have everything installed, it’s time to build you own gulp file! First, you have to figure out what you want your gulpfile to do. if I had to figure out my favorite task to auto has to be SCSS to CSS with an auto-prefixer. You should start off by searching the official <a href="http://gulpjs.com/plugins/" target="_blank" rel="noopener">Gulp plugin database</a> for the correct plugins. However, I have two favorites that’ll do the job just fine, <a href="https://www.npmjs.com/package/gulp-scss/" target="_blank" rel="noopener">gulp-scss</a> and <a href="https://www.npmjs.com/package/gulp-autoprefixer/" target="_blank" rel="noopener">gulp-autoprefixer</a>.</p><p>Once you have found the plugins, it’s time to install them. To install, open the console and navigate to your project. Then enter <code>npm install gulp-scss --save-dev</code>. This will install gulp-scss and mark it as a dependency in your package.json file. This is important because instead of having to commit or send the large node_modules, the directory where your NPM plugins are stored, you can simply commit this file. Other developers can then install the required dependencies with <code>npm install --dev</code>.</p><p>Time to kick off some gulp development! First thing you need to include is the plugins you just installed:</p><pre>var gulp = require(&#x27;gulp&#x27;);
+var scss = require(&#x27;gulp-scss&#x27;);
+var prefix = require(&#x27;gulp-autoprefixer&#x27;);</pre><p>The dependencies are very important to include. If not included, gulp won’t know what to do and will error out. After the dependencies are included, we can build our first task. Tasks have 4 elements that you need to know:</p><h3>Name</h3><p>The name is pretty self explanatory, I feel. It’s what your task is called, and how it’s called. Each task’s name should be unique. A task named “default” will run on <code>gulp</code> command. Otherwise, <code>gulp task-name</code> will run your task.</p><h3>Source</h3><p>The source is the path to the file you’d like to run through gulp. It can be a direct file, such as “css/main.scss” or it can be multiple files like “css/*.css” or “css/**/*.scss”. The former will get all files in the top level of the css directly while the latter will get every file, even “css/asburd/path/to/file.scss”. it is also possible to have an array, to you can have multiple inputs.</p><h3>Pipes</h3><p>Pipes is like, well, a pipe. If you’re experienced with the console, it probably rings a bell. Pipes is how gulp moves the input from one plugin to another.</p><h3>Destination</h3><p>The final pipe is the destination, more often than not. This is where you want the final file to be. It should be a path to a folder, and it will assume the source file name. You can use a plugin to change that, but it is not possible through gulp.dest as far as I know.</p><p>Below is an example of a gulpfile. It’ll take a scss file, compile it to css and then use the auto-prefixer to insert browser prefixes. When it’s done, it’ll output a css file to “public/css”.</p><pre>var gulp = require(&#x27;gulp&#x27;);
+var scss = require(&#x27;gulp-scss&#x27;);
+var prefix = require(&#x27;gulp-autoprefixer&#x27;);
+
+gulp.task(&#x27;defualt&#x27;, function(){
+	return gulp.src(&#x27;main.scss&#x27;)
+	.pipe(sass())
+	.pipe(prefix())
+	.pipe(gulp.dest(&#x27;public/css&#x27;));
+});</pre><p>To run our gulp file, simply enter <code>gulp</code>.</p><h3>Advanced Techniques</h3><p>Now that you have the basics down pat, it’s time for something more challenging…</p><h3>Chaining</h3><p>Chaining is pretty cool. It taking one task and calling another before running. In the example below, I am chaining “sass-to-css” to “prefix-css”. Now, when I call “prefix-css”, it will run “sass-to-css” beforehand.</p><pre>var gulp = require(&#x27;gulp&#x27;);
+var scss = require(&#x27;gulp-scss&#x27;);
+var prefix = require(&#x27;gulp-autoprefixer&#x27;);
+
+gulp.task(&#x27;sass-to-css&#x27;, function(){
+	return gulp.src(&#x27;main.scss&#x27;)
+	.pipe(sass())
+	.pipe(gulp.dest(&#x27;public/css&#x27;));
+});
+gulp.task(&#x27;prefix-css&#x27;, [&#x27;scss-to-css&#x27;], function(){
+	return gulp.src(&#x27;public/css/main.scss&#x27;)
+	.pipe(prefix())
+	.pipe(gulp.dest(&#x27;public/css&#x27;));
+});</pre><h3>Watching</h3><p>You can also set up gulp to only run when a file is changed.</p><pre>var gulp = require(&#x27;gulp&#x27;);
+var scss = require(&#x27;gulp-scss&#x27;);
+var prefix = require(&#x27;gulp-autoprefixer&#x27;);
+
+gulp.task(&#x27;sass-to-css&#x27;, function(){
+	return gulp.src(&#x27;main.scss&#x27;)
+	.pipe(sass())
+	.pipe(gulp.dest(&#x27;public/css&#x27;));
+});
+gulp.task(&#x27;prefix-css&#x27;, [&#x27;scss-to-css&#x27;], function(){
+	return gulp.src(&#x27;public/css/main.scss&#x27;)
+	.pipe(prefix())
+	.pipe(gulp.dest(&#x27;public/css&#x27;));
+});
+
+gulp.task(&quot;watch&quot;, function(){
+	gulp.watch(&quot;main.scss&quot;, [&quot;prefix-css&quot;]);
+});</pre><p>When you run <code>gulp watch</code>, it will not end like a normal task. It will remain open, watching for changes to “main.scss”. Once a change is saved, it will run “prefix-css”.</p><h3>Error Handling</h3><p>Error handling is very important, especially when using watching. For a while, I had to watch my watch task to make sure an error didn’t break it. Now, I have a dedicated error handle that sends an alert and even notifies me with sound. This is a pretty indepth topic, and has it’s own post <a href="http://hmphry.com/articles/error-handling-in-gulp-js" target="_blank" rel="noopener">here</a>.</p></article></article><div class="text-content-4 grid grid-cols-2 pt-10 pb-4 text-sm"><div class="">Copyright © <!-- -->2026</div><ul class="flex justify-end gap-4"><li><a class="hover:text-content" title="LinkedIn" rel="noopener noreferrer" href="https://www.linkedin.com/in/heyhmphry/" target="_blank">LinkedIn</a></li><li><a class="hover:text-content" title="Github" rel="noopener noreferrer" href="https://github.com/hmphry/" target="_blank">Github</a></li></ul></div></div></div><div class="layout-grid fixed bottom-0 w-16"><div class="p-2 pb-4"><button class="text-content-4 text-emerald-light hover:text-emerald-lightest flex w-full cursor-pointer items-center justify-between p-2" title="more"><span class="size-1 rounded-full bg-current"></span><span class="size-1 rounded-full bg-current"></span><span class="size-1 rounded-full bg-current"></span></button></div></div><script>((storageKey2, restoreKey) => {
+    if (!window.history.state || !window.history.state.key) {
+      let key = Math.random().toString(32).slice(2);
+      window.history.replaceState({ key }, "");
+    }
+    try {
+      let positions = JSON.parse(sessionStorage.getItem(storageKey2) || "{}");
+      let storedY = positions[restoreKey || window.history.state.key];
+      if (typeof storedY === "number") {
+        window.scrollTo(0, storedY);
+      }
+    } catch (error) {
+      console.error(error);
+      sessionStorage.removeItem(storageKey2);
+    }
+  })("react-router-scroll-positions", null)</script><script>window.__reactRouterContext = {"basename":"/","future":{"unstable_middleware":false,"unstable_optimizeDeps":false,"unstable_splitRouteModules":false,"unstable_subResourceIntegrity":false,"unstable_viteEnvironmentApi":false},"routeDiscovery":{"mode":"initial"},"ssr":false,"isSpaMode":false};window.__reactRouterContext.stream = new ReadableStream({start(controller){window.__reactRouterContext.streamController = controller;}}).pipeThrough(new TextEncoderStream());</script><script type="module" async="">import "/assets/manifest-eadf4de7.js";
+import * as route0 from "/assets/root-CzlNjLET.js";
+import * as route1 from "/assets/index-4B5qYQum.js";
+import * as route2 from "/assets/page-D9FkMrbk.js";
+  
+  window.__reactRouterRouteModules = {"root":route0,"features/article/index":route1,"content/articles/page":route2};
+
+import("/assets/entry.client-DdeeK6H6.js");</script><!--$?--><template id="B:0"></template><!--/$--><div hidden id="S:0"><script>window.__reactRouterContext.streamController.enqueue("[{\"_1\":2,\"_15\":-5,\"_16\":-5},\"loaderData\",{\"_3\":4},\"content/articles/page\",{\"_5\":6,\"_7\":8,\"_9\":10,\"_11\":12,\"_13\":14},\"title\",\"Learning Gulp\",\"description\",\"Getting Started With The Front End Factory\",\"publishDate\",\"6/11/2014\",\"element\",\"learning-gulp\",\"path\",\"/articles/learning-gulp\",\"actionData\",\"errors\"]\n");</script><!--$?--><template id="B:1"></template><!--/$--></div><script>$RC=function(b,c,e){c=document.getElementById(c);c.parentNode.removeChild(c);var a=document.getElementById(b);if(a){b=a.previousSibling;if(e)b.data="$!",a.setAttribute("data-dgst",e);else{e=b.parentNode;a=b.nextSibling;var f=0;do{if(a&&8===a.nodeType){var d=a.data;if("/$"===d)if(0===f)break;else f--;else"$"!==d&&"$?"!==d&&"$!"!==d||f++}d=a.nextSibling;e.removeChild(a);a=d}while(a);for(;c.firstChild;)e.insertBefore(c.firstChild,a);b.data="$"}b._reactRetry&&b._reactRetry()}};$RC("B:0","S:0")</script><div hidden id="S:1"><script>window.__reactRouterContext.streamController.close();</script></div><script>$RC("B:1","S:1")</script></body></html>

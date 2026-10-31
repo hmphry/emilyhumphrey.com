@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en" class="bg-surface text-content h-full w-full font-sans"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="modulepreload" href="/assets/manifest-eadf4de7.js"/><link rel="modulepreload" href="/assets/entry.client-DdeeK6H6.js"/><link rel="modulepreload" href="/assets/chunk-EF7DTUVF-C4xvGfCF.js"/><link rel="modulepreload" href="/assets/root-CzlNjLET.js"/><link rel="modulepreload" href="/assets/index-4B5qYQum.js"/><link rel="modulepreload" href="/assets/page-D9FkMrbk.js"/><link rel="icon" type="image/svg+xml" href="/vite.svg"/><title>Reddit NFL and Sass Maps · Emily Humphrey</title><link rel="stylesheet" href="/assets/root-CU4-VxOl.css"/><link rel="stylesheet" href="/assets/index-49X-KxYH.css"/></head><body class="h-full w-full overflow-y-scroll"><div class="layout-grid fixed inset-x-0 top-0 z-30 items-center"><a class="sidebar p-3" href="/" data-discover="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 60" class="w-full"><defs><style>
+      .st0 {
+        fill: var(--bronze);
+      }
+
+      .st1 {
+        fill: var(--white);
+      }
+    </style></defs><path class="st0" d="M48,0H0s-.02,27.7.02,30.66c.06,4.93,1.46,9.66,4.15,14.06,2.57,4.2,6.24,7.8,11.23,11.03,1.76,1.14,3.65,2.06,5.47,2.96.71.35,1.44.71,2.14,1.07.29.15.63.23.98.23.35,0,.69-.08.98-.23.71-.36,1.44-.72,2.14-1.07,1.82-.9,3.71-1.82,5.47-2.96,4.99-3.22,8.66-6.83,11.23-11.03,2.69-4.4,4.09-9.13,4.15-14.06.04-2.96.02-30.66.02-30.66ZM43.49,30.6c-.05,4.11-1.22,8.06-3.49,11.76-2.21,3.61-5.43,6.75-9.84,9.6-1.54,1-3.31,1.86-5.01,2.7h0c-.38.19-.76.38-1.15.57-.39-.19-.78-.38-1.15-.57-1.71-.84-3.47-1.71-5.01-2.7-4.41-2.85-7.63-5.99-9.84-9.6-2.26-3.7-3.44-7.65-3.49-11.76-.03-2.16-.02-17.94-.02-26.1h39.03c0,8.16,0,23.93-.02,26.1Z"></path><path class="st1" d="M25.35,43.93h0v-15.34h.55v-2.34l-.55-1.69v-5.09c2.99-.5,5.23-2.62,5.23-5.16,0-2.91-2.95-5.27-6.59-5.27s-6.59,2.36-6.59,5.27c0,2.54,2.25,4.66,5.23,5.16v5.09l-.55,1.69v2.34h.55v7.98h-4.03v.84h.6v1.11h.9v2.11h-.9v1.11h-.6v.84h4.03v1.35h0c.01.74.61,1.34,1.35,1.34s1.34-.6,1.35-1.34ZM22.68,11.85c0-.73.59-1.32,1.32-1.32s1.32.59,1.32,1.32-.59,1.32-1.32,1.32-1.32-.59-1.32-1.32Z"></path></svg></a><div class="main bg-surface-0/80 flex h-20 items-center justify-between backdrop-blur-xs"><a href="/" data-discover="true"><div class="text-lg font-bold">Emily Humphrey</div><div class="text-content-4 text-sm">Senior Software Engineer</div></a><nav class="text-content-4 flex gap-4"><a aria-current="page" class="hover:text-emerald-content-2 text-emerald-content-1" href="/articles" data-discover="true">Articles</a></nav></div></div><div class="layout-grid h-full w-full"><div class="sidebar bg-emerald-darkest"></div><div class="bar bg-emerald"></div><div class="main pt-30"><article class="article pb-10"><article class="article"><h2>Reddit NFL and Sass Maps</h2><p class="eyebrow">Originally Published on August 25th, 2014</p><h3>Backstory</h3><p>I’ve been recently diving into refactoring the code of r/NFL, Reddit’s NFL community. The code is about two years old now, and as you would guess, coding to customize Reddit is not a clean process. Reddit uses markdown to insert custom content, so we’re not allowed to use IDs, classes, or any HTML identifying attributes other than titles. I like to use titles for simple things and creating a unique identifying sequence with Header for complex elements(46 = h2+h6+custom content). This, plus wear and tear from updating and adding “features,” not too mention a specific mod plugin that likes to expand and format the subreddit’s CSS automatically, has left the code base a bit unmanageable. To make matters worse, we’ve hit the 100kb cap limit, so no more additions until we clean up.</p><p>So, we decided to rebuild. We’re coding the new theme in SASS and markdown, using Gulp.js to compile the files into Reddit-usable code. You can track and contribute to the project on<!-- --> <a href="https://www.reddit.com/r/nfldev/" target="_blank" rel="noopener">Reddit</a> <!-- -->or<!-- --> <a href="https://github.com/redditnfl/front-end" target="_blank" rel="noopener">Github</a>.</p><h3>The Problem</h3><p>I knew we’d encounter some issues, and one of them would be the NFL team associated data. For those that do not know, the NFL has 32 teams. Users of r/NFL are allowed to select one of these teams to mark their profiles. This is called “flair” on Reddit. A user’s flair is shown next to their username on every comment made within r/NFL. Users can also insert these logos into comments, by either using a team’s call sign(I.E. NYG = Giants, CHI = Bears), or by linking to that team’s subreddit, which are not always the same as the team’s name(I.E.<!-- --> <a href="https://old.reddit.com/r/nygiants/" target="_blank" rel="noopener">/r/nygiants</a>,<!-- --> <a href="https://old.reddit.com/r/falcons/" target="_blank" rel="noopener">/r/falcons</a>). All in all, each team has three unique identifiers, totaling 96 selectors in our CSS. However, many of these styles are repeatable. Subreddit links and call signs are the same size and use the same sprite sheet, as user flair. There is just a change in the background position. Previously to SASS maps, the only way to accomplish this section would be to either hardcode everything, using objects and the “nth” function, or code three different loops, bloating the code base out three times the size!</p><h3>Enter Our Hero, The SASS Map</h3><p>SASS Maps were introduced in Sass 3.3 – Maptastic Maple. They allow you to assign object data “keys”. Without SASS maps, you could handle objects like this $animals: (Lion Panthera Felidae), (Wolf, Canis, Canidae);, then break them out with SASS’ “nth” function, as mentioned above. This isn’t very intuitive, and can lead to confusion later down the road. With Maps, the example would look something like this: $animals: (name:Lion, genus:Panthera, family:Felidae), (name:Wolf, genus:Canis, family:Canidae);. Initially, there is a lot more to type, but this way leaves much of the guess work out when using this code. Here is example used in a loop:</p><pre>
+
+@each $animal in $animals{
+	// Get animal&#x27;s name
+	$name: nth($animal, 1);
+	// Get animal&#x27;s genus
+	$genus: nth($animal, 2);
+	// Get animal&#x27;s family
+	$family: nth($animal, 3);
+	.#{$name}:after{
+		content: &quot;#{$name} belong to the #{$genus} genus of the #{$family} family.&quot;;
+	}
+}
+                </pre><p>Simple enough. However, what if you wanted to add a “tribe” key after the genus, or a descriptor like “Large” or “Grey” before the name? You’ll have to either remap all the objects then the variables in every each loop, or code out of hierarchy. It’s not very maintainable. Using a Map, the code would look like this:</p><pre>@each $animal in $animals{
+	// Get animal&#x27;s name
+	$name: map-get($animal, name);
+	// Get animal&#x27;s genus
+	$genus: map-get($animal, genus);
+	// Get animal&#x27;s family
+	$family: map-get($animal, family);
+	.#{$name}:after{
+		content: &quot;#{$name} belong to the #{$genus} genus of the #{$family} family.&quot;;
+	}
+}</pre><p>There is some repeating, but this code is a lot more maintainable. If you need to add a new key, you simply set it and be done.</p><h3>The Solution</h3><p>By using SASS maps, our solution is cleaner and more readable. We’re going to define a variable called $nfl-teams and map 32 objects with name, abbr, and url. Warning: very long code incoming. We’re storing each team on a new line, in case an event where we have to change it.</p><pre>$nfl-teams:
+	(name:cardinals, abbr:ARI, url:azcardinals),
+	(name:falcons, abbr:ATL, url:falcons),
+	(name:ravens, abbr:BAL, url:ravens),
+	(name:bills, abbr:BUF, url:buffalobills),
+	(name:panthers, abbr:CAR, url:panthers),
+	(name:bears, abbr:CHI, url:chibears),
+	(name:bengals, abbr:CIN, url:bengals),
+	(name:browns, abbr:CLE, url:browns),
+	(name:cowboys, abbr:DAL, url:cowboys),
+	(name:broncos, abbr:DEN, url:denverbroncos),
+	(name:lions, abbr:DET, url:detroitlions),
+	(name:packers, abbr:GB, url:greenbaypackers),
+	(name:texans, abbr:HOU, url:texans),
+	(name:colts, abbr:IND, url:colts),
+	(name:jaguars, abbr:JAX, url:jaguars),
+	(name:chiefs, abbr:KC, url:kansascitychiefs),
+	(name:dolphins, abbr:MIA, url:miamidolphins),
+	(name:vikings, abbr:MIN, url:minnesotavikings),
+	(name:patriots, abbr:NE, url:patriots),
+	(name:saints, abbr:NO, url:saints),
+	(name:giants, abbr:NYG, url:nygiants),
+	(name:jets, abbr:NYJ, url:nyjets),
+	(name:raiders, abbr:OAK, url:oaklandraiders),
+	(name:eagles, abbr:PHI, url:eagles),
+	(name:steelers, abbr:PIT, url:steelers),
+	(name:chargers, abbr:SD, url:chargers),
+	(name:49ers, abbr:SF, url:49ers),
+	(name:seahawks, abbr:SEA, url:seahawks),
+	(name:rams, abbr:STL, url:stlouisrams),
+	(name:buccaneers, abbr:TB, url:buccaneers),
+	(name:titans, abbr:TEN, url:tennesseetitans),
+	(name:redskins, abbr:WAS, url:redskins);</pre><p>Now, we’re going to to create just one loop to create the code we need:</p><pre>$pos-20: 0;
+@each $team in $nfl-teams {
+	// Get team name
+	$name: map-get($team, name);
+	// Get team abbr
+	$abbr: map-get($team, abbr);
+	// Get team url
+	$url: map-get($team, url);
+	.flair-#{$thisName}:before,
+	a[href$=&quot;/r/#{$thisUrl}&quot;]:before,
+	a[href$=&quot;/#{$thisAbbr}&quot;]:before{
+		background-position: 0 rem($pos-20);
+	}
+	// Count down for bg position
+	$pos-20: $pos-20 - 20px;
+}</pre><p>You don’t have to define each as a variable. I did in this case because I am using them as selector, but you can simply use the get-map() function if they’re values. The final product looks something like this, but repeated 31 times:</p><pre>.flair-giants:before,
+a[href$=&quot;/r/nygiants&quot;]:before,
+a[href$=&quot;/NYG&quot;]:before {
+	background-position: 0 -25rem;
+}</pre><h3>Conclusion</h3><p>Sass maps are useful to keep your code organized and precise. If you have any questions, or a way to improve this, feel free to tweet, comment below, or open a github issue for r/nfl. Finally, Let’s go Giants and thanks for reading!</p></article></article><div class="text-content-4 grid grid-cols-2 pt-10 pb-4 text-sm"><div class="">Copyright © <!-- -->2026</div><ul class="flex justify-end gap-4"><li><a class="hover:text-content" title="LinkedIn" rel="noopener noreferrer" href="https://www.linkedin.com/in/heyhmphry/" target="_blank">LinkedIn</a></li><li><a class="hover:text-content" title="Github" rel="noopener noreferrer" href="https://github.com/hmphry/" target="_blank">Github</a></li></ul></div></div></div><div class="layout-grid fixed bottom-0 w-16"><div class="p-2 pb-4"><button class="text-content-4 text-emerald-light hover:text-emerald-lightest flex w-full cursor-pointer items-center justify-between p-2" title="more"><span class="size-1 rounded-full bg-current"></span><span class="size-1 rounded-full bg-current"></span><span class="size-1 rounded-full bg-current"></span></button></div></div><script>((storageKey2, restoreKey) => {
+    if (!window.history.state || !window.history.state.key) {
+      let key = Math.random().toString(32).slice(2);
+      window.history.replaceState({ key }, "");
+    }
+    try {
+      let positions = JSON.parse(sessionStorage.getItem(storageKey2) || "{}");
+      let storedY = positions[restoreKey || window.history.state.key];
+      if (typeof storedY === "number") {
+        window.scrollTo(0, storedY);
+      }
+    } catch (error) {
+      console.error(error);
+      sessionStorage.removeItem(storageKey2);
+    }
+  })("react-router-scroll-positions", null)</script><script>window.__reactRouterContext = {"basename":"/","future":{"unstable_middleware":false,"unstable_optimizeDeps":false,"unstable_splitRouteModules":false,"unstable_subResourceIntegrity":false,"unstable_viteEnvironmentApi":false},"routeDiscovery":{"mode":"initial"},"ssr":false,"isSpaMode":false};window.__reactRouterContext.stream = new ReadableStream({start(controller){window.__reactRouterContext.streamController = controller;}}).pipeThrough(new TextEncoderStream());</script><script type="module" async="">import "/assets/manifest-eadf4de7.js";
+import * as route0 from "/assets/root-CzlNjLET.js";
+import * as route1 from "/assets/index-4B5qYQum.js";
+import * as route2 from "/assets/page-D9FkMrbk.js";
+  
+  window.__reactRouterRouteModules = {"root":route0,"features/article/index":route1,"content/articles/page":route2};
+
+import("/assets/entry.client-DdeeK6H6.js");</script><!--$?--><template id="B:0"></template><!--/$--><div hidden id="S:0"><script>window.__reactRouterContext.streamController.enqueue("[{\"_1\":2,\"_17\":-5,\"_18\":-5},\"loaderData\",{\"_3\":4},\"content/articles/page\",{\"_5\":6,\"_7\":8,\"_9\":10,\"_11\":12,\"_13\":14,\"_15\":16},\"title\",\"Reddit NFL and Sass Maps\",\"subtitle\",\"How I Learned To Stop Worrying and Love The Map\",\"description\",\"\",\"publishDate\",\"7/15/2015\",\"element\",\"reddit-nfl-sass-maps\",\"path\",\"/articles/reddit-nfl-sass-maps\",\"actionData\",\"errors\"]\n");</script><!--$?--><template id="B:1"></template><!--/$--></div><script>$RC=function(b,c,e){c=document.getElementById(c);c.parentNode.removeChild(c);var a=document.getElementById(b);if(a){b=a.previousSibling;if(e)b.data="$!",a.setAttribute("data-dgst",e);else{e=b.parentNode;a=b.nextSibling;var f=0;do{if(a&&8===a.nodeType){var d=a.data;if("/$"===d)if(0===f)break;else f--;else"$"!==d&&"$?"!==d&&"$!"!==d||f++}d=a.nextSibling;e.removeChild(a);a=d}while(a);for(;c.firstChild;)e.insertBefore(c.firstChild,a);b.data="$"}b._reactRetry&&b._reactRetry()}};$RC("B:0","S:0")</script><div hidden id="S:1"><script>window.__reactRouterContext.streamController.close();</script></div><script>$RC("B:1","S:1")</script></body></html>
