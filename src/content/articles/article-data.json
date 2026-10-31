@@ -1,14 +1,14 @@
 [
     {
         "title": "How Tailwind Changed The Game... Again",
-        "description": "Tailwind CSS 4 shifts the paradigm by ditching PostCSS for Lightning CSS, switching config to CSS variables, and adding native container queries and modern CSS features for faster, cleaner development.",
+        "description": "Tailwind CSS 4 shifts the paradigm by ditching PostCSS for Lightning CSS, switching config to CSS variables, and adding native container queries and modern CSS features for faster, cleaner development.",
         "publishDate": "7/18/2025",
         "element": "how-tailwind-4-changed-the-game",
         "path": "/articles/how-tailwind-changed-the-game-again"
     },
     {
         "title": "What is Lightning CSS",
-        "description": "Lightning CSS is a Rust‑based, high‑performance CSS processor that powers Tailwind CSS 4. It delivers massive build speedups, built‑in minification, vendor prefixing, and future‑proof syntax support with no extra configuration.",
+        "description": "Lightning CSS is a Rust-based, high-performance CSS processor that powers Tailwind CSS 4. It delivers massive build speedups, built-in minification, vendor prefixing, and future-proof syntax support with no extra configuration.",
         "publishDate": "7/16/2025",
         "element": "what-is-lightning-css",
         "path": "/articles/what-is-lightning-css"
@@ -22,6 +22,13 @@
         "path": "/articles/5-vue-features-react-nails"
     },
     {
+        "title": "The Devil Never Sleeps... But He Only Wins If We Don't Do Better Next Time",
+        "description": "A call for builders to aim their craft at hard community problems — resilience over retention — between crises.",
+        "publishDate": "7/9/2025",
+        "element": "the-devil-never-sleeps",
+        "path": "/articles/the-devil-never-sleeps"
+    },
+    {
         "title": "Top 5 Accessibility Mistakes",
         "subtitle": "",
         "description": "",
@@ -30,11 +37,159 @@
         "path": "/articles/top-5-wcag-mistakes"
     },
     {
+        "title": "How to Read Code You Didn't Write",
+        "description": "A practical strategy for making sense of unfamiliar codebases: start from the top, skim for structure, trace a real feature, and take notes.",
+        "publishDate": "6/27/2025",
+        "element": "how-to-read-code-you-didnt-write",
+        "path": "/articles/how-to-read-code-you-didnt-write"
+    },
+    {
+        "eyebrow": "Attack Vectors Every Developer Should Know",
+        "title": "Cross-Site Scripting",
+        "description": "How XSS works (reflected, stored, DOM-based), the impact, and practical ways to prevent it in frontend and backend code.",
+        "publishDate": "6/24/2025",
+        "element": "attack-vectors-cross-site-scripting",
+        "path": "/articles/attack-vectors-cross-site-scripting"
+    },
+    {
+        "title": "Common Tailwind Code Smells (Part 1)",
+        "description": "Real-world Tailwind patterns that look harmless at first but create long-term maintenance problems: arbitrary values, semantics, duplicate utilities, and more.",
+        "publishDate": "6/20/2025",
+        "element": "common-tailwind-code-smells-part-1",
+        "path": "/articles/tailwind-code-smells-part-1"
+    },
+    {
+        "title": "Understanding Reducers",
+        "description": "A quick walkthrough of JavaScript reducers — a powerful tool that isn't always intuitive.",
+        "publishDate": "6/2/2025",
+        "element": "understanding-reducers",
+        "path": "/articles/understanding-reducers"
+    },
+    {
+        "title": "Introducing JSMamba",
+        "description": "A React and Tailwind CSS flashcard app for mastering JavaScript concepts, inspired by Kobe Bryant's work ethic.",
+        "publishDate": "1/26/2024",
+        "element": "jsmamba-launch",
+        "path": "/articles/jsmamba-launch"
+    },
+    {
+        "title": "Thripp For Congress",
+        "description": "Branding A First Time Congressional Candidate",
+        "publishDate": "9/21/2023",
+        "element": "thripp-for-congress",
+        "path": "/articles/thripp-for-congress"
+    },
+    {
+        "title": "Reddit NFL",
+        "description": "Redefining what a subreddit can be",
+        "publishDate": "3/12/2023",
+        "element": "reddit-nfl",
+        "path": "/articles/reddit-nfl"
+    },
+    {
+        "title": "Hoisting",
+        "description": "What is hoisting and why",
+        "publishDate": "9/28/2022",
+        "element": "hoisting",
+        "path": "/articles/hoisting"
+    },
+    {
+        "title": "Arizona Cardinals Rebrand Concept",
+        "description": "A new face for the oldest team in the NFL",
+        "publishDate": "9/3/2021",
+        "element": "arizona-cardinals-rebrand-concept",
+        "path": "/articles/arizona-cardinals-rebrand-concept"
+    },
+    {
+        "title": "Daytona Beach and The Death Penalty",
+        "description": "On occasion, I need to remind myself why I am anti-Death Penalty. With cases like the murder of Officer Raynor, it’s that time I remind myself why I believe what I do. This…",
+        "publishDate": "8/18/2021",
+        "element": "daytona-beach-and-the-death-penalty",
+        "path": "/articles/daytona-beach-and-the-death-penalty"
+    },
+    {
+        "title": "Barebones",
+        "description": "Seemlessly simple SCSS grids",
+        "publishDate": "11/16/2019",
+        "element": "barebones",
+        "path": "/articles/barebones"
+    },
+    {
+        "title": "The JS Engine",
+        "description": "Understanding the JavaScript Engine",
+        "publishDate": "8/30/2019",
+        "element": "the-js-engine",
+        "path": "/articles/the-js-engine"
+    },
+    {
+        "title": "JavaScript Variables",
+        "description": "When to use var, let, and const.",
+        "publishDate": "8/28/2019",
+        "element": "javascript-variables",
+        "path": "/articles/javascript-variables"
+    },
+    {
+        "title": "Redefine in Twenty One Nine",
+        "description": "No goals. These are my promises for 2019.",
+        "publishDate": "1/1/2019",
+        "element": "redefine-in-2019",
+        "path": "/articles/redefine-in-2019"
+    },
+    {
+        "title": "Sarcasm Translator",
+        "description": "Transforms your boring, bland text into several options to convey sarcasm",
+        "publishDate": "12/20/2018",
+        "element": "sarcasm",
+        "path": "/articles/sarcasm"
+    },
+    {
+        "title": "You Made My Spirit Brighter",
+        "description": "Dear Friends, This year has been beyond amazing, and I just want to thank you for all the support and love. Whether you’ve listened to my opinions on Gotham; You’ve put up with me…",
+        "publishDate": "12/20/2018",
+        "element": "brighter",
+        "path": "/articles/brighter"
+    },
+    {
+        "title": "Morse Code Interactions",
+        "description": "Add Morse code events to any device",
+        "publishDate": "9/8/2018",
+        "element": "morse-code-interactions",
+        "path": "/articles/morse-code-interactions"
+    },
+    {
+        "title": "Google Analytics Events",
+        "description": "Create complex Google Analytic events easy and efficiently",
+        "publishDate": "10/10/2016",
+        "element": "google-analytics-events",
+        "path": "/articles/google-analytics-events"
+    },
+    {
+        "title": "CSS Kind of Hates You",
+        "description": "Examining annoying pitfalls within CSS",
+        "publishDate": "7/19/2015",
+        "element": "css-kind-of-hates-you",
+        "path": "/articles/css-kind-of-hates-you"
+    },
+    {
         "title": "Reddit NFL and Sass Maps",
         "subtitle": "How I Learned To Stop Worrying and Love The Map",
         "description": "",
         "publishDate": "7/15/2015",
         "element": "reddit-nfl-sass-maps",
         "path": "/articles/reddit-nfl-sass-maps"
+    },
+    {
+        "title": "Error Handling in Gulp.js",
+        "description": "Stop checking the console and get notified",
+        "publishDate": "12/3/2014",
+        "element": "error-handling-in-gulp-js",
+        "path": "/articles/error-handling-in-gulp-js"
+    },
+    {
+        "title": "Learning Gulp",
+        "description": "Getting Started With The Front End Factory",
+        "publishDate": "6/11/2014",
+        "element": "learning-gulp",
+        "path": "/articles/learning-gulp"
     }
 ]
