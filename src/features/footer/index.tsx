@@ -18,7 +18,7 @@ const links: SocialLink[] = [
 
 function Footer() {
     return (
-        <div className="text-content-4 grid grid-cols-2 pt-10 pb-4 text-sm">
+        <div className="text-content-4 text-small grid grid-cols-2 pt-10 pb-4">
             <div className="">Copyright &copy; {new Date().getFullYear()}</div>
             <ul className="flex justify-end gap-4">
                 {links.map((link, index) => (

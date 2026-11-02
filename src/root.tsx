@@ -14,7 +14,7 @@ export function Layout({ children }: { children: ReactNode }) {
     return (
         <html
             lang="en"
-            className="bg-surface text-content h-full w-full font-sans"
+            className="bg-surface text-content font-body h-full w-full"
         >
             <head>
                 <meta charSet="utf-8" />
