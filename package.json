@@ -10,7 +10,7 @@
         "postbuild": "node scripts/copy-spa-fallback.mjs",
         "preview": "vite preview --outDir build/client",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d build/client",
+        "deploy": "gh-pages -d build/client --nojekyll",
         "typecheck": "react-router typegen && tsc -b",
         "lint": "eslint ."
     },

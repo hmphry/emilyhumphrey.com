@@ -22,7 +22,8 @@ export function Layout({ children }: { children: ReactNode }) {
                     name="viewport"
                     content="width=device-width, initial-scale=1.0"
                 />
-                <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+                <link rel="icon" type="image/png" href="/favicon.png" />
+                <link rel="apple-touch-icon" href="/favicon.png" />
                 <Meta />
                 <Links />
             </head>
