@@ -5,33 +5,35 @@
     h2, h3, h4, h5, h6, p, eyebrow {
         max-width: 800px;
     }
+    h2, h3, h4, h5, h6 {
+        @apply font-display font-medium;
+    }
     h2 {
-        @apply font-display;
-        font-size: 2.027rem;
+        font-size: 2.441rem;
     }
     h3{
         @apply pt-12;
-        font-size: 1.802rem;
+        font-size: 1.953rem;
     }
     h4{
         @apply pt-12;
-        font-size: 1.602rem;
+        font-size: 1.563rem;
     }
     h5{
         @apply pt-10;
-        font-size: 1.424rem;
+        font-size: 1.25rem;
     }
     h6{
         @apply pt-10;
-        font-size: 1.266rem;
+        font-size: 1rem;
     }
     .eyebrow {
-        font-size: 0.889rem;
+        font-size: 0.8rem;
     }
     p a {
-        @apply text-emerald-content-0;
+        @apply text-content underline decoration-pink-key underline-offset-4;
         &:hover {
-            @apply underline text-emerald-content-2;  
+            @apply decoration-ink;
         }
     }
     pre {
