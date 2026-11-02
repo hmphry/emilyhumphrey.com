@@ -1,13 +1,55 @@
 @import "tailwindcss";
 
+:root {
+    --sidebar-ground: hsl(158 42% 9%);
+}
+
 .layout-grid {
     @apply grid;
-    grid-template-areas: 
-        "sidebar bar main";
-    grid-template-columns: theme(spacing.16)  theme(spacing.1) 1fr;
-} 
+    grid-template-areas: "sidebar bar main";
+    grid-template-columns: theme(spacing.16) theme(spacing.1) 1fr;
+}
 .sidebar {
     grid-area: sidebar;
+}
+.sidebar-mark {
+    background-color: var(--sidebar-ground);
+}
+.sidebar-field {
+    background-color: var(--sidebar-ground);
+    background-image:
+        radial-gradient(
+            circle 1.35rem at 0.85rem 7.25rem,
+            hsl(153 82% 46%) 0% 42%,
+            transparent 72%
+        ),
+        radial-gradient(
+            circle 1.05rem at 2.85rem 12.5rem,
+            hsl(36 86% 56%) 0% 38%,
+            transparent 70%
+        ),
+        radial-gradient(
+            circle 1.55rem at 1.7rem 18.25rem,
+            hsl(166 72% 38%) 0% 40%,
+            transparent 72%
+        ),
+        radial-gradient(
+            circle 0.95rem at 3.15rem 23.5rem,
+            hsl(24 78% 52%) 0% 40%,
+            transparent 70%
+        ),
+        radial-gradient(
+            circle 1.4rem at 1.15rem 29rem,
+            hsl(148 70% 32%) 0% 42%,
+            transparent 72%
+        ),
+        radial-gradient(
+            circle 1.15rem at 2.4rem 34.75rem,
+            hsl(40 80% 58%) 0% 36%,
+            transparent 70%
+        );
+    background-repeat: repeat-y;
+    background-size: 100% 42rem;
 }
 .bar {
     grid-area: bar;
