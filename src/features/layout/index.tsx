@@ -8,7 +8,7 @@ interface LayoutProps {
 function Layout({ children }: LayoutProps) {
     return (
         <div className="layout-grid h-full w-full">
-            <div className="sidebar bg-emerald-darkest"></div>
+            <div className="sidebar sidebar-field"></div>
             <div className="bar bg-emerald"></div>
             <div className="main pt-30">{children}</div>
         </div>

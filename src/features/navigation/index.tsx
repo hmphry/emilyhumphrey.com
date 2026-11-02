@@ -6,7 +6,10 @@ import { sections } from "./sections.ts"
 function Navigation() {
     return (
         <div className="layout-grid fixed inset-x-0 top-0 z-30 items-center">
-            <Link to="/" className="sidebar p-3">
+            <Link
+                to="/"
+                className="sidebar sidebar-mark flex h-20 items-center p-3"
+            >
                 <Logo className="w-full" />
             </Link>
             <div className="main bg-surface-0/80 flex h-20 items-center justify-between backdrop-blur-xs">
