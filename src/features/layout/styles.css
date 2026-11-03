@@ -2,16 +2,61 @@
 
 .layout-grid {
     @apply grid;
-    grid-template-areas: 
-        "sidebar bar main";
-    grid-template-columns: theme(spacing.16)  theme(spacing.1) 1fr;
-} 
-.sidebar {
+    grid-template-areas: "sidebar main";
+    grid-template-columns: 88px 1fr;
+}
+
+.sidebar-slot {
     grid-area: sidebar;
 }
-.bar {
-    grid-area: bar;
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    display: flex;
+    width: 88px;
+    height: 100vh;
+    background-color: transparent;
 }
+
+.sidebar-sigil-col {
+    display: flex;
+    width: 64px;
+    height: 100%;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--cream);
+}
+
+.sidebar-sigil {
+    display: flex;
+    width: 100%;
+    height: theme(spacing.20); /* match header h-20 */
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-sigil svg {
+    width: theme(spacing.12);
+    height: auto;
+    flex-shrink: 0;
+}
+
+.sidebar-lace {
+    width: 24px;
+    flex-shrink: 0;
+    height: 100%;
+    background-color: transparent;
+    background-image: url("../../assets/images/lace-trim.png");
+    background-repeat: repeat-y;
+    background-position: top center;
+    background-size: 24px auto;
+}
+
 .main {
     @apply px-4;
     grid-area: main;

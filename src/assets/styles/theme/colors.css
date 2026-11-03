@@ -9,6 +9,7 @@
         --ink: #3d3835;
         --metal: #d4a574;
         --white: #ffffff;
+<<<<<<< HEAD
 
         /* Pink (default) */
         --pink-bg: #fff3f4;
@@ -45,8 +46,11 @@
         --cream-border: #f8f4ec;
         --cream-key: #cfc5b5;
         --cream: var(--cream-bg);
+=======
+        --cream: #f2ebdf;
+>>>>>>> 48ccdb8 (feat: add fixed cream sidebar with lace trim and sigil)
 
-        --surface-0: var(--cream);
+        --surface-0: #fffefc;
         --surface-1: var(--white);
         --surface-2: var(--pink-border);
         --surface-3: var(--pink-key);

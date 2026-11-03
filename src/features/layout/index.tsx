@@ -8,8 +8,8 @@ interface LayoutProps {
 function Layout({ children }: LayoutProps) {
     return (
         <div className="layout-grid h-full w-full">
-            <div className="sidebar bg-pink-bg"></div>
-            <div className="bar bg-pink-key"></div>
+            {/* Width spacer — real sidebar is fixed in Navigation */}
+            <div className="sidebar-slot" aria-hidden="true" />
             <div className="main pt-30">{children}</div>
         </div>
     )
