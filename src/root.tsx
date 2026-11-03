@@ -3,7 +3,6 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router"
 import "./assets/styles/index.css"
 import Footer from "./features/footer/index.tsx"
 import SiteLayout from "./features/layout/index.tsx"
-import MoreButton from "./features/more-button/index.tsx"
 import Navigation from "./features/navigation/index.tsx"
 
 export function meta() {
@@ -44,7 +43,6 @@ export default function App() {
                 <Outlet />
                 <Footer />
             </SiteLayout>
-            <MoreButton />
         </>
     )
 }

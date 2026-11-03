@@ -11,9 +11,9 @@
         --ink: #3d3835;
         --metal: #d4a574;
         --white: #ffffff;
-        --cream: #fffefc;
+        --cream: #f2ebdf;
 
-        --surface-0: var(--cream);
+        --surface-0: #fffefc;
         --surface-1: var(--white);
         --surface-2: var(--pink-border);
         --surface-3: var(--pink-key);
