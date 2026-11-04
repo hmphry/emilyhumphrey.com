@@ -1,0 +1,89 @@
+.code-block {
+    @apply overflow-hidden rounded-md border border-cream-border bg-cream-bg text-ink;
+}
+
+.code-block__toolbar {
+    @apply flex items-center justify-end gap-2 border-b border-cream-border bg-cream-border px-3 py-1.5;
+}
+
+.code-block__copy {
+    @apply inline-flex items-center gap-1.5 text-sm text-cream-key;
+    @apply hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream-key;
+}
+
+.code-block__copy-icon {
+    @apply size-4 shrink-0 fill-current;
+}
+
+.code-block__pre {
+    @apply m-0 overflow-x-auto p-4 text-sm leading-relaxed;
+}
+
+.code-block__code {
+    @apply font-mono text-ink;
+}
+
+/* Soft Sigil editor-style highlight.js theme */
+.code-block__code.hljs {
+    background: transparent;
+    color: var(--ink);
+}
+
+.code-block__code .hljs-comment,
+.code-block__code .hljs-quote {
+    color: var(--cream-key);
+    font-style: italic;
+}
+
+.code-block__code .hljs-keyword,
+.code-block__code .hljs-selector-tag,
+.code-block__code .hljs-addition {
+    color: var(--pink-key);
+}
+
+.code-block__code .hljs-string,
+.code-block__code .hljs-meta .hljs-string,
+.code-block__code .hljs-regexp {
+    color: var(--metal);
+}
+
+.code-block__code .hljs-number,
+.code-block__code .hljs-literal,
+.code-block__code .hljs-bullet {
+    color: var(--canary-key);
+}
+
+.code-block__code .hljs-title,
+.code-block__code .hljs-section,
+.code-block__code .hljs-title.function_ {
+    color: var(--blue-key);
+}
+
+.code-block__code .hljs-type,
+.code-block__code .hljs-class .hljs-title,
+.code-block__code .hljs-title.class_ {
+    color: var(--lilac-key);
+}
+
+.code-block__code .hljs-built_in,
+.code-block__code .hljs-attr,
+.code-block__code .hljs-attribute,
+.code-block__code .hljs-name,
+.code-block__code .hljs-selector-id,
+.code-block__code .hljs-selector-class {
+    color: var(--mint-key);
+}
+
+.code-block__code .hljs-tag,
+.code-block__code .hljs-punctuation,
+.code-block__code .hljs-symbol,
+.code-block__code .hljs-variable,
+.code-block__code .hljs-template-variable,
+.code-block__code .hljs-deletion {
+    color: var(--rose-key);
+}
+
+.code-block__code .hljs-meta,
+.code-block__code .hljs-subst {
+    color: var(--ink);
+}
