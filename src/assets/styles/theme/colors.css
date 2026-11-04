@@ -9,7 +9,6 @@
         --ink: #3d3835;
         --metal: #d4a574;
         --white: #ffffff;
-<<<<<<< HEAD
 
         /* Pink (default) */
         --pink-bg: #fff3f4;
@@ -41,14 +40,13 @@
         --rose-border: #eeb9c8;
         --rose-key: #e6a5b8;
 
-        /* Cream */
+        /* Cream colorway (code blocks + surfaces) */
         --cream-bg: #fffefc;
         --cream-border: #f8f4ec;
         --cream-key: #cfc5b5;
-        --cream: var(--cream-bg);
-=======
+
+        /* Sidebar rail cream (matches live Soft Sigil layout) */
         --cream: #f2ebdf;
->>>>>>> 48ccdb8 (feat: add fixed cream sidebar with lace trim and sigil)
 
         --surface-0: #fffefc;
         --surface-1: var(--white);
