@@ -25,15 +25,16 @@
     gap: 0.375rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    color: var(--cream-key);
+    /* cream-key alone disappears on cream-border; lean toward ink for contrast */
+    color: color-mix(in srgb, var(--cream-key) 35%, var(--ink));
 }
 
 .code-block__copy:hover {
-    opacity: 0.8;
+    color: var(--ink);
 }
 
 .code-block__copy:focus-visible {
-    outline: 2px solid var(--cream-key);
+    outline: 2px solid color-mix(in srgb, var(--cream-key) 35%, var(--ink));
     outline-offset: 2px;
 }
 
@@ -57,7 +58,8 @@
     color: var(--ink);
 }
 
-/* Soft Sigil editor-style highlight.js theme */
+/* Soft Sigil editor-style highlight.js theme.
+   Colorway keys are pastel; mix toward ink so syntax stays readable on cream-bg. */
 .code-block__code.hljs {
     background: transparent;
     color: var(--ink);
@@ -65,38 +67,38 @@
 
 .code-block__code .hljs-comment,
 .code-block__code .hljs-quote {
-    color: var(--cream-key);
+    color: color-mix(in srgb, var(--cream-key) 40%, var(--ink));
     font-style: italic;
 }
 
 .code-block__code .hljs-keyword,
 .code-block__code .hljs-selector-tag,
 .code-block__code .hljs-addition {
-    color: var(--pink-key);
+    color: color-mix(in srgb, var(--pink-key) 55%, var(--ink));
 }
 
 .code-block__code .hljs-string,
 .code-block__code .hljs-meta .hljs-string,
 .code-block__code .hljs-regexp {
-    color: var(--metal);
+    color: color-mix(in srgb, var(--metal) 70%, var(--ink));
 }
 
 .code-block__code .hljs-number,
 .code-block__code .hljs-literal,
 .code-block__code .hljs-bullet {
-    color: var(--canary-key);
+    color: color-mix(in srgb, var(--canary-key) 45%, var(--ink));
 }
 
 .code-block__code .hljs-title,
 .code-block__code .hljs-section,
 .code-block__code .hljs-title.function_ {
-    color: var(--blue-key);
+    color: color-mix(in srgb, var(--blue-key) 45%, var(--ink));
 }
 
 .code-block__code .hljs-type,
 .code-block__code .hljs-class .hljs-title,
 .code-block__code .hljs-title.class_ {
-    color: var(--lilac-key);
+    color: color-mix(in srgb, var(--lilac-key) 45%, var(--ink));
 }
 
 .code-block__code .hljs-built_in,
@@ -105,7 +107,7 @@
 .code-block__code .hljs-name,
 .code-block__code .hljs-selector-id,
 .code-block__code .hljs-selector-class {
-    color: var(--mint-key);
+    color: color-mix(in srgb, var(--mint-key) 45%, var(--ink));
 }
 
 .code-block__code .hljs-tag,
@@ -114,7 +116,7 @@
 .code-block__code .hljs-variable,
 .code-block__code .hljs-template-variable,
 .code-block__code .hljs-deletion {
-    color: var(--rose-key);
+    color: color-mix(in srgb, var(--rose-key) 50%, var(--ink));
 }
 
 .code-block__code .hljs-meta,
