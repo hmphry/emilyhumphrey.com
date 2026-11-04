@@ -1,4 +1,4 @@
-import { useEffect, useId, useState } from "react"
+import { useEffect, useState } from "react"
 import hljs from "highlight.js/lib/core"
 import javascript from "highlight.js/lib/languages/javascript"
 import css from "highlight.js/lib/languages/css"
@@ -19,7 +19,6 @@ interface CodeBlockProps {
 }
 
 function CodeBlock({ children, language }: CodeBlockProps) {
-    const codeId = useId()
     const [html, setHtml] = useState<string | null>(null)
     const [copied, setCopied] = useState(false)
 
@@ -54,7 +53,6 @@ function CodeBlock({ children, language }: CodeBlockProps) {
                     className="code-block__copy"
                     onClick={handleCopy}
                     aria-label={copied ? "Copied" : "Copy code"}
-                    aria-describedby={codeId}
                 >
                     <svg
                         className="code-block__copy-icon"
@@ -72,15 +70,11 @@ function CodeBlock({ children, language }: CodeBlockProps) {
             </div>
             <pre className="code-block__pre">
                 {html === null ? (
-                    <code
-                        id={codeId}
-                        className={`code-block__code language-${language}`}
-                    >
+                    <code className={`code-block__code language-${language}`}>
                         {children}
                     </code>
                 ) : (
                     <code
-                        id={codeId}
                         className={`code-block__code hljs language-${language}`}
                         dangerouslySetInnerHTML={{ __html: html }}
                     />
