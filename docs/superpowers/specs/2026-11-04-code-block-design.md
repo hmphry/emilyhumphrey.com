@@ -38,9 +38,9 @@ Each colorway exposes `--{name}-bg`, `--{name}-border`, `--{name}-key`:
 
 Notes:
 
-- Existing `--cream: #fffefc` aligns with cream bg; introduce `--cream-bg` / `--cream-border` / `--cream-key` and keep `--cream` as an alias of cream bg for current surface usage, or migrate call sites to `--cream-bg` if cleaner.
+- Introduce `--cream-bg` / `--cream-border` / `--cream-key`. Keep existing `--cream` as an alias of `--cream-bg` so current surface usage keeps working without a call-site migrate.
 - Pink tokens already exist as `--pink-bg`, `--pink-border`, `--pink-key`.
-- Surface/content semantic tokens stay as they are unless a rename is required for consistency.
+- Surface/content semantic tokens stay unchanged.
 
 ## Component API
 

@@ -1,26 +1,60 @@
 .code-block {
-    @apply overflow-hidden rounded-md border border-cream-border bg-cream-bg text-ink;
+    overflow: hidden;
+    border-radius: 0.375rem;
+    border: 1px solid var(--cream-border);
+    background: var(--cream-bg);
+    color: var(--ink);
 }
 
 .code-block__toolbar {
-    @apply flex items-center justify-end gap-2 border-b border-cream-border bg-cream-border px-3 py-1.5;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--cream-border);
+    background: var(--cream-border);
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
 }
 
 .code-block__copy {
-    @apply inline-flex items-center gap-1.5 text-sm text-cream-key;
-    @apply hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream-key;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: var(--cream-key);
+}
+
+.code-block__copy:hover {
+    opacity: 0.8;
+}
+
+.code-block__copy:focus-visible {
+    outline: 2px solid var(--cream-key);
+    outline-offset: 2px;
 }
 
 .code-block__copy-icon {
-    @apply size-4 shrink-0 fill-current;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    fill: currentColor;
 }
 
 .code-block__pre {
-    @apply m-0 overflow-x-auto p-4 text-sm leading-relaxed;
+    margin: 0;
+    overflow-x: auto;
+    padding: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.625;
 }
 
 .code-block__code {
-    @apply font-mono text-ink;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    color: var(--ink);
 }
 
 /* Soft Sigil editor-style highlight.js theme */
