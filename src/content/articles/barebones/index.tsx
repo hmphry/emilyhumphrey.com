@@ -1,3 +1,4 @@
+import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
@@ -25,7 +26,7 @@ function Article() {
                 Barebones is a small SCSS Mixin that makes grids. Any number of grids, with any number of columns at any breakpoint! It’s 100% flexible to your needs. A basic usage of a grid is 4 columns on mobile, 8 columns on tablet, and 12 columns on laptop and above. Here is what that set up would look like:
             </p>
 
-            <pre>
+            <CodeBlock language="scss">
                 {`$barebones:
 	namespace: "bones",
 	box-sizing: "border",
@@ -54,19 +55,19 @@ function Article() {
 		gutter: 0,
 		padding: 0
 	));`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 With this system, an element that’ll span 4 columns on mobile, 6 columns on tablet and 8 columns on desktop would be written as:
             </p>
 
-            <pre>
+            <CodeBlock language="xml">
                 {`<div class="grid">
     <div class="bones-m-4 bones-t-6 bones-d-8">
         ...
     </div>
 </div>`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 To see more examples, check out <a

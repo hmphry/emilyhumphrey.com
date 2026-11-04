@@ -1,3 +1,4 @@
+import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
@@ -31,7 +32,7 @@ function Article() {
                 Our code will look like this:
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`ga('send', {
   hitType: 'event',
   eventCategory: 'category',
@@ -39,7 +40,7 @@ function Article() {
   eventLabel: 'label'
   eventValue: 0
 });`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 The first parameter is not a big deal, it just tells GA to send it. Whats really important here is the second parameter, the object, and its values. This object contains the data sent.
@@ -73,7 +74,7 @@ function Article() {
                 To start, we’re going to build our prototype. I like to use a prototype for this, just incase if I have to any functions I want to extend to other functions.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`GoogleEvent.prototype = {};
 GoogleEvent.prototype.report = function(){
     console.log('send', {
@@ -96,7 +97,7 @@ function GoogleEvent(trigger, emitter, action, category, label, value, dynamic){
         parent.report()
     });
 }`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 Now we have the prototype, with a report function, and a constructor. If you’re not familiar with this setup, you can learn more by searching for JavaScript Prototypes.
@@ -112,7 +113,7 @@ function GoogleEvent(trigger, emitter, action, category, label, value, dynamic){
                 To begin, we’re going to declare a function expression. This function expression will accept two parameters, emitter and action, as they are most likely to be repeated. The function expression will then return an anonymous function, which will take the place of the expression when called. The anonymous function will call the constructor and bada boom, realest events in the room. How ya doing.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`GoogleEvent.prototype = {};
 GoogleEvent.prototype.report = function(){...};
 
@@ -123,13 +124,13 @@ var defineGoogleEvent = function(emitter, action){
         new GoogleEvent(trigger, emitter, action, category, label, value, dynamic)
     }
 };`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 Now we define our function expression for clicks and call it on buttons elements:
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`GoogleEvent.prototype = {};
 GoogleEvent.prototype.report = function(){...};
 
@@ -139,7 +140,7 @@ var defineGoogleEvent = function(emitter, action){...};
 var defineGoogleClick = defineGoogleEvent("click", "click");
 
 defineGoogleClick("button", "button", "innerContent");`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 Everytime we click a button on the page, we’ll now send an event to Google Analytics.
@@ -151,7 +152,7 @@ defineGoogleClick("button", "button", "innerContent");`}
                 To create hover events, it’s a very similar process, except instead of using “click” for both arguments, we’re going to use “hover” and “mouseenter”.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`GoogleEvent.prototype = {};
 GoogleEvent.prototype.report = function(){...};
 
@@ -163,7 +164,7 @@ var defineGoogleHover = defineGoogleEvent("mouseenter", "hover");
 
 defineGoogleClick("button", "button", "innerContent");
 defineGoogleHover("button", "button", "innerContent");`}
-            </pre>
+            </CodeBlock>
 
             <h3>Dynamic Events</h3>
 
@@ -179,7 +180,7 @@ defineGoogleHover("button", "button", "innerContent");`}
                 As you’ll notice above, we already built in the dynamic parameter and leaving it as undefined. However, to accomplish our task, we’re going to need to refactor our code here a bit.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`GoogleEvent.prototype = {};
 GoogleEvent.prototype.report = function(report){
     ga('send', {
@@ -226,7 +227,7 @@ var buttonIdReplace = {
 
 defineGoogleClick("button", "button", "innerContent", 0, buttonIdReplace);
 //defineGoogleHover("button", "button", "innerContent");`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 Below is a break down of what I refactored:
@@ -265,7 +266,7 @@ defineGoogleClick("button", "button", "innerContent", 0, buttonIdReplace);
                 To solve this problem, we’ll store a session cookie with an ID that Google Analytics can reference. We’re going to use a standard Base64 ID, and since we’re not storing this ID anywhere on the server, there is an astronomically small chance that two users could share an ID — just a heads up.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`GoogleEvent.prototype = {};
 GoogleEvent.prototype.report = function(report){...};
 GoogleEvent.prototype.getNameId = function(elem){...};
@@ -301,13 +302,13 @@ var defineGoogleHover = defineGoogleEvent("mouseenter", "hover");
 var buttonIdReplace = {...};
 
 defineGoogleClick("button", "button", "innerContent", 0, buttonIdReplace);`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 We created <code>GoogleEvent.prototype.sessionId</code> as an immediately-invoked function expression. If an ID is stored, it’ll use the one stored. If no stored ID is found, it’ll create and store one for the session.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`GoogleEvent.prototype = {};
 GoogleEvent.prototype.report = function(report){...};
 GoogleEvent.prototype.getNameId = function(elem){...};
@@ -330,7 +331,7 @@ var userIdReplace = {
 
 defineGoogleClick("button", "button", "innerContent", 0, buttonIdReplace)
 new GoogleEvent($(window), "resize", "resize", "resize", "resize", 0, userIdReplace)`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 Like before, we’re going to create <code>GoogleEvent.prototype.getSessionId</code> and have it return the session ID. Now we’re going to create our object called <code>userIdReplace</code>. We’re going to define <code>userIdReplace.replace</code> as “category” and <code>userIdReplace.replaceValue</code> as “getSessionId”. Finally, since we’re only defining this event once, we don’t need to curry the function. We’ll create a new instance of the original GoogleEvent constructor.

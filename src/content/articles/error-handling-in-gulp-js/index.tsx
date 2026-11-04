@@ -1,3 +1,4 @@
+import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
@@ -15,20 +16,20 @@ function Article() {
                 A basic way to handle errors is with the on error method:
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`gulp.task("compile-scss", function(){
 	return gulp.src("scss/**/*.scss")
 		.pipe(sass({style: "compressed", noCache: true}))
 		.on("error", console.log)
 		.pipe(gulp.dest("build/scss/**/*.scss"))
 });`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 This method will silently log the error to the console, however it won’t break your stream. To customize, you can also call a function, like so:
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`gulp.task("compile-scss", function(){
 	return gulp.src("scss/**/*.scss")
 		.pipe(sass({style: "compressed", noCache: true}))
@@ -39,7 +40,7 @@ function errorAlert(err) {
 	console.log(err.toString());
 	this.emit("end");
 }`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 Of course, all this does is send the same information as previous, but it’s easier to change in case you need to add to it in the future. At any rate, this is nice simple way to handle errors if you save all the time.
@@ -59,7 +60,7 @@ function errorAlert(err) {
                 Much like the previous method, we will be using the on error method. Will then be calling gulp-notify to send an alert to growl.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`gulp.task("compile-scss", function(){
 	return gulp.src("scss/**/*.scss")
 		.pipe(sass({style: "compressed", noCache: true}))
@@ -68,7 +69,7 @@ function errorAlert(err) {
 		}))
 		.pipe(gulp.dest("build/scss/**/*.scss"))
 });`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 Gulp-notify is pretty cool and allows you to customize many things about the message include image, sound, and title.
@@ -84,26 +85,26 @@ function errorAlert(err) {
                 >gulp-plumber</a>. First, we will create out error function that will be called by plumber in the event of an error.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`function errorAlert(error){
 	notify.onError({title: "SCSS Error", message: "Check your terminal", sound: "Sosumi"})(error); //Error Notification
 	console.log(error.toString());//Prints Error to Console
 	this.emit("end"); //End function
 };`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 From there, we will deviate from the on error method we have been using previous and use plumber’s built in error handler to call our errorAlert function.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`gulp.task("compile-scss", function(){
 	return gulp.src("scss/**/*.scss")
 		.pipe(plumber({errorHandler: errorAlert}))
 		.pipe(sass({style: "compressed", noCache: true}))
 		.pipe(gulp.dest("build/scss/**/*.scss"))
 });`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 You will also notice that we included our error handler at the beginning of our task, rather than the end. This is important.

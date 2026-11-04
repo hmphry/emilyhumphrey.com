@@ -1,3 +1,4 @@
+import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
@@ -21,7 +22,7 @@ function Article() {
                 Both let and const are block-scoped. Meaning, values initiated inside blocks can not be accessed outside those blocks:
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`if("apples" != "oranges"){
   let a = "apples";
   const b = "oranges"
@@ -29,13 +30,13 @@ function Article() {
 
 console.log(a) // reference error
 console.log(b) // reference error`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 This is a huge behavioral change from var, which is function-scoped:
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`if("apples" != "oranges"){
   var a = "apples";
   var b = "oranges"
@@ -43,13 +44,13 @@ console.log(b) // reference error`}
 
 console.log(a) // "apples"
 console.log(b) // "oranges"`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 However, the remarkable thing is, let and const can only be initialized once per scope. That means tracing let and const to their sources is much easier than var, which can be initialized anywhere and reinitialized anywhere!
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`var emergencyActive = true;
 var systemOn = emergencyActive ? false : true; // system should always be on unless emergency
 
@@ -63,7 +64,7 @@ var systemOn = true;
 
 
 runSystem() // logs "System is running"`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 If we had used let, or even better: const, we would have gotten a syntax error. Instead, we got a system, which was designed not to run when an emergency was declared, running when a freaking emergency was declared! Due to this behavior, I think let and const are more reliable than var to hold data.
@@ -75,7 +76,7 @@ runSystem() // logs "System is running"`}
                 Contrary to popular believe, const and let are indeed hoisted!
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`let favoriteFood = "mac and cheese";
 
 function healthyFood(){
@@ -84,7 +85,7 @@ function healthyFood(){
 }
 
 healthyFood() //logs ReferenceError`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 If let and const were not hoisted, than favoriteFoods should have logged Mac and Cheese. Instead, it results in a reference error. This result isn’t because the variable doesn’t exist; it’s because the variable wasn’t initialized! When called before being initialized, let and const exist within something called the Temporal Dead Zone(TDZ). The TDZ isn’t particularly important to understand right now, but instead of resolving as “undefined,” it emits an error. This behavior produces higher visibility of bugs. There are not many reasons to intentionally call a variable before it is initialized.

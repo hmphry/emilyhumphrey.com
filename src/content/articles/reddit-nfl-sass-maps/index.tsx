@@ -1,3 +1,4 @@
+import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
@@ -93,7 +94,7 @@ function Article() {
                 type, but this way leaves much of the guess work out when using
                 this code. Here is example used in a loop:
             </p>
-            <pre>
+            <CodeBlock language="scss">
                 {`
 @each $animal in $animals{
 	// Get animal's name
@@ -107,7 +108,7 @@ function Article() {
 	}
 }
                 `}
-            </pre>
+            </CodeBlock>
             <p>
                 Simple enough. However, what if you wanted to add a “tribe” key
                 after the genus, or a descriptor like “Large” or “Grey” before
@@ -115,7 +116,7 @@ function Article() {
                 variables in every each loop, or code out of hierarchy. It’s not
                 very maintainable. Using a Map, the code would look like this:
             </p>
-            <pre>
+            <CodeBlock language="scss">
                 {`@each $animal in $animals{
 	// Get animal's name
 	$name: map-get($animal, name);
@@ -127,7 +128,7 @@ function Article() {
 		content: "#{$name} belong to the #{$genus} genus of the #{$family} family.";
 	}
 }`}
-            </pre>
+            </CodeBlock>
             <p>
                 There is some repeating, but this code is a lot more
                 maintainable. If you need to add a new key, you simply set it
@@ -142,7 +143,7 @@ function Article() {
                 incoming. We’re storing each team on a new line, in case an
                 event where we have to change it.
             </p>
-            <pre>
+            <CodeBlock language="scss">
                 {`$nfl-teams:
 	(name:cardinals, abbr:ARI, url:azcardinals),
 	(name:falcons, abbr:ATL, url:falcons),
@@ -176,12 +177,12 @@ function Article() {
 	(name:buccaneers, abbr:TB, url:buccaneers),
 	(name:titans, abbr:TEN, url:tennesseetitans),
 	(name:redskins, abbr:WAS, url:redskins);`}
-            </pre>
+            </CodeBlock>
             <p>
                 Now, we’re going to to create just one loop to create the code
                 we need:
             </p>
-            <pre>
+            <CodeBlock language="scss">
                 {`$pos-20: 0;
 @each $team in $nfl-teams {
 	// Get team name
@@ -198,20 +199,20 @@ function Article() {
 	// Count down for bg position
 	$pos-20: $pos-20 - 20px;
 }`}
-            </pre>
+            </CodeBlock>
             <p>
                 You don’t have to define each as a variable. I did in this case
                 because I am using them as selector, but you can simply use the
                 get-map() function if they’re values. The final product looks
                 something like this, but repeated 31 times:
             </p>
-            <pre>
+            <CodeBlock language="css">
                 {`.flair-giants:before,
 a[href$="/r/nygiants"]:before,
 a[href$="/NYG"]:before {
 	background-position: 0 -25rem;
 }`}
-            </pre>
+            </CodeBlock>
 
             <h3>Conclusion</h3>
             <p>

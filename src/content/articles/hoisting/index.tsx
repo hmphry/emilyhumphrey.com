@@ -1,3 +1,4 @@
+import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
@@ -25,13 +26,13 @@ function Article() {
                 Hoisting works for all container types in JavaScript; however, the behavior differs between “var” and the other keywords. Only variables declared with “var” will be hoisted to the top of the scope with an undefined value. This will not throw an error.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`console.log("What is 50 * 2? " + num); // num is undefined
 
 var num = 100;
 
 console.log("What is 50 * 2? " + num);  // num is 100`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 However, variables declared with “let” and “const” will exist in the Temporal Dead Zone and throw a reference error.
@@ -49,7 +50,7 @@ console.log("What is 50 * 2? " + num);  // num is 100`}
                 Function hoisting is advantageous because it allows us to hide function declarations towards the bottom of the file. When combined with comments, this makes a complex application much more readable.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`resetScore();
 drawGameBoard();
 populateGameBoard();
@@ -70,7 +71,7 @@ function populateGameBoard() {
 function startGame() {
   // complex functionality to start the game
 }`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 Looking at this code gives one an immediate idea of what the application does without reading all of the functionality.

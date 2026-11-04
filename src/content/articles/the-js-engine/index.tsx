@@ -1,3 +1,4 @@
+import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
@@ -59,7 +60,7 @@ function Article() {
                 The Stack, sometimes referred to as the CallStack, is a program that manages what functions run and when. Since JavaScript is single-threaded, the Stack runs one function at a time. The Stack begins empty, but every time we evoke a function, the Stack grows.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`function givePez(){
   returns "gave pez";
 }
@@ -73,7 +74,7 @@ function dispensePez(){
 }
 
 dispensePez()`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 The execution of the above code is as such:

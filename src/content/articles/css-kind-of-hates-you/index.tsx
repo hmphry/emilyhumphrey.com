@@ -1,3 +1,4 @@
+import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
@@ -25,7 +26,7 @@ function Article() {
                 You have a div with the class “text” on it. Inside .text, there is a paragraph with an ID of “intro” and a class of “blue”.
             </p>
 
-            <pre>
+            <CodeBlock language="css">
                 {`#intro{
    font-size: 1.2em;
    color: red;
@@ -39,7 +40,7 @@ p.blue{
 .text > div.blue{
    color: blue;
 }`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 What color do you think #intro will be? #intro will be red. Despite it having no descendant tags and being at the top of the sheet, #intro will be red. If decedent tags and cascading hierarchy won’t work, how do you change #intro’s color? You can:
@@ -60,27 +61,27 @@ p.blue{
                 </li>
             </ul>
 
-            <pre>
+            <CodeBlock language="css">
                 {`.intro{
    color: red;
 }
 .blue{
    color: blue;
 }`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 .blue will overwrite .intro’s color by simple hierarchy. However, you can also use element tags with descenders to overwrite .intro’s styles, without the additional class:
             </p>
 
-            <pre>
+            <CodeBlock language="css">
                 {`.intro{
    color: red;
 }
 .text p{
    color: blue;
 }`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 When it comes to the ID selector, I follow the Uncle Ben method:
@@ -157,12 +158,12 @@ p.blue{
                 This isn’t one that’s talked about often, but when you do encounter it, it’s pretty debilitating. Using the transform property on the parent of a position: fixed element will unfix the fixed element. Let that sink in. It will unfix it. A few months ago, I was building a sidedraw navigation. I decided to build my HTML like so:
             </p>
 
-            <pre>
+            <CodeBlock language="xml">
                 {`<div class="track">
    <section class="side-navigation">...</section>
    <section class="main-content">...</section>
 </div>`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 It’s a pretty simple set up. .track was going to be my tracking element while .main-content would exist to hold all the content normally held in a body or wrapper. .main-content would be set to 100%, while the .side-navigation would be set to 20%, then positioned: absolute and transform: translateX(-100%). This would ensure the side draw navigation would be invisible until .track had moved over 20%. I decided to use transform for .track’s animation, because of that sweet 60FPS. One problem: The hamburger button was fixed inside .main-content. Once the hamburger was clicked and the track did its thing, it’d disappear. Gone. It lost its sticky. Luckily, I was able to move the menu button outside of .track overcome this issue, but it’s weird behavior. From my testing, all transform properties seem to cause this effect.

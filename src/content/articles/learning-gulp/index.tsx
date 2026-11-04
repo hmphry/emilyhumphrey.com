@@ -1,3 +1,4 @@
+import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
@@ -67,11 +68,11 @@ function Article() {
                 Time to kick off some gulp development! First thing you need to include is the plugins you just installed:
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`var gulp = require('gulp');
 var scss = require('gulp-scss');
 var prefix = require('gulp-autoprefixer');`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 The dependencies are very important to include. If not included, gulp won’t know what to do and will error out. After the dependencies are included, we can build our first task. Tasks have 4 elements that you need to know:
@@ -105,7 +106,7 @@ var prefix = require('gulp-autoprefixer');`}
                 Below is an example of a gulpfile. It’ll take a scss file, compile it to css and then use the auto-prefixer to insert browser prefixes. When it’s done, it’ll output a css file to “public/css”.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`var gulp = require('gulp');
 var scss = require('gulp-scss');
 var prefix = require('gulp-autoprefixer');
@@ -116,7 +117,7 @@ gulp.task('defualt', function(){
 	.pipe(prefix())
 	.pipe(gulp.dest('public/css'));
 });`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 To run our gulp file, simply enter <code>gulp</code>.
@@ -134,7 +135,7 @@ gulp.task('defualt', function(){
                 Chaining is pretty cool. It taking one task and calling another before running. In the example below, I am chaining “sass-to-css” to “prefix-css”. Now, when I call “prefix-css”, it will run “sass-to-css” beforehand.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`var gulp = require('gulp');
 var scss = require('gulp-scss');
 var prefix = require('gulp-autoprefixer');
@@ -149,7 +150,7 @@ gulp.task('prefix-css', ['scss-to-css'], function(){
 	.pipe(prefix())
 	.pipe(gulp.dest('public/css'));
 });`}
-            </pre>
+            </CodeBlock>
 
             <h3>Watching</h3>
 
@@ -157,7 +158,7 @@ gulp.task('prefix-css', ['scss-to-css'], function(){
                 You can also set up gulp to only run when a file is changed.
             </p>
 
-            <pre>
+            <CodeBlock language="javascript">
                 {`var gulp = require('gulp');
 var scss = require('gulp-scss');
 var prefix = require('gulp-autoprefixer');
@@ -176,7 +177,7 @@ gulp.task('prefix-css', ['scss-to-css'], function(){
 gulp.task("watch", function(){
 	gulp.watch("main.scss", ["prefix-css"]);
 });`}
-            </pre>
+            </CodeBlock>
 
             <p>
                 When you run <code>gulp watch</code>, it will not end like a normal task. It will remain open, watching for changes to “main.scss”. Once a change is saved, it will run “prefix-css”.
