@@ -5,13 +5,46 @@
     :root {
         color-scheme: light;
 
-        --pink-bg: #fff3f4;
-        --pink-border: #fdcdd2;
-        --pink-key: #f498a2;
+        /* System */
         --ink: #3d3835;
         --metal: #d4a574;
         --white: #ffffff;
-        --cream: #fffefc;
+
+        /* Pink (default) */
+        --pink-bg: #fff3f4;
+        --pink-border: #fdcdd2;
+        --pink-key: #f498a2;
+
+        /* Blue */
+        --blue-bg: #fbfdfe;
+        --blue-border: #d3e9f9;
+        --blue-key: #a8d0ec;
+
+        /* Mint */
+        --mint-bg: #f8fdfd;
+        --mint-border: #bde2e7;
+        --mint-key: #96cdd5;
+
+        /* Lilac */
+        --lilac-bg: #fdfbfd;
+        --lilac-border: #ead9ec;
+        --lilac-key: #d2b4d6;
+
+        /* Canary */
+        --canary-bg: #fffff7;
+        --canary-border: #faf0ba;
+        --canary-key: #f0e396;
+
+        /* Rose */
+        --rose-bg: #fdf6f8;
+        --rose-border: #eeb9c8;
+        --rose-key: #e6a5b8;
+
+        /* Cream */
+        --cream-bg: #fffefc;
+        --cream-border: #f8f4ec;
+        --cream-key: #cfc5b5;
+        --cream: var(--cream-bg);
 
         --surface-0: var(--cream);
         --surface-1: var(--white);
@@ -30,13 +63,38 @@
 @theme inline {
     --color-*: initial;
 
-    --color-pink-bg: var(--pink-bg);
-    --color-pink-border: var(--pink-border);
-    --color-pink-key: var(--pink-key);
     --color-ink: var(--ink);
     --color-metal: var(--metal);
     --color-white: var(--white);
+
+    --color-pink-bg: var(--pink-bg);
+    --color-pink-border: var(--pink-border);
+    --color-pink-key: var(--pink-key);
+
+    --color-blue-bg: var(--blue-bg);
+    --color-blue-border: var(--blue-border);
+    --color-blue-key: var(--blue-key);
+
+    --color-mint-bg: var(--mint-bg);
+    --color-mint-border: var(--mint-border);
+    --color-mint-key: var(--mint-key);
+
+    --color-lilac-bg: var(--lilac-bg);
+    --color-lilac-border: var(--lilac-border);
+    --color-lilac-key: var(--lilac-key);
+
+    --color-canary-bg: var(--canary-bg);
+    --color-canary-border: var(--canary-border);
+    --color-canary-key: var(--canary-key);
+
+    --color-rose-bg: var(--rose-bg);
+    --color-rose-border: var(--rose-border);
+    --color-rose-key: var(--rose-key);
+
     --color-cream: var(--cream);
+    --color-cream-bg: var(--cream-bg);
+    --color-cream-border: var(--cream-border);
+    --color-cream-key: var(--cream-key);
 
     --color-surface: var(--surface-0);
     --color-surface-0: var(--surface-0);
