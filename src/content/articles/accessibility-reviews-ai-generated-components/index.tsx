@@ -3,8 +3,8 @@ function Article() {
         <article className="article min-w-0">
             <h2>Accessibility Reviews for AI-Generated Components</h2>
             <p>
-                The agent ran axe, got a clean report — contrast fine, alt text
-                present — and closed the ticket.
+                The agent ran axe and gave a clean report: contrast fine, alt
+                text present, and closed the ticket.
             </p>
             <p>
                 Then a keyboard user opened the dialog and focus fell through to
@@ -15,18 +15,17 @@ function Article() {
             </p>
             <p>
                 That pattern shows up constantly in AI-assisted UI. Large
-                language models are reliable at the visible wins — contrast,
+                language models are reliable at the visible wins: contrast,
                 basic alt text, an <code>aria-label</code> on an icon button
-                when you ask — and unreliable at the behavioral ones: focus
+                when you ask; and unreliable at the behavioral ones: focus
                 management, programmatic labels that stay tied to errors, live
                 regions that announce status changes to screen readers,
                 semantics, and composite-widget keyboard patterns.{" "}
                 <a href="https://www.deque.com/automated-accessibility-coverage-report/">
                     Deque&apos;s coverage research
                 </a>{" "}
-                puts automated detection at roughly{" "}
-                <strong>57% of issues by volume</strong>. The other half is
-                where agents smile and move on.
+                puts automated detection at roughly 57% of issues by volume. The
+                other half is where agents smile and move on.
             </p>
             <p>
                 Note the denominator: Deque is measuring issue <em>volume</em>,
@@ -39,11 +38,9 @@ function Article() {
             <p>
                 In healthcare UI, that gap is not an abstract WCAG miss. It is a
                 clinician who cannot finish a task under time pressure, or a
-                patient who cannot book care. Clinicians often work almost
-                entirely from the keyboard. Patients who rely on assistive
-                technology are easy to undercount in analytics. So every
-                AI-generated component gets a short, targeted human review aimed
-                at exactly what agents skip.
+                patient who cannot book care. So every AI-generated component
+                gets a short, targeted human review aimed at exactly what agents
+                skip.
             </p>
 
             <h3>What the research says</h3>
@@ -63,7 +60,7 @@ function Article() {
                 <a href="https://arxiv.org/html/2503.15885">arXiv 2503.15885</a>{" "}
                 compared human and LLM accessible code generation. Naive LLM
                 output often scored more accessible than the human-written
-                originals — especially on contrast and alt text — while ARIA
+                originals, especially on contrast and alt text, while ARIA
                 remained weak. Feedback loops beat prompt tricks. In these
                 studies, one-shot prompting didn&apos;t hold up. Iteration
                 against a failing check did.
@@ -86,7 +83,7 @@ function Article() {
                 found models frequently fall short of full WCAG compliance
                 without follow-up prompting; Claude 3.7 Sonnet and GPT-4o needed
                 less of it than the rest. The researchers verified outputs with
-                keyboard and screen-reader testing — that was their evaluation
+                keyboard and screen-reader testing. That was their evaluation
                 method, not a finding that every model requires those checks to
                 improve. Follow-up prompts that named concrete failures helped;
                 human oversight still closed the gap.
@@ -179,9 +176,9 @@ function Article() {
             <p>
                 No positive <code>tabindex</code>. Dialogs move focus in, trap
                 it while open, and return it to the trigger on close. Focus must
-                survive a delete or re-render — lists that remove the focused
-                row and dump the user to <code>{"<body>"}</code> fail in
-                clinical queues constantly.
+                survive a delete or re-render: lists that remove the focused row
+                and dump the user to <code>{"<body>"}</code> fail in queues
+                constantly.
             </p>
             <p>
                 Visible focus is not optional. Bare <code>outline-none</code>{" "}
@@ -214,12 +211,10 @@ function Article() {
             <p>
                 Tie errors with <code>aria-describedby</code> and{" "}
                 <code>aria-invalid</code>, and keep the message element in the
-                DOM when it is shown — swapping the entire field for an
+                DOM when it is shown. Swapping the entire field for an
                 &quot;errored&quot; variant often drops the description
                 relationship. Group related controls with <code>fieldset</code>{" "}
-                / <code>legend</code> — insurance type radio sets and medication
-                schedules are the usual offenders when agents emit a pile of
-                loose inputs.
+                / <code>legend</code>.
             </p>
 
             <h4>Live regions and status</h4>
@@ -234,14 +229,9 @@ function Article() {
                 Screen readers frequently miss a live region that appears and
                 receives text in the same paint. Prefer a persistent region:
             </p>
-            <pre className="min-w-0 overflow-x-auto">{`{/* React — region exists first; text changes later */}
+            <pre className="min-w-0 overflow-x-auto">{`{/* region exists first; text changes later */}
 <div className="sr-only" role="status" aria-live="polite">
   {saved ? 'Draft saved' : ''}
-</div>
-`}</pre>
-            <pre className="min-w-0 overflow-x-auto">{`<!-- Vue — same idea -->
-<div class="sr-only" role="status" aria-live="polite">
-  {{ saved ? 'Draft saved' : '' }}
 </div>
 `}</pre>
             <p>
@@ -249,7 +239,7 @@ function Article() {
                 <code>{'role="alert"'}</code> only for urgent interruptions. Do
                 not remount the wrapper with a changing <code>key</code>.
                 Announce autosave, async loads, validation summaries, and
-                session-timeout warnings — the status changes clinicians glance
+                session-timeout warnings. The status changes clinicians glance
                 at and assistive tech users otherwise never hear.{" "}
                 <a href="https://tetralogical.com/blog/2024/05/01/why-are-my-live-regions-not-working/">
                     TetraLogical&apos;s live-region write-up
@@ -263,14 +253,14 @@ function Article() {
                 A <code>{"<button>"}</code> is not a <code>div</code> with an{" "}
                 <code>onClick</code>. Real tables with header associations beat
                 ARIA grids for clinical data until you have a strong reason.
-                Headings are structure, not decoration — agents still demote
+                Headings are structure, not decoration, and agents still demote
                 them to styled <code>{"<p>"}</code> tags because the mockup used
                 a large font.
             </p>
             <p>
                 If you reach for ARIA, you are usually compensating for the
                 wrong element. Fix the element first. Agents over-ARIA because
-                training data is full of role soup. Your review question is
+                training data is full of bad ARIA data. Your review question is
                 simple: would a native control do this? If yes, delete the
                 roles.
             </p>
@@ -279,10 +269,8 @@ function Article() {
             <p>
                 Comboboxes, tabs, menus, and date pickers have keyboard
                 contracts defined in the ARIA Authoring Practices Guide. Prefer
-                design-system or headless primitives — Radix, Headless UI, Reka
-                UI — over a hand-rolled widget the agent assembled from blog
-                posts. Hand-rolled comboboxes are where &quot;it works with a
-                mouse&quot; PRs come from.
+                design-system or headless primitives over a hand-rolled
+                component the agent assembled from blog posts.
             </p>
             <p>
                 When the agent must customize, start from the APG pattern and
@@ -297,8 +285,7 @@ function Article() {
             <p>
                 Check 200% and 400% zoom. Reflow should keep content usable
                 without two-dimensional scrolling for vertical text blocks.
-                Honor <code>prefers-reduced-motion</code> — agents love entrance
-                animations on every toast.
+                Honor <code>prefers-reduced-motion</code>.
             </p>
             <p>
                 Never encode status with color alone. Vitals, alerts, and
@@ -308,13 +295,6 @@ function Article() {
             </p>
 
             <h3>The workflow</h3>
-            <p>
-                Wire this into the same three-gate habit as{" "}
-                <strong>
-                    My Front-End Agent Loop: Spec → Diff → Browser Check
-                </strong>{" "}
-                — this is Gate 3&apos;s accessibility half.
-            </p>
             <ol className="list-decimal space-y-2 pl-6">
                 <li>
                     <p>
@@ -362,32 +342,25 @@ function Article() {
                 not auditing the whole product. You are verifying the behaviors
                 models skip on the component that just changed. Ten minutes is
                 enough when axe already ran and the accessibility tree already
-                listed roles and names. Stretch it only when the change touches
-                a composite widget or a dialog — those deserve the screen reader
-                every time.
+                listed roles and names.
             </p>
 
-            <h3>Healthcare context</h3>
+            <h3>A Note on Healthcare UI</h3>
             <p>
-                HHS&apos;s Section 504 rule (45 CFR 84.84) points recipients of
-                HHS funding at WCAG 2.1 AA for web and mobile. In May 2026 HHS{" "}
+                HHS&apos;s Section 504 says recipients of HHS funding must be
+                WCAG 2.1 AA compliant for web and mobile. In May 2026 HHS{" "}
                 <a href="https://www.hhs.gov/press-room/hhs-extends-mobile-and-web-accessibility-deadline.html">
                     extended the deadlines
                 </a>
                 : <strong>May 11, 2027</strong> for recipients with 15 or more
-                employees, <strong>May 10, 2028</strong> for smaller ones. That
-                is the compliance calendar. It is not the reason to do the work.
+                employees, <strong>May 10, 2028</strong> for smaller ones.
             </p>
             <p>
-                Lead with people. A nurse on a VDI session over Citrix, display
-                zoomed to read small type, interrupted mid-order, should still
-                be able to Tab back to where they were. Focus loss after a
-                re-render is not a niche bug in that environment; it is a
-                shift-handoff failure. A patient using a screen reader should
-                hear that the slot they picked is unavailable, not discover it
-                because the Continue button does nothing. The deadline slipped a
-                year; a nurse who loses their place after a re-render is not
-                waiting on it.
+                Don’t wait until 2027, start now. A nurse zoomed in to read
+                small type should still be able to Tab back to where they were.
+                A patient using a screen reader should hear that the slot they
+                picked is unavailable, not discover it because the Continue
+                button does nothing.
             </p>
             <p>
                 Clinical environments add constraints automation rarely models:
@@ -395,33 +368,12 @@ function Article() {
                 interruption. Build for those, and the WCAG criteria tend to
                 follow.
             </p>
-            <p>
-                This is not legal advice. If you are an HHS-funded recipient,
-                read the rule and talk to counsel. If you ship clinical UI
-                either way, ship the keyboard path.
-            </p>
 
             <h3>Closing</h3>
             <p>
                 Automation catches about half the issue volume. Models catch the
                 visible half of that half when prompted well. The behavioral
-                remainder — focus, names, live regions, semantics, composites,
-                zoom — is a short human checklist, not a second career.
-            </p>
-            <p>
-                Drop the MUST / SHOULD instruction block into the repo this
-                week. Attach the PR checklist. Pair it with{" "}
-                <strong>
-                    My Front-End Agent Loop: Spec → Diff → Browser Check
-                </strong>{" "}
-                so screenshots and accessibility trees show up in the same Gate
-                3 review pass. When focus-visible rings and token contrast need
-                their own treatment, that belongs with the Tailwind /
-                design-token companion — same gate, different lens.
-            </p>
-            <p>
-                Scanners will keep passing dialogs that drop focus. Press Tab
-                yourself before you merge.
+                leftover is a short checklist for us humans.
             </p>
 
             <h3>Sources</h3>
