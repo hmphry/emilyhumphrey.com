@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router"
 import articleRoutes from "@/content/articles/index.tsx"
 import Article from "./article"
 
-const PAGE_SIZE = 20
+const PAGE_SIZE = 5
 
 function pageSearch(page: number) {
     return page <= 1 ? "" : `?page=${page}`
