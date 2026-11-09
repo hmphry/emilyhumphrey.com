@@ -1,5 +1,12 @@
 [
     {
+        "title": "Accessibility Reviews for AI-Generated Components",
+        "description": "So every AI-generated component gets a short, targeted human review aimed at exactly what agents skip.",
+        "publishDate": "11/9/2026",
+        "element": "accessibility-reviews-ai-generated-components",
+        "path": "/articles/accessibility-reviews-ai-generated-components"
+    },
+    {
         "title": "How Tailwind Changed The Game... Again",
         "description": "Tailwind CSS 4 shifts the paradigm by ditching PostCSS for Lightning CSS, switching config to CSS variables, and adding native container queries and modern CSS features for faster, cleaner development.",
         "publishDate": "7/18/2025",
