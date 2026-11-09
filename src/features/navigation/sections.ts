@@ -16,12 +16,12 @@ export const sections: SiteSection[] = [
     },
     {
         path: "/articles",
-        title: "Article",
+        title: "Articles",
         icon: ICONS.ARTICLES,
     },
     {
         path: "/essays",
-        title: "Essay",
+        title: "Essays",
         icon: ICONS.ESSAYS,
     },
 ]
