@@ -1,0 +1,5 @@
+/* After @hmphry/brand imports. Keeps page surface without overriding --color-bg
+   so package sidebar styles keep their own background. */
+body {
+    background: var(--surface-0);
+}

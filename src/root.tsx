@@ -1,9 +1,11 @@
 import type { ReactNode } from "react"
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router"
+import "@hmphry/brand/styles.css"
 import "./assets/styles/index.css"
 import Footer from "./features/footer/index.tsx"
 import SiteLayout from "./features/layout/index.tsx"
 import Navigation from "./features/navigation/index.tsx"
+import "./assets/styles/page-surface.css"
 
 export function meta() {
     return [{ title: "Emily Humphrey" }]
@@ -26,7 +28,7 @@ export function Layout({ children }: { children: ReactNode }) {
                 <Meta />
                 <Links />
             </head>
-            <body className="h-full w-full overflow-y-scroll">
+            <body className="bg-surface h-full w-full overflow-y-scroll">
                 {children}
                 <ScrollRestoration />
                 <Scripts />
