@@ -2,6 +2,7 @@ import type { ReactNode } from "react"
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router"
 import "@hmphry/brand/styles.css"
 import "./assets/styles/index.css"
+import { GoatCounterTracker } from "./features/analytics/goatcounter.tsx"
 import Footer from "./features/footer/index.tsx"
 import SiteLayout from "./features/layout/index.tsx"
 import Navigation from "./features/navigation/index.tsx"
@@ -27,6 +28,11 @@ export function Layout({ children }: { children: ReactNode }) {
                 <link rel="apple-touch-icon" href="/favicon.png" />
                 <Meta />
                 <Links />
+                <script
+                    data-goatcounter="https://emilyhumphrey.goatcounter.com/count"
+                    async
+                    src="//gc.zgo.at/count.js"
+                />
             </head>
             <body className="bg-surface h-full w-full overflow-y-scroll">
                 {children}
@@ -40,6 +46,7 @@ export function Layout({ children }: { children: ReactNode }) {
 export default function App() {
     return (
         <>
+            <GoatCounterTracker />
             <Navigation />
             <SiteLayout>
                 <Outlet />
