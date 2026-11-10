@@ -18,8 +18,8 @@ const socialImages: Record<string, SocialImage> = {
     "accessibility-review-for-ai-generated-ui": {
         src: accessibilityReviewImage,
         type: "image/png",
-        width: 2400,
-        height: 1260,
+        width: 1200,
+        height: 630,
         alt: "Emily Humphrey social card titled Accessibility Review for AI-Generated UI, with the key mark and an accessibility symbol.",
     },
 }
