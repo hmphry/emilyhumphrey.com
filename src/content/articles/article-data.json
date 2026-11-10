@@ -1,7 +1,7 @@
 [
     {
         "title": "Accessibility Review for AI-Generated UI",
-        "description": "So every AI-generated component gets a short, targeted human review aimed at exactly what agents skip.",
+        "description": "Every AI-generated component should get reviewed targeting what the agents skip.",
         "publishDate": "11/9/2026",
         "element": "accessibility-review-for-ai-generated-ui",
         "path": "/articles/accessibility-review-for-ai-generated-ui"
