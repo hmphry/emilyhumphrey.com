@@ -3,7 +3,7 @@ import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
-            <h2>Accessibility Reviews for AI-Generated Components</h2>
+            <h2>Accessibility Review for AI-Generated UI</h2>
             <p>
                 The agent ran axe and gave a clean report: contrast fine, alt
                 text present, and closed the ticket.

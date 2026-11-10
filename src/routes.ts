@@ -4,6 +4,10 @@ export default [
     index("features/home/index.tsx"),
     route("articles", "features/article/index.tsx", [
         index("features/article-list/articles-index.tsx"),
+        route(
+            "accessibility-reviews-ai-generated-components",
+            "content/articles/accessibility-reviews-redirect.tsx",
+        ),
         route(":slug", "content/articles/page.tsx"),
     ]),
     route("essays", "features/essay/index.tsx", [
