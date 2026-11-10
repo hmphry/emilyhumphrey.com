@@ -1,1 +1,0 @@
-import{w as e,p as t,O as r}from"./chunk-EF7DTUVF-BgjxeOue.js";/* empty css               */function s(){return t.jsx("article",{className:"article pb-10",children:t.jsx(r,{})})}const a=e(s);export{a as default};
