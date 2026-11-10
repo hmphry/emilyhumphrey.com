@@ -1,5 +1,7 @@
 import type { ComponentType } from "react"
+import type { MetaDescriptor } from "react-router"
 import articles, { type ArticleConfig } from "./index.tsx"
+import { articlePageMeta } from "./meta.ts"
 
 const modules = import.meta.glob<{ default: ComponentType }>("./*/index.tsx", {
     eager: true,
@@ -17,20 +19,12 @@ export function loader({ params }: { params: { slug?: string } }) {
     return article
 }
 
-export function meta({ data }: { data?: ArticleConfig }) {
+export function meta({ data }: { data?: ArticleConfig }): MetaDescriptor[] {
     if (!data) {
         return [{ title: "Emily Humphrey" }]
     }
 
-    const tags: ({ title: string } | { name: string; content: string })[] = [
-        { title: `${data.title} · Emily Humphrey` },
-    ]
-
-    if (data.description) {
-        tags.push({ name: "description", content: data.description })
-    }
-
-    return tags
+    return articlePageMeta(data)
 }
 
 export default function ArticlePage({
