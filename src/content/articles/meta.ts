@@ -1,6 +1,6 @@
 import type { MetaDescriptor } from "react-router"
 import type { ArticleConfig } from "./index.tsx"
-import accessibilityReviewImage from "@/assets/social-images/accessibility-review-for-ai-generated-ui.jpg"
+import accessibilityReviewImage from "@/assets/social-images/accessibility-review-for-ai-generated-ui.png"
 
 const siteOrigin = "https://emilyhumphrey.com"
 const siteName = "Emily Humphrey"
@@ -17,9 +17,9 @@ interface SocialImage {
 const socialImages: Record<string, SocialImage> = {
     "accessibility-review-for-ai-generated-ui": {
         src: accessibilityReviewImage,
-        type: "image/jpeg",
-        width: 1024,
-        height: 537,
+        type: "image/png",
+        width: 2400,
+        height: 1260,
         alt: "Emily Humphrey social card titled Accessibility Review for AI-Generated UI, with the key mark and an accessibility symbol.",
     },
 }
