@@ -3,14 +3,18 @@ import "./styles.css"
 
 interface LayoutProps {
     children: ReactNode
+    footer?: ReactNode
 }
 
-function Layout({ children }: LayoutProps) {
+function Layout({ children, footer }: LayoutProps) {
     return (
         <div className="layout-grid h-full w-full">
             {/* Width spacer — real sidebar is fixed in Navigation */}
             <div className="sidebar-slot" aria-hidden="true" />
-            <main className="main pt-8">{children}</main>
+            <div className="main pt-8">
+                <main>{children}</main>
+                {footer}
+            </div>
         </div>
     )
 }
