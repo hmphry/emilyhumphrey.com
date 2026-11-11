@@ -1,0 +1,1 @@
+.home.content-container{max-width:56rem}.key-section{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2.5rem}.key-section__copy p{max-width:none}.key-section__copy h2{padding-top:0}.key-section__mark{flex-shrink:0}@media (max-width: 40rem){.key-section{grid-template-columns:1fr;justify-items:center}.key-section__copy{width:100%}}
