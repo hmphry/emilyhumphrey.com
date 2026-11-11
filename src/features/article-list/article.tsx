@@ -23,7 +23,7 @@ const Article = ({
         <p>
             <Link to={path} className="group relative z-0">
                 Read More
-                <span className="bg-pink-key absolute inset-x-0 bottom-0 h-[2px] translate-y-1 opacity-0 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100"></span>
+                <span className="bg-pink-key absolute inset-x-0 bottom-0 h-[2px] translate-y-1 opacity-0 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100 motion-reduce:transition-none"></span>
             </Link>
         </p>
     </li>
