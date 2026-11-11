@@ -1,0 +1,117 @@
+name: Deploy staging
+
+# Every branch push publishes the built site to staging.emilyhumphrey.com.
+# gh-pages is excluded: that branch is the GitHub Pages production output, and
+# building it again would upload compiled files as if they were source.
+on:
+  push:
+    branches:
+      - "**"
+      - "!gh-pages"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: read
+  actions: write
+
+# One group for every branch. A newer push cancels the in-flight run so two
+# uploads cannot write the staging docroot at the same time. The latest push
+# is the site staging serves.
+concurrency:
+  group: deploy-staging
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    if: github.ref != 'refs/heads/gh-pages'
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      VITE_SITE_ORIGIN: https://staging.emilyhumphrey.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Prepare staging output
+        run: node scripts/prepare-staging-output.mjs
+
+      - name: Upload staging build
+        uses: actions/upload-artifact@v4
+        with:
+          name: staging-site
+          path: build/staging-site
+          include-hidden-files: true
+          retention-days: 7
+
+  deploy:
+    name: Deploy to staging
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download staging build
+        uses: actions/download-artifact@v4
+        with:
+          name: staging-site
+          path: build/staging-site
+
+      - name: Confirm deploy payload
+        run: |
+          set -euo pipefail
+          test -f build/staging-site/index.html
+          test -f build/staging-site/.htaccess
+          test -f build/staging-site/robots.txt
+          test ! -e build/staging-site/CNAME
+          grep -q '^Disallow: /' build/staging-site/robots.txt
+          grep -q 'DirectoryIndex index.html' build/staging-site/.htaccess
+          grep -q 'https://staging.emilyhumphrey.com/' \
+            build/staging-site/articles/accessibility-review-for-ai-generated-ui/index.html
+          if grep -q 'https://emilyhumphrey.com' \
+            build/staging-site/articles/accessibility-review-for-ai-generated-ui/index.html
+          then
+            echo "production origin leaked into staging article HTML"
+            exit 1
+          fi
+          if grep -q 'url=https://emilyhumphrey.com' \
+            build/staging-site/articles/accessibility-reviews-ai-generated-components/index.html
+          then
+            echo "legacy redirect still points at production"
+            exit 1
+          fi
+
+      # FTP_SERVER, FTP_USERNAME, and FTP_PASSWORD are repo secrets.
+      # The FTP account is jailed to the staging docroot, so server-dir ./ is
+      # that account root. protocol ftps is explicit TLS on port 21.
+      # security loose still encrypts; Namecheap shared certificates often fail
+      # this action's strict check. Deploy fails until FTP_PASSWORD is set.
+      - name: Deploy over FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          security: loose
+          local-dir: build/staging-site/
+          server-dir: ./
+          timeout: 120000
+          log-level: standard
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/CNAME
