@@ -1,7 +1,8 @@
+import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <h2>Cross-Site Scripting</h2>
+            <Header variant="h1">Cross-Site Scripting</Header>
             <p>
                 Cross-Site Scripting (XSS) is one of the most common, and
                 potentially devastating, vulnerabilities in web development. It
@@ -24,7 +25,7 @@ function Article() {
                 and practical tips on how to mitigate each.
             </p>
 
-            <h3>Key reminders</h3>
+            <Header variant="h2">Key reminders</Header>
             <ul>
                 <li>
                     Escape output before rendering user-controlled content

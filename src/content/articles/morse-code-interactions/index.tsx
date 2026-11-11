@@ -1,7 +1,8 @@
+import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <h2>Morse Code Interactions</h2>
+            <Header variant="h1">Morse Code Interactions</Header>
 
             <p className="eyebrow">Originally Published on September 8th, 2018</p>
 

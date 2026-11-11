@@ -1,10 +1,11 @@
+import { Header } from "@hmphry/brand"
 import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
-            <h2>Reddit NFL and Sass Maps</h2>
+            <Header variant="h1">Reddit NFL and Sass Maps</Header>
             <p className="eyebrow">Originally Published on August 25th, 2014</p>
-            <h3>Backstory</h3>
+            <Header variant="h2">Backstory</Header>
             <p>
                 I’ve been recently diving into refactoring the code of r/NFL,
                 Reddit’s NFL community. The code is about two years old now, and
@@ -43,7 +44,7 @@ function Article() {
                 .
             </p>
 
-            <h3>The Problem</h3>
+            <Header variant="h2">The Problem</Header>
             <p>
                 I knew we’d encounter some issues, and one of them would be the
                 NFL team associated data. For those that do not know, the NFL
@@ -80,7 +81,7 @@ function Article() {
                 size!
             </p>
 
-            <h3>Enter Our Hero, The SASS Map</h3>
+            <Header variant="h2">Enter Our Hero, The SASS Map</Header>
             <p>
                 SASS Maps were introduced in Sass 3.3 – Maptastic Maple. They
                 allow you to assign object data “keys”. Without SASS maps, you
@@ -135,7 +136,7 @@ function Article() {
                 and be done.
             </p>
 
-            <h3>The Solution</h3>
+            <Header variant="h2">The Solution</Header>
             <p>
                 By using SASS maps, our solution is cleaner and more readable.
                 We’re going to define a variable called $nfl-teams and map 32
@@ -214,7 +215,7 @@ a[href$="/NYG"]:before {
 }`}
             </CodeBlock>
 
-            <h3>Conclusion</h3>
+            <Header variant="h2">Conclusion</Header>
             <p>
                 Sass maps are useful to keep your code organized and precise. If
                 you have any questions, or a way to improve this, feel free to

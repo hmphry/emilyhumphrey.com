@@ -1,7 +1,8 @@
+import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <h2>How to Read Code You Didn&apos;t Write</h2>
+            <Header variant="h1">How to Read Code You Didn&apos;t Write</Header>
             <p>
                 Reading someone else&apos;s code is one of the most underrated
                 skills in software development. Whether you&apos;re reviewing a

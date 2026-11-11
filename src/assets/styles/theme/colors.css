@@ -10,6 +10,13 @@
         --metal: #d4a574;
         --white: #ffffff;
 
+        /* AA text on light surfaces (sidebar active labels, etc.) */
+        --theme-primary-contrast: color-mix(
+            in srgb,
+            var(--theme-primary-darkest) 50%,
+            var(--color-velvet-darkest)
+        );
+
         /* Pink (default) */
         --pink-bg: #fff3f4;
         --pink-border: #fdcdd2;
@@ -68,6 +75,7 @@
     --color-ink: var(--ink);
     --color-metal: var(--metal);
     --color-white: var(--white);
+    --color-theme-primary-contrast: var(--theme-primary-contrast);
 
     --color-pink-bg: var(--pink-bg);
     --color-pink-border: var(--pink-border);

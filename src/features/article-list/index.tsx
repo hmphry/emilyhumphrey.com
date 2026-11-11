@@ -1,3 +1,4 @@
+import { Header } from "@hmphry/brand"
 import { useEffect, useRef } from "react"
 import { Link, useSearchParams } from "react-router"
 import articleRoutes from "@/content/articles/index.tsx"
@@ -32,7 +33,7 @@ function ArticleList() {
 
     return (
         <div className="content-container">
-            <h2 className="font-display text-h1 font-medium">Articles</h2>
+            <Header variant="h1">Articles</Header>
             <p className="text-content-4">And other random thoughts on code.</p>
             <ul className="grid max-w-4xl gap-10 pt-12">
                 {visibleArticles.map((a) => (

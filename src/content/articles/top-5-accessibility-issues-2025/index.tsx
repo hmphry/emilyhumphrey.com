@@ -1,7 +1,8 @@
+import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <h2>Top 5 Accessibility Errors</h2>
+            <Header variant="h1">Top 5 Accessibility Errors</Header>
             <p>
                 Accessibility is the foundation of usable design. If your app
                 only works for some users, it isn’t a complete interface... it’s
@@ -17,7 +18,7 @@ function Article() {
                 more people.
             </p>
 
-            <h3>1. Images without alt text</h3>
+            <Header variant="h2">1. Images without alt text</Header>
             <p>
                 It’s an easy mistake with serious consequences. Adding an image
                 without alt text means screen readers have nothing to announce.
@@ -33,7 +34,7 @@ function Article() {
                 aria-labelledby, or visible text for interactive elements.
             </p>
 
-            <h3>2. Reactivity Without Boilerplate</h3>
+            <Header variant="h2">2. Reactivity Without Boilerplate</Header>
             <p>
                 Vue is a compiled framework, so this comes with an admitted
                 caveat. React 19 will be compiled, and it, too, has reduced
@@ -51,7 +52,7 @@ function Article() {
                 from React's. Proceed with caution when under its hood.
             </p>
 
-            <h3>1. Provide/Inject for Scoped Dependency Sharing</h3>
+            <Header variant="h2">1. Provide/Inject for Scoped Dependency Sharing</Header>
             <p>
                 Vue’s directives like v-if, v-for, and v-bind keep logic
                 declarative and markup readable. Conditional rendering and list
@@ -79,7 +80,7 @@ function Article() {
                 putting that out there.
             </p>
 
-            <h3>Template-Driven Composition</h3>
+            <Header variant="h2">Template-Driven Composition</Header>
             <p>
                 JSX is powerful because it allows you to mix logic and markup.
                 But it can also feel directionless due to that. Of course, you
@@ -90,7 +91,7 @@ function Article() {
                 layers clean and reduces the friction of scaling a component.
             </p>
 
-            <h3>CSS and Scoped styles</h3>
+            <Header variant="h2">CSS and Scoped styles</Header>
             <p>
                 Tailwind has made utility-first styling the default in many
                 teams. But scoped styles still matter, and Vue supports them out
@@ -106,7 +107,7 @@ function Article() {
                 collisions.
             </p>
 
-            <h3>Conclusion</h3>
+            <Header variant="h2">Conclusion</Header>
             <p>
                 Framework loyalty is common. But it can be limiting. Vue and
                 React take different approaches to solving real-world UI

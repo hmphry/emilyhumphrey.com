@@ -10,7 +10,7 @@ function Layout({ children }: LayoutProps) {
         <div className="layout-grid h-full w-full">
             {/* Width spacer — real sidebar is fixed in Navigation */}
             <div className="sidebar-slot" aria-hidden="true" />
-            <div className="main pt-8">{children}</div>
+            <main className="main pt-8">{children}</main>
         </div>
     )
 }

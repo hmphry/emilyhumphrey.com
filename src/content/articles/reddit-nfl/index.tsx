@@ -1,7 +1,8 @@
+import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <h2>Reddit NFL</h2>
+            <Header variant="h1">Reddit NFL</Header>
 
             <p className="eyebrow">Originally Published on March 12th, 2023</p>
 
@@ -21,13 +22,13 @@ function Article() {
                 <img src="http://hmphry.com/wp-content/uploads/2023/09/crown.png" alt="" />
             </p>
 
-            <h3>The Crown</h3>
+            <Header variant="h2">The Crown</Header>
 
             <p>
                 The closest element we had to a logo was what we called “The Crown”. The Crown was used as the central visual element of the site and used in the global navigation. Eventually, we began using it in all applications. For The Crown, we knew we wanted something that felt quintessentially “NFL”, but with a modern twist. Our guiding principle was to keep the lines straight and avoid any curves, giving it a bold and powerful look.
             </p>
 
-            <h3>The Code</h3>
+            <Header variant="h2">The Code</Header>
 
             <p>
                 Reddit’s customization tool has its limitations, as it only offers a basic version of markdown and CSS, and places a cap on image uploads at 50. However, in 2014, I sought to enhance the process by introducing Gulp.JS and SCSS into our code base. These tools enabled us to develop a more robust theme and created a user experience not-possible otherwise

@@ -1,7 +1,8 @@
+import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <h2>How Tailwind Changed The Game... Again</h2>
+            <Header variant="h1">How Tailwind Changed The Game... Again</Header>
             <p>
                 I’ve been using Tailwind CSS since v2. At first, version 4 may
                 look simple, but it has changed how I write CSS once again. From
@@ -11,7 +12,7 @@ function Article() {
                 capabilities.
             </p>
 
-            <h3>1. Lightning CSS</h3>
+            <Header variant="h2">1. Lightning CSS</Header>
             <p>
                 First things first: PostCSS is gone. That might sound limiting.
                 But you can still add PostCSS if you truly need it. In most
@@ -27,7 +28,7 @@ function Article() {
                 today.`}
             </p>
 
-            <h3>2. First Class Vite Integration</h3>
+            <Header variant="h2">2. First Class Vite Integration</Header>
             <p>
                 Tailwind 4 works out of the box with Vite. This tight
                 integration makes use of Vite’s fast dev server, native ES
@@ -36,7 +37,7 @@ function Article() {
                 CSS, and you will be ready to proceed.
             </p>
 
-            <h3>3. CSS As Configuration</h3>
+            <Header variant="h2">3. CSS As Configuration</Header>
             <p>
                 Tailwind 4 moves away from traditional config files. It uses CSS
                 variables as a main form of configuration. Define CSS variables
@@ -53,7 +54,7 @@ function Article() {
                 adjustable runtime. It’s more than just precompiled output. It’s
                 a foundational shift.
             </p>
-            <h3>4. Modern CSS</h3>
+            <Header variant="h2">4. Modern CSS</Header>
             <p>
                 Tailwind CSS 4 embraces the full power of modern CSS. It
                 supports container queries. This lets components change based on
@@ -70,7 +71,7 @@ function Article() {
                 targeting elements more expressive and conditional styling much
                 easier.
             </p>
-            <h3>Final Thoughts</h3>
+            <Header variant="h2">Final Thoughts</Header>
             <p>
                 Tailwind 4 doesn’t reinvent the framework. It might not be as
                 flashy as JIT and arbitrary values. But, I believe Tailwind 4
