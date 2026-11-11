@@ -1,9 +1,10 @@
+import { Header } from "@hmphry/brand"
 import CodeBlock from "@/shared/code-block"
 
 function Article() {
     return (
         <article className="article">
-            <h2>Accessibility Review for AI-Generated UI</h2>
+            <Header variant="h1">Accessibility Review for AI-Generated UI</Header>
             <p>
                 The agent ran axe and gave a clean report: contrast fine, alt
                 text present, and closed the ticket.
@@ -45,7 +46,7 @@ function Article() {
                 skip.
             </p>
 
-            <h3>What the research says</h3>
+            <Header variant="h2">What the research says</Header>
             <p>The last two years of papers are blunt.</p>
             <p>
                 A{" "}
@@ -99,7 +100,7 @@ function Article() {
                 verified.
             </p>
 
-            <h3>What automation covers, and what it can&apos;t</h3>
+            <Header variant="h2">What automation covers, and what it can&apos;t</Header>
             <p>
                 Use automation aggressively. Just do not confuse it with a
                 release gate on its own.
@@ -162,14 +163,14 @@ function Article() {
                 one that is easy to automate.
             </p>
 
-            <h3>The checklist agents skip</h3>
+            <Header variant="h2">The checklist agents skip</Header>
             <p>
                 This is the ten-minute pass. I&apos;d paste it into the PR
                 template. Point the agent at it as MUST / SHOULD rules, then
                 verify by hand.
             </p>
 
-            <h4>Focus order and management</h4>
+            <Header variant="h3">Focus order and management</Header>
             <p>
                 DOM order should match visual order. Watch Tailwind{" "}
                 <code>order-*</code>, <code>flex-row-reverse</code>, and grid
@@ -197,7 +198,7 @@ function Article() {
                 space so the bar cannot cover it.
             </p>
 
-            <h4>Names and labels</h4>
+            <Header variant="h3">Names and labels</Header>
             <p>
                 Real <code>{"<label>"}</code> elements, not placeholders doing
                 double duty. Icon-only buttons need an accessible name (
@@ -219,7 +220,7 @@ function Article() {
                 / <code>legend</code>.
             </p>
 
-            <h4>Live regions and status</h4>
+            <Header variant="h3">Live regions and status</Header>
             <p>
                 Mount the region empty <strong>before</strong> you update it.
                 Agents love this pattern:
@@ -250,7 +251,7 @@ function Article() {
                 silently.
             </p>
 
-            <h4>Semantics before ARIA</h4>
+            <Header variant="h3">Semantics before ARIA</Header>
             <p>
                 A <code>{"<button>"}</code> is not a <code>div</code> with an{" "}
                 <code>onClick</code>. Real tables with header associations beat
@@ -267,7 +268,7 @@ function Article() {
                 roles.
             </p>
 
-            <h4>Composite widgets</h4>
+            <Header variant="h3">Composite widgets</Header>
             <p>
                 Comboboxes, tabs, menus, and date pickers have keyboard
                 contracts defined in the ARIA Authoring Practices Guide. Prefer
@@ -283,7 +284,7 @@ function Article() {
                 regressions from AI PRs.
             </p>
 
-            <h4>Zoom, reflow, motion, color</h4>
+            <Header variant="h3">Zoom, reflow, motion, color</Header>
             <p>
                 Check 200% and 400% zoom. Reflow should keep content usable
                 without two-dimensional scrolling for vertical text blocks.
@@ -296,7 +297,7 @@ function Article() {
                 both fail the green-dot interface.
             </p>
 
-            <h3>The workflow</h3>
+            <Header variant="h2">The workflow</Header>
             <ol className="list-decimal space-y-2 pl-6">
                 <li>
                     <p>
@@ -347,7 +348,7 @@ function Article() {
                 listed roles and names.
             </p>
 
-            <h3>A Note on Healthcare UI</h3>
+            <Header variant="h2">A Note on Healthcare UI</Header>
             <p>
                 HHS&apos;s Section 504 says recipients of HHS funding must be
                 WCAG 2.1 AA compliant for web and mobile. In May 2026 HHS{" "}
@@ -371,14 +372,14 @@ function Article() {
                 follow.
             </p>
 
-            <h3>Closing</h3>
+            <Header variant="h2">Closing</Header>
             <p>
                 Automation catches about half the issue volume. Models catch the
                 visible half of that half when prompted well. The behavioral
                 leftover is a short checklist for us humans.
             </p>
 
-            <h3>Sources</h3>
+            <Header variant="h2">Sources</Header>
             <ul className="list-disc space-y-2 pl-6">
                 <li>
                     <p>

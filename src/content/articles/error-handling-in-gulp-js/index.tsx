@@ -1,8 +1,9 @@
+import { Header } from "@hmphry/brand"
 import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
-            <h2>Error Handling in Gulp.js</h2>
+            <Header variant="h1">Error Handling in Gulp.js</Header>
 
             <p className="eyebrow">Originally Published on December 3rd, 2014</p>
 
@@ -10,7 +11,7 @@ function Article() {
                 Working with Gulp, you begin to run into a slightly annoying problem, and that is how gulp handles errors. If you mess up your code, Gulp plugins will not be sure what to do and will return an error. Once the error is returned, Gulp logs it and break the stream. In order to fix the error, you will have to fix the error, then restart your stream. Normally, this isn’t a problem, but after maybe the tenth time, it becomes tiresome. I will outline three different ways you can easily handle errors in your Gulp environment.
             </p>
 
-            <h3>Non-Breaking Errors</h3>
+            <Header variant="h2">Non-Breaking Errors</Header>
 
             <p>
                 A basic way to handle errors is with the on error method:
@@ -46,7 +47,7 @@ function errorAlert(err) {
                 Of course, all this does is send the same information as previous, but it’s easier to change in case you need to add to it in the future. At any rate, this is nice simple way to handle errors if you save all the time.
             </p>
 
-            <h3>Error Notifications</h3>
+            <Header variant="h2">Error Notifications</Header>
 
             <p>
                 Many times with Gulp, I will receive an error and not even notice it. Sometimes, Gulp will send them silently, other times not. In the beginning, I kept saving and refreshing wondering why the change isn’t working. After a few times of this occurrence, I began checking my streams like a fiend. This method will ensure you are always notified on an error, although it will break your stream. It requires a plugin called <a
@@ -75,7 +76,7 @@ function errorAlert(err) {
                 Gulp-notify is pretty cool and allows you to customize many things about the message include image, sound, and title.
             </p>
 
-            <h3>Combining Them</h3>
+            <Header variant="h2">Combining Them</Header>
 
             <p>
                 The final version I will go over is combining our error notification system, ran but gulp-notify, with another powerful plugin to create a error message which won’t break your streams. The new plugin is called <a

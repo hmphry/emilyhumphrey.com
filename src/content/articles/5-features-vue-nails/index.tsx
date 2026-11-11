@@ -1,7 +1,8 @@
+import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <h2>Vue vs React: 5 Features Vue Nails</h2>
+            <Header variant="h1">Vue vs React: 5 Features Vue Nails</Header>
             <p>
                 I enjoy working in React. But Vue has some great, unique
                 features. These features help make component logic cleaner,
@@ -9,7 +10,7 @@ function Article() {
                 Vue features I love:
             </p>
 
-            <h3>1. Provide/Inject for Scoped Dependency Sharing</h3>
+            <Header variant="h2">1. Provide/Inject for Scoped Dependency Sharing</Header>
             <p>
                 Provide and inject allow you to pass data deep into the
                 component tree. No Context, no Zustand, no props. Define a
@@ -18,7 +19,7 @@ function Article() {
                 thoughtfully it's an elegant solution to passing down data.
             </p>
 
-            <h3>2. Reactivity Without Boilerplate</h3>
+            <Header variant="h2">2. Reactivity Without Boilerplate</Header>
             <p>
                 Vue is a compiled framework, so this comes with an admitted
                 caveat. React 19 will be compiled, and it, too, has reduced
@@ -36,7 +37,7 @@ function Article() {
                 from React's. Proceed with caution when under its hood.
             </p>
 
-            <h3>3. Directives</h3>
+            <Header variant="h2">3. Directives</Header>
             <p>
                 Vue’s directives like v-if, v-for, and v-bind keep logic
                 declarative and markup readable. Conditional rendering and list
@@ -64,7 +65,7 @@ function Article() {
                 putting that out there.
             </p>
 
-            <h3>4. Template-Driven Composition</h3>
+            <Header variant="h2">4. Template-Driven Composition</Header>
             <p>
                 JSX is powerful because it allows you to mix logic and markup.
                 But it can also feel directionless due to that. Of course, you
@@ -75,7 +76,7 @@ function Article() {
                 layers clean and reduces the friction of scaling a component.
             </p>
 
-            <h3>5. CSS and Scoped styles</h3>
+            <Header variant="h2">5. CSS and Scoped styles</Header>
             <p>
                 Tailwind has made utility-first styling the default in many
                 teams. But scoped styles still matter, and Vue supports them out
@@ -91,7 +92,7 @@ function Article() {
                 collisions.
             </p>
 
-            <h3>Final Thoughts</h3>
+            <Header variant="h2">Final Thoughts</Header>
             <p>
                 Framework loyalty is common. But it can be limiting. Vue and
                 React take different approaches to solving real-world UI

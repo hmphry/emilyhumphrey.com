@@ -1,3 +1,4 @@
+import { Header } from "@hmphry/brand"
 import { Link } from "react-router-dom"
 import type { ArticleConfig } from "@/content/articles"
 
@@ -12,11 +13,11 @@ const Article = ({
 }: ArticleCardProps) => (
     <li className="grid gap-1">
         {eyebrow && <p className="text-content text-small">{eyebrow}</p>}
-        <h3 className="text-h3 font-medium">
-            <Link to={path} className="font-display hover:text-pink-key">
+        <Header variant="h2">
+            <Link to={path} className="hover:text-pink-key">
                 {title}
             </Link>
-        </h3>
+        </Header>
         <p className="text-content-4 text-small pb-2">{publishDate}</p>
         <p>{description}</p>
         <p>

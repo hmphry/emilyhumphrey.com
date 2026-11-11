@@ -1,7 +1,8 @@
+import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <h2>Introducing JSMamba</h2>
+            <Header variant="h1">Introducing JSMamba</Header>
             <p>
                 I&apos;m thrilled to introduce JSMamba, an application born from
                 a blend of my admiration for Kobe Bryant&apos;s unparalleled

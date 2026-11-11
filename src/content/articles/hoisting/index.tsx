@@ -1,8 +1,9 @@
+import { Header } from "@hmphry/brand"
 import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
-            <h2>Hoisting</h2>
+            <Header variant="h1">Hoisting</Header>
 
             <p className="eyebrow">Originally Published on September 28th, 2022</p>
 
@@ -14,13 +15,13 @@ function Article() {
                 Let’s dive into hoisting.
             </p>
 
-            <h3>Hoisting Is An Unintended Consequence</h3>
+            <Header variant="h2">Hoisting Is An Unintended Consequence</Header>
 
             <p>
                 It’s important to note that there isn’t a defined process for hoisting in JavaScript. Hoisting is just an implied behavior of compilers during the interpretation process. Before executing JavaScript, the browser interprets the entirety of the script. During this process, declarations are hoisted to the top of their scope automatically, whether they’re called or not.
             </p>
 
-            <h3>Variable Hoisting</h3>
+            <Header variant="h2">Variable Hoisting</Header>
 
             <p>
                 Hoisting works for all container types in JavaScript; however, the behavior differs between “var” and the other keywords. Only variables declared with “var” will be hoisted to the top of the scope with an undefined value. This will not throw an error.
@@ -38,13 +39,13 @@ console.log("What is 50 * 2? " + num);  // num is 100`}
                 However, variables declared with “let” and “const” will exist in the Temporal Dead Zone and throw a reference error.
             </p>
 
-            <h3>The Temporal Dead Zone</h3>
+            <Header variant="h3">The Temporal Dead Zone</Header>
 
             <p>
                 The Temporal Dead Zone, or TDZ for short, is a state in the compiler where the variables are known in scope but have an unknown value. The code will throw a reference error if the variables are referenced before their initialization. This behavior might seem counter-intuitive to the concept of hoisting, but it is beneficial when debugging.
             </p>
 
-            <h3>Function Hoisting</h3>
+            <Header variant="h2">Function Hoisting</Header>
 
             <p>
                 Function hoisting is advantageous because it allows us to hide function declarations towards the bottom of the file. When combined with comments, this makes a complex application much more readable.

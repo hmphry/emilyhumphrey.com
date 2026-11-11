@@ -1,10 +1,11 @@
+import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <h2>
+            <Header variant="h1">
                 The Devil Never Sleeps... But He Only Wins If We Don&apos;t Do
                 Better Next Time
-            </h2>
+            </Header>
             <p>
                 This is a line Juliette Kayyem said in a CNN interview about the
                 flooding in Texas. And she&apos;s right. She was appealing to

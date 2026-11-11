@@ -1,4 +1,4 @@
-import { Sigil, Wordmark } from "@hmphry/brand"
+import { Header, Sigil, Wordmark } from "@hmphry/brand"
 import "../article/styles.css"
 import "./styles.css"
 
@@ -34,7 +34,9 @@ export default function Home() {
                 </p>
                 <section className="key-section pt-12" aria-labelledby="the-key">
                     <div className="key-section__copy">
-                        <h3 id="the-key">The key</h3>
+                        <Header variant="h2" id="the-key">
+                            The key
+                        </Header>
                         <p>
                             The key in my mark was my father&apos;s work key. He
                             carried it through the years he spent supporting our

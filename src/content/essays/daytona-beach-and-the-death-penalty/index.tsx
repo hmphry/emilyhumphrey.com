@@ -1,7 +1,8 @@
+import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <h2>Daytona Beach and The Death Penalty</h2>
+            <Header variant="h1">Daytona Beach and The Death Penalty</Header>
 
             <p className="eyebrow">Originally Published on August 18th, 2021</p>
 

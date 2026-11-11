@@ -48,9 +48,8 @@ export default function App() {
         <>
             <GoatCounterTracker />
             <Navigation />
-            <SiteLayout>
+            <SiteLayout footer={<Footer />}>
                 <Outlet />
-                <Footer />
             </SiteLayout>
         </>
     )

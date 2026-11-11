@@ -1,10 +1,11 @@
+import { Header } from "@hmphry/brand"
 import articleRoutes from "@/content/projects/index.tsx"
 import Article from "./article"
 
 function ProjectList() {
     return (
         <div className="content-container">
-            <h2 className="font-display text-h1 font-medium">Projects</h2>
+            <Header variant="h1">Projects</Header>
             <p>Some text here</p>
             <ul className="grid max-w-4xl gap-10 pt-12">
                 {articleRoutes.map((a) => (

@@ -2,30 +2,15 @@
 
 .article {
     @apply grid grid-cols-1 gap-4;
-    h2, h3, h4, h5, h6, p, eyebrow, .code-block {
+    h1, h2, h3, h4, h5, h6, p, .eyebrow, .code-block {
         max-width: 800px;
     }
-    h2, h3, h4, h5, h6 {
-        @apply font-display font-medium;
-    }
-    h2 {
-        font-size: 2.441rem;
-    }
-    h3{
+    /* Section rhythm — sizes come from brand Header */
+    h2, h3, h4 {
         @apply pt-12;
-        font-size: 1.953rem;
     }
-    h4{
-        @apply pt-12;
-        font-size: 1.563rem;
-    }
-    h5{
+    h5, h6 {
         @apply pt-10;
-        font-size: 1.25rem;
-    }
-    h6{
-        @apply pt-10;
-        font-size: 1rem;
     }
     .eyebrow {
         font-size: 0.8rem;

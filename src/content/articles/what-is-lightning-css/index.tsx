@@ -1,7 +1,8 @@
+import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <h2>What is Lightning CSS?</h2>
+            <Header variant="h1">What is Lightning CSS?</Header>
             <p>
                 Lightning CSS is a blazing-fast CSS processor built in Rust.
                 Originally made for the Parcel bundler, it’s now getting popular
@@ -17,7 +18,7 @@ function Article() {
                 not.
             </p>
 
-            <h3>1. It’s fast—really fast</h3>
+            <Header variant="h2">1. It’s fast—really fast</Header>
             <p>
                 Lightning CSS is written in Rust, designed for performance.
                 Compared to PostCSS and other JS-based processors, it’s
@@ -29,7 +30,7 @@ function Article() {
                 traditional CSS processors.
             </p>
 
-            <h3>2. Built-in CSS minification</h3>
+            <Header variant="h2">2. Built-in CSS minification</Header>
             <p>
                 No need for a separate minifier. Lightning CSS handles this by
                 default, compressing your styles without extra tooling. It
@@ -37,7 +38,7 @@ function Article() {
                 custom media queries.
             </p>
 
-            <h3>3. Automatic vendor prefixing</h3>
+            <Header variant="h2">3. Automatic vendor prefixing</Header>
             <p>
                 Lightning CSS automatically adds vendor prefixes for your target
                 browsers. This ensures wide compatibility without any extra
@@ -45,7 +46,7 @@ function Article() {
                 be in your package.json or in a separate .browserslistrc file.
             </p>
 
-            <h3>4. Future-proof CSS features</h3>
+            <Header variant="h2">4. Future-proof CSS features</Header>
             <p>
                 Lightning CSS supports features from the CSS spec that haven’t
                 fully landed in browsers yet. For example:
@@ -60,14 +61,14 @@ function Article() {
                 support.
             </p>
 
-            <h3>5. Tailwind 4 integration is seamless</h3>
+            <Header variant="h2">5. Tailwind 4 integration is seamless</Header>
             <p>
                 If you’re using Tailwind CSS 4, you’re already using Lightning
                 CSS under the hood. No extra setup. Faster builds, better
                 support for new CSS syntax, and a leaner dependency tree.
             </p>
 
-            <h3>6. It’s also a standalone tool</h3>
+            <Header variant="h2">6. It’s also a standalone tool</Header>
             <p>
                 You can also use Lightning CSS without Tailwind. It works as a
                 CSS bundler, minifier, or transformer in your build pipeline.
@@ -75,7 +76,7 @@ function Article() {
                 future-proof syntax. And lightning CSS check those boxes.
             </p>
 
-            <h3>Final thoughts</h3>
+            <Header variant="h2">Final thoughts</Header>
             <p>
                 Lightning CSS is a modern rethink of how CSS tooling should
                 work. Whether you choose Tailwind, create your own styles, or
