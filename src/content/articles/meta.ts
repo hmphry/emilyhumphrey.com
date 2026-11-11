@@ -2,7 +2,10 @@ import type { MetaDescriptor } from "react-router"
 import type { ArticleConfig } from "./index.tsx"
 import accessibilityReviewImage from "@/assets/social-images/accessibility-review-for-ai-generated-ui.png"
 
-const siteOrigin = "https://emilyhumphrey.com"
+// Unset in production, so canonical and social URLs stay on emilyhumphrey.com.
+// Staging sets VITE_SITE_ORIGIN so those absolute URLs match the uploaded host.
+const siteOrigin =
+    import.meta.env.VITE_SITE_ORIGIN || "https://emilyhumphrey.com"
 const siteName = "Emily Humphrey"
 const authorProfileUrl = "https://www.linkedin.com/in/heyhmphry/"
 
