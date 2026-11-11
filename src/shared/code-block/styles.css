@@ -67,38 +67,38 @@
 
 .code-block__code .hljs-comment,
 .code-block__code .hljs-quote {
-    color: color-mix(in srgb, var(--cream-key) 40%, var(--ink));
+    color: color-mix(in srgb, var(--cream-key) 35%, var(--ink));
     font-style: italic;
 }
 
 .code-block__code .hljs-keyword,
 .code-block__code .hljs-selector-tag,
 .code-block__code .hljs-addition {
-    color: color-mix(in srgb, var(--pink-key) 55%, var(--ink));
+    color: color-mix(in srgb, var(--pink-key) 40%, var(--ink));
 }
 
 .code-block__code .hljs-string,
 .code-block__code .hljs-meta .hljs-string,
 .code-block__code .hljs-regexp {
-    color: color-mix(in srgb, var(--metal) 70%, var(--ink));
+    color: color-mix(in srgb, var(--metal) 48%, var(--ink));
 }
 
 .code-block__code .hljs-number,
 .code-block__code .hljs-literal,
 .code-block__code .hljs-bullet {
-    color: color-mix(in srgb, var(--canary-key) 45%, var(--ink));
+    color: color-mix(in srgb, var(--canary-key) 28%, var(--ink));
 }
 
 .code-block__code .hljs-title,
 .code-block__code .hljs-section,
 .code-block__code .hljs-title.function_ {
-    color: color-mix(in srgb, var(--blue-key) 45%, var(--ink));
+    color: color-mix(in srgb, var(--blue-key) 32%, var(--ink));
 }
 
 .code-block__code .hljs-type,
 .code-block__code .hljs-class .hljs-title,
 .code-block__code .hljs-title.class_ {
-    color: color-mix(in srgb, var(--lilac-key) 45%, var(--ink));
+    color: color-mix(in srgb, var(--lilac-key) 35%, var(--ink));
 }
 
 .code-block__code .hljs-built_in,
@@ -107,7 +107,7 @@
 .code-block__code .hljs-name,
 .code-block__code .hljs-selector-id,
 .code-block__code .hljs-selector-class {
-    color: color-mix(in srgb, var(--mint-key) 45%, var(--ink));
+    color: color-mix(in srgb, var(--mint-key) 35%, var(--ink));
 }
 
 .code-block__code .hljs-tag,
@@ -116,7 +116,7 @@
 .code-block__code .hljs-variable,
 .code-block__code .hljs-template-variable,
 .code-block__code .hljs-deletion {
-    color: color-mix(in srgb, var(--rose-key) 50%, var(--ink));
+    color: color-mix(in srgb, var(--rose-key) 40%, var(--ink));
 }
 
 .code-block__code .hljs-meta,
