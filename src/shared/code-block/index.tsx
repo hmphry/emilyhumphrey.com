@@ -68,7 +68,7 @@ function CodeBlock({ children, language }: CodeBlockProps) {
                     <span>{copied ? "Copied" : "Copy"}</span>
                 </button>
             </div>
-            <pre className="code-block__pre">
+            <pre className="code-block__pre" tabIndex={0}>
                 {html === null ? (
                     <code className={`code-block__code language-${language}`}>
                         {children}
