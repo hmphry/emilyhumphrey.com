@@ -3,3 +3,28 @@
 body {
     background: var(--surface-0);
 }
+
+.skip-link {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    z-index: 100;
+    padding: 0.5rem 0.75rem;
+    background: var(--surface-1);
+    color: var(--ink);
+    text-decoration: underline;
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.skip-link:focus {
+    clip-path: none;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    outline: 2px solid var(--theme-primary-contrast, var(--ink));
+    outline-offset: 2px;
+}

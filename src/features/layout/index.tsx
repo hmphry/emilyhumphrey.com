@@ -12,7 +12,9 @@ function Layout({ children, footer }: LayoutProps) {
             {/* Width spacer — real sidebar is fixed in Navigation */}
             <div className="sidebar-slot" aria-hidden="true" />
             <div className="main pt-8">
-                <main>{children}</main>
+                <main id="main-content" tabIndex={-1}>
+                    {children}
+                </main>
                 {footer}
             </div>
         </div>

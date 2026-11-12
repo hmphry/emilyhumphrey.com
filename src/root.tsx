@@ -46,6 +46,9 @@ export function Layout({ children }: { children: ReactNode }) {
 export default function App() {
     return (
         <>
+            <a href="#main-content" className="skip-link">
+                Skip to main content
+            </a>
             <GoatCounterTracker />
             <Navigation />
             <SiteLayout footer={<Footer />}>

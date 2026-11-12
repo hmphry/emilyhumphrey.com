@@ -57,17 +57,20 @@ function ArticleList() {
                             Previous
                         </span>
                     )}
-                    <ol className="flex gap-3">
+                    <ol className="flex items-center gap-3">
                         {Array.from({ length: pageCount }, (_, index) => {
                             const pageNumber = index + 1
                             const isCurrent = pageNumber === page
+                            const pageClassName =
+                                "inline-flex min-h-6 min-w-6 items-center justify-center font-display"
 
                             return (
                                 <li key={pageNumber}>
                                     {isCurrent ? (
                                         <span
                                             aria-current="page"
-                                            className="text-pink-key font-display"
+                                            aria-label={`Page ${pageNumber}`}
+                                            className={`${pageClassName} text-pink-key`}
                                         >
                                             {pageNumber}
                                         </span>
@@ -76,7 +79,8 @@ function ArticleList() {
                                             to={{
                                                 search: pageSearch(pageNumber),
                                             }}
-                                            className="hover:text-pink-key"
+                                            aria-label={`Page ${pageNumber}`}
+                                            className={`${pageClassName} hover:text-pink-key`}
                                         >
                                             {pageNumber}
                                         </Link>
