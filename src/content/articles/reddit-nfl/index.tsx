@@ -2,7 +2,7 @@ import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <Header variant="h1">Reddit NFL</Header>
+            <Header variant="h2">Reddit NFL</Header>
 
             <p className="eyebrow">Originally Published on March 12th, 2023</p>
 
@@ -11,31 +11,31 @@ function Article() {
             </p>
 
             <p>
-                We also created a unique brand, aiming to be taken more seriously. To foster a greater sense of community, we organized special events with unique themes that brought fans together, amplifying the excitement and camaraderie. Our revamped subreddit was soon noticed by Reddit’s COO at the time, Erik Martin, and he recognized the effort with the “CSS Animal” award. It was a proud moment for the team.
+                We also created a unique brand, aiming to be taken more seriously. To foster a greater sense of community, we organized special events with unique themes that brought fans together, amplifying the excitement and camaraderie. Our revamped subreddit was soon noticed by Reddit?s COO at the time, Erik Martin, and he recognized the effort with the ?CSS Animal? award. It was a proud moment for the team.
             </p>
 
             <p>
-                It involved collaboration from the entire team, and I’m grateful for the opportunity to have cultivated a subreddit that millions of NFL fans consider their online football sanctuary.
+                It involved collaboration from the entire team, and I?m grateful for the opportunity to have cultivated a subreddit that millions of NFL fans consider their online football sanctuary.
             </p>
 
             <p>
                 <img src="http://hmphry.com/wp-content/uploads/2023/09/crown.png" alt="" />
             </p>
 
-            <Header variant="h2">The Crown</Header>
+            <Header variant="h3">The Crown</Header>
 
             <p>
-                The closest element we had to a logo was what we called “The Crown”. The Crown was used as the central visual element of the site and used in the global navigation. Eventually, we began using it in all applications. For The Crown, we knew we wanted something that felt quintessentially “NFL”, but with a modern twist. Our guiding principle was to keep the lines straight and avoid any curves, giving it a bold and powerful look.
+                The closest element we had to a logo was what we called ?The Crown?. The Crown was used as the central visual element of the site and used in the global navigation. Eventually, we began using it in all applications. For The Crown, we knew we wanted something that felt quintessentially ?NFL?, but with a modern twist. Our guiding principle was to keep the lines straight and avoid any curves, giving it a bold and powerful look.
             </p>
 
-            <Header variant="h2">The Code</Header>
+            <Header variant="h3">The Code</Header>
 
             <p>
-                Reddit’s customization tool has its limitations, as it only offers a basic version of markdown and CSS, and places a cap on image uploads at 50. However, in 2014, I sought to enhance the process by introducing Gulp.JS and SCSS into our code base. These tools enabled us to develop a more robust theme and created a user experience not-possible otherwise
+                Reddit?s customization tool has its limitations, as it only offers a basic version of markdown and CSS, and places a cap on image uploads at 50. However, in 2014, I sought to enhance the process by introducing Gulp.JS and SCSS into our code base. These tools enabled us to develop a more robust theme and created a user experience not-possible otherwise
             </p>
 
             <p>
-                I am quite proud of this code base and it’s longevity. After stepping away from the project in 2020 due to dwindling interest in the NFL, it has been taken over and maintained by other developers and is still in use and beloved by the fan base, nearly a decade after launch.
+                I am quite proud of this code base and it?s longevity. After stepping away from the project in 2020 due to dwindling interest in the NFL, it has been taken over and maintained by other developers and is still in use and beloved by the fan base, nearly a decade after launch.
             </p>
 
             <p>

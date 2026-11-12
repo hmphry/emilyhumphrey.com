@@ -2,7 +2,7 @@ import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <Header variant="h1">Sarcasm Translator</Header>
+            <Header variant="h2">Sarcasm Translator</Header>
 
             <p className="eyebrow">Originally Published on December 20th, 2018</p>
 
@@ -18,7 +18,7 @@ function Article() {
                 ?Well?then?I?got?a?plugin?for?you!?
             </p>
 
-            <Header variant="h2">Introducing the Sarcasm Transformer!</Header>
+            <Header variant="h3">Introducing the Sarcasm Transformer!</Header>
 
             <p>
                 With the Sarcasm Transformer, writing sarcastic messages is just a right click away! Simply select the text you wish to transform, right click on it and select one of the three options!

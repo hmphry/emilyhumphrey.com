@@ -13,7 +13,7 @@ const Article = ({
 }: ArticleCardProps) => (
     <li className="grid gap-1">
         {eyebrow && <p className="text-content text-small">{eyebrow}</p>}
-        <Header variant="h2">
+        <Header variant="h3">
             <Link to={path} className="hover:text-pink-key">
                 {title}
             </Link>

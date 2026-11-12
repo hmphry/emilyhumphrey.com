@@ -3,21 +3,21 @@ import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
-            <Header variant="h1">JavaScript Variables</Header>
+            <Header variant="h2">JavaScript Variables</Header>
 
             <p className="eyebrow">Originally Published on August 28th, 2019</p>
 
             <p>
-                Variables are a pretty simple concept. For most of JavaScript’s life, the only difficult decision about variables was what to call them. Then ES6 came out and all of a sudden, we have three variable options. Each with different names and properties. So what is the difference? Also, more importantly, when should you use which?
+                Variables are a pretty simple concept. For most of JavaScript?s life, the only difficult decision about variables was what to call them. Then ES6 came out and all of a sudden, we have three variable options. Each with different names and properties. So what is the difference? Also, more importantly, when should you use which?
             </p>
 
-            <Header variant="h2">Readability</Header>
+            <Header variant="h3">Readability</Header>
 
             <p>
-                Const is the most readable of the three. That’s because const can never be reassigned in a scope. It has a quite specific and narrow use case. Const is so readable it gives context to let simply by existing. Let value can be reassigned and therefore has an entirely different use case than const. Var, on the other hand, tells you nothing about how the data was intended to be handled. It could be reassigned, and it could not be. Let can indeed suffer from this problem as well, const + let architecture is much more common than const + var because const and let have the same behavior. So while let has the same weakness as var, let was made to be paired with const, which var was not.
+                Const is the most readable of the three. That?s because const can never be reassigned in a scope. It has a quite specific and narrow use case. Const is so readable it gives context to let simply by existing. Let value can be reassigned and therefore has an entirely different use case than const. Var, on the other hand, tells you nothing about how the data was intended to be handled. It could be reassigned, and it could not be. Let can indeed suffer from this problem as well, const + let architecture is much more common than const + var because const and let have the same behavior. So while let has the same weakness as var, let was made to be paired with const, which var was not.
             </p>
 
-            <Header variant="h2">Scope</Header>
+            <Header variant="h3">Scope</Header>
 
             <p>
                 Both let and const are block-scoped. Meaning, values initiated inside blocks can not be accessed outside those blocks:
@@ -71,7 +71,7 @@ runSystem() // logs "System is running"`}
                 If we had used let, or even better: const, we would have gotten a syntax error. Instead, we got a system, which was designed not to run when an emergency was declared, running when a freaking emergency was declared! Due to this behavior, I think let and const are more reliable than var to hold data.
             </p>
 
-            <Header variant="h2">Hoisting</Header>
+            <Header variant="h3">Hoisting</Header>
 
             <p>
                 Contrary to popular believe, const and let are indeed hoisted!
@@ -89,13 +89,13 @@ healthyFood() //logs ReferenceError`}
             </CodeBlock>
 
             <p>
-                If let and const were not hoisted, than favoriteFoods should have logged Mac and Cheese. Instead, it results in a reference error. This result isn’t because the variable doesn’t exist; it’s because the variable wasn’t initialized! When called before being initialized, let and const exist within something called the Temporal Dead Zone(TDZ). The TDZ isn’t particularly important to understand right now, but instead of resolving as “undefined,” it emits an error. This behavior produces higher visibility of bugs. There are not many reasons to intentionally call a variable before it is initialized.
+                If let and const were not hoisted, than favoriteFoods should have logged Mac and Cheese. Instead, it results in a reference error. This result isn?t because the variable doesn?t exist; it?s because the variable wasn?t initialized! When called before being initialized, let and const exist within something called the Temporal Dead Zone(TDZ). The TDZ isn?t particularly important to understand right now, but instead of resolving as ?undefined,? it emits an error. This behavior produces higher visibility of bugs. There are not many reasons to intentionally call a variable before it is initialized.
             </p>
 
-            <Header variant="h2">In Conclusion</Header>
+            <Header variant="h3">In Conclusion</Header>
 
             <p>
-                In my opinion, there isn’t a particularly strong reason to use “var” over “let” or “const.” It’s an unreliable form of data that is less readable, which can cause hard to debug problems and is notoriously difficult to track. So I suggest removing var from your lexicon entirely. This decision also makes the “what declaration to use when” extremely simple going forward: if you plan to reassign, use let. If not, use const.
+                In my opinion, there isn?t a particularly strong reason to use ?var? over ?let? or ?const.? It?s an unreliable form of data that is less readable, which can cause hard to debug problems and is notoriously difficult to track. So I suggest removing var from your lexicon entirely. This decision also makes the ?what declaration to use when? extremely simple going forward: if you plan to reassign, use let. If not, use const.
             </p>
         </article>
     )

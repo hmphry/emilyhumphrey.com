@@ -5,7 +5,7 @@ import Article from "./article"
 function ProjectList() {
     return (
         <div className="content-container">
-            <Header variant="h1">Projects</Header>
+            <Header variant="h2">Projects</Header>
             <p>Some text here</p>
             <ul className="grid max-w-4xl gap-10 pt-12">
                 {articleRoutes.map((a) => (

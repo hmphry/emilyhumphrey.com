@@ -2,7 +2,7 @@ import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <Header variant="h1">Vue vs React: 5 Features Vue Nails</Header>
+            <Header variant="h2">Vue vs React: 5 Features Vue Nails</Header>
             <p>
                 I enjoy working in React. But Vue has some great, unique
                 features. These features help make component logic cleaner,
@@ -10,7 +10,7 @@ function Article() {
                 Vue features I love:
             </p>
 
-            <Header variant="h2">1. Provide/Inject for Scoped Dependency Sharing</Header>
+            <Header variant="h3">1. Provide/Inject for Scoped Dependency Sharing</Header>
             <p>
                 Provide and inject allow you to pass data deep into the
                 component tree. No Context, no Zustand, no props. Define a
@@ -19,7 +19,7 @@ function Article() {
                 thoughtfully it's an elegant solution to passing down data.
             </p>
 
-            <Header variant="h2">2. Reactivity Without Boilerplate</Header>
+            <Header variant="h3">2. Reactivity Without Boilerplate</Header>
             <p>
                 Vue is a compiled framework, so this comes with an admitted
                 caveat. React 19 will be compiled, and it, too, has reduced
@@ -37,9 +37,9 @@ function Article() {
                 from React's. Proceed with caution when under its hood.
             </p>
 
-            <Header variant="h2">3. Directives</Header>
+            <Header variant="h3">3. Directives</Header>
             <p>
-                Vue’s directives like v-if, v-for, and v-bind keep logic
+                Vue?s directives like v-if, v-for, and v-bind keep logic
                 declarative and markup readable. Conditional rendering and list
                 generation feel native, not engineered. Custom directives take
                 this further. They let you wrap low-level DOM behavior, like
@@ -48,7 +48,7 @@ function Article() {
             </p>
             <p>
                 In React, the equivalent often involves hooks, extra components,
-                or both. It works—but it’s more ceremony for the same result.
+                or both. It works?but it?s more ceremony for the same result.
             </p>
             <p>
                 I love ternaries, but I hate when people nest them. For some
@@ -65,18 +65,18 @@ function Article() {
                 putting that out there.
             </p>
 
-            <Header variant="h2">4. Template-Driven Composition</Header>
+            <Header variant="h3">4. Template-Driven Composition</Header>
             <p>
                 JSX is powerful because it allows you to mix logic and markup.
                 But it can also feel directionless due to that. Of course, you
                 should separate business and reusable logic into hooks. But that
-                has its own downsides: file bloat being chief among them. Vue’s
+                has its own downsides: file bloat being chief among them. Vue?s
                 template syntax and Composition API work together to solve this
                 problem. Separating business and rendering logic keeps both
                 layers clean and reduces the friction of scaling a component.
             </p>
 
-            <Header variant="h2">5. CSS and Scoped styles</Header>
+            <Header variant="h3">5. CSS and Scoped styles</Header>
             <p>
                 Tailwind has made utility-first styling the default in many
                 teams. But scoped styles still matter, and Vue supports them out
@@ -92,7 +92,7 @@ function Article() {
                 collisions.
             </p>
 
-            <Header variant="h2">Final Thoughts</Header>
+            <Header variant="h3">Final Thoughts</Header>
             <p>
                 Framework loyalty is common. But it can be limiting. Vue and
                 React take different approaches to solving real-world UI

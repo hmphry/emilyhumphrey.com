@@ -1,4 +1,4 @@
-import { Header, Sigil, Wordmark } from "@hmphry/brand"
+import { Header, Sigil } from "@hmphry/brand"
 import "../article/styles.css"
 import "./styles.css"
 
@@ -9,13 +9,6 @@ export function meta() {
 export default function Home() {
     return (
         <div className="home content-container">
-            <h1 className="mt-8 mb-0">
-                <Wordmark
-                    size="md"
-                    textColor="var(--theme-primary-main)"
-                    aria-label="Emily Humphrey"
-                />
-            </h1>
             <article className="article pt-10">
                 <p>
                     I&apos;m Emily Humphrey, a front-end engineer with more than
@@ -34,7 +27,7 @@ export default function Home() {
                 </p>
                 <section className="key-section pt-12" aria-labelledby="the-key">
                     <div className="key-section__copy">
-                        <Header variant="h2" id="the-key">
+                        <Header variant="h3" id="the-key">
                             The key
                         </Header>
                         <p>

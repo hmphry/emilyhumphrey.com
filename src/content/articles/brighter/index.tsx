@@ -2,7 +2,7 @@ import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <Header variant="h1">You Made My Spirit Brighter</Header>
+            <Header variant="h2">You Made My Spirit Brighter</Header>
 
             <p className="eyebrow">Originally Published on December 20th, 2018</p>
 
@@ -18,13 +18,13 @@ function Article() {
                 <a href="https://giphy.com/embed/26tP7rT7PEInZ6uIw" target="_blank" rel="noopener">View embed</a>
             </p>
 
-            <p>Whether youâ€™ve listened to my opinions on Gotham;</p>
+            <p>Whether you’ve listened to my opinions on Gotham;</p>
 
             <p>
                 <a href="https://giphy.com/embed/1pLsiOm6BIYCSE87Rv" target="_blank" rel="noopener">View embed</a>
             </p>
 
-            <p>Youâ€™ve put up with me ignoring the objective to pin the enemy Reinhardt off a cliff;</p>
+            <p>You’ve put up with me ignoring the objective to pin the enemy Reinhardt off a cliff;</p>
 
             <p>
                 <img src="http://hmphry.com/wp-content/uploads/2018/12/35948765_640174843011996_7321668326160072704_n.jpg" alt="" />
@@ -36,7 +36,7 @@ function Article() {
                 <img src="http://hmphry.com/wp-content/uploads/2018/12/26869276_164504030997875_6344745866854662144_n.jpg" alt="" />
             </p>
 
-            <p>Weâ€™ve taken a road trip together;</p>
+            <p>We’ve taken a road trip together;</p>
 
             <p>
                 <img src="http://hmphry.com/wp-content/uploads/2018/12/33790411_1562192320569993_1562349617264197632_n.jpg" alt="" />
@@ -54,7 +54,7 @@ function Article() {
                 <img src="http://hmphry.com/wp-content/uploads/2018/12/16229194_714285795420502_2764724195655942144_n.jpg" alt="" />
             </p>
 
-            <p>Or youâ€™re just an adorable dog who loves belly rubs;</p>
+            <p>Or you’re just an adorable dog who loves belly rubs;</p>
 
             <p>
                 <img src="http://hmphry.com/wp-content/uploads/2018/12/40000392_221951245342102_9124813360729161728_n.jpg" alt="" />
