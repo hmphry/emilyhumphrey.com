@@ -1,16 +1,21 @@
 @import "tailwindcss";
 
 .vertical-grid {
-    @apply grid;
-    grid-template-areas: 
-        "header main footer";
-    grid-template-row: auto 1fr auto;
+    @apply grid min-h-full;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+
     .header {
-        grid-area: sidebar;
+        grid-area: header;
     }
-    .main {
+
+    .content {
         grid-area: main;
     }
+
     .footer {
         grid-area: footer;
     }

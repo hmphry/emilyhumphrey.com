@@ -11,6 +11,6 @@
 }
 
 .main {
-    @apply px-4;
+    @apply min-h-full px-4;
     grid-area: main;
 }
