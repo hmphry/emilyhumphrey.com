@@ -33,7 +33,7 @@ function ArticleList() {
 
     return (
         <div className="content-container">
-            <Header variant="h1">Articles</Header>
+            <Header variant="h2">Articles</Header>
             <p className="text-content-4">And other random thoughts on code.</p>
             <ul className="grid max-w-4xl gap-10 pt-12">
                 {visibleArticles.map((a) => (

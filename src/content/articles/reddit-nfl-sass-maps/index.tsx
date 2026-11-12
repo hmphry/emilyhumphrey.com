@@ -3,26 +3,26 @@ import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
-            <Header variant="h1">Reddit NFL and Sass Maps</Header>
+            <Header variant="h2">Reddit NFL and Sass Maps</Header>
             <p className="eyebrow">Originally Published on August 25th, 2014</p>
-            <Header variant="h2">Backstory</Header>
+            <Header variant="h3">Backstory</Header>
             <p>
-                I’ve been recently diving into refactoring the code of r/NFL,
-                Reddit’s NFL community. The code is about two years old now, and
+                I?ve been recently diving into refactoring the code of r/NFL,
+                Reddit?s NFL community. The code is about two years old now, and
                 as you would guess, coding to customize Reddit is not a clean
-                process. Reddit uses markdown to insert custom content, so we’re
+                process. Reddit uses markdown to insert custom content, so we?re
                 not allowed to use IDs, classes, or any HTML identifying
                 attributes other than titles. I like to use titles for simple
                 things and creating a unique identifying sequence with Header
                 for complex elements(46 = h2+h6+custom content). This, plus wear
-                and tear from updating and adding “features,” not too mention a
+                and tear from updating and adding ?features,? not too mention a
                 specific mod plugin that likes to expand and format the
-                subreddit’s CSS automatically, has left the code base a bit
-                unmanageable. To make matters worse, we’ve hit the 100kb cap
+                subreddit?s CSS automatically, has left the code base a bit
+                unmanageable. To make matters worse, we?ve hit the 100kb cap
                 limit, so no more additions until we clean up.
             </p>
             <p>
-                So, we decided to rebuild. We’re coding the new theme in SASS
+                So, we decided to rebuild. We?re coding the new theme in SASS
                 and markdown, using Gulp.js to compile the files into
                 Reddit-usable code. You can track and contribute to the project
                 on{" "}
@@ -44,17 +44,17 @@ function Article() {
                 .
             </p>
 
-            <Header variant="h2">The Problem</Header>
+            <Header variant="h3">The Problem</Header>
             <p>
-                I knew we’d encounter some issues, and one of them would be the
+                I knew we?d encounter some issues, and one of them would be the
                 NFL team associated data. For those that do not know, the NFL
                 has 32 teams. Users of r/NFL are allowed to select one of these
-                teams to mark their profiles. This is called “flair” on Reddit.
-                A user’s flair is shown next to their username on every comment
+                teams to mark their profiles. This is called ?flair? on Reddit.
+                A user?s flair is shown next to their username on every comment
                 made within r/NFL. Users can also insert these logos into
-                comments, by either using a team’s call sign(I.E. NYG = Giants,
-                CHI = Bears), or by linking to that team’s subreddit, which are
-                not always the same as the team’s name(I.E.{" "}
+                comments, by either using a team?s call sign(I.E. NYG = Giants,
+                CHI = Bears), or by linking to that team?s subreddit, which are
+                not always the same as the team?s name(I.E.{" "}
                 <a
                     href="https://old.reddit.com/r/nygiants/"
                     target="_blank"
@@ -76,18 +76,18 @@ function Article() {
                 use the same sprite sheet, as user flair. There is just a change
                 in the background position. Previously to SASS maps, the only
                 way to accomplish this section would be to either hardcode
-                everything, using objects and the “nth” function, or code three
+                everything, using objects and the ?nth? function, or code three
                 different loops, bloating the code base out three times the
                 size!
             </p>
 
-            <Header variant="h2">Enter Our Hero, The SASS Map</Header>
+            <Header variant="h3">Enter Our Hero, The SASS Map</Header>
             <p>
-                SASS Maps were introduced in Sass 3.3 – Maptastic Maple. They
-                allow you to assign object data “keys”. Without SASS maps, you
+                SASS Maps were introduced in Sass 3.3 ? Maptastic Maple. They
+                allow you to assign object data ?keys?. Without SASS maps, you
                 could handle objects like this $animals: (Lion Panthera
                 Felidae), (Wolf, Canis, Canidae);, then break them out with
-                SASS’ “nth” function, as mentioned above. This isn’t very
+                SASS? ?nth? function, as mentioned above. This isn?t very
                 intuitive, and can lead to confusion later down the road. With
                 Maps, the example would look something like this: $animals:
                 (name:Lion, genus:Panthera, family:Felidae), (name:Wolf,
@@ -111,10 +111,10 @@ function Article() {
                 `}
             </CodeBlock>
             <p>
-                Simple enough. However, what if you wanted to add a “tribe” key
-                after the genus, or a descriptor like “Large” or “Grey” before
-                the name? You’ll have to either remap all the objects then the
-                variables in every each loop, or code out of hierarchy. It’s not
+                Simple enough. However, what if you wanted to add a ?tribe? key
+                after the genus, or a descriptor like ?Large? or ?Grey? before
+                the name? You?ll have to either remap all the objects then the
+                variables in every each loop, or code out of hierarchy. It?s not
                 very maintainable. Using a Map, the code would look like this:
             </p>
             <CodeBlock language="scss">
@@ -136,12 +136,12 @@ function Article() {
                 and be done.
             </p>
 
-            <Header variant="h2">The Solution</Header>
+            <Header variant="h3">The Solution</Header>
             <p>
                 By using SASS maps, our solution is cleaner and more readable.
-                We’re going to define a variable called $nfl-teams and map 32
+                We?re going to define a variable called $nfl-teams and map 32
                 objects with name, abbr, and url. Warning: very long code
-                incoming. We’re storing each team on a new line, in case an
+                incoming. We?re storing each team on a new line, in case an
                 event where we have to change it.
             </p>
             <CodeBlock language="scss">
@@ -180,7 +180,7 @@ function Article() {
 	(name:redskins, abbr:WAS, url:redskins);`}
             </CodeBlock>
             <p>
-                Now, we’re going to to create just one loop to create the code
+                Now, we?re going to to create just one loop to create the code
                 we need:
             </p>
             <CodeBlock language="scss">
@@ -202,9 +202,9 @@ function Article() {
 }`}
             </CodeBlock>
             <p>
-                You don’t have to define each as a variable. I did in this case
+                You don?t have to define each as a variable. I did in this case
                 because I am using them as selector, but you can simply use the
-                get-map() function if they’re values. The final product looks
+                get-map() function if they?re values. The final product looks
                 something like this, but repeated 31 times:
             </p>
             <CodeBlock language="css">
@@ -215,12 +215,12 @@ a[href$="/NYG"]:before {
 }`}
             </CodeBlock>
 
-            <Header variant="h2">Conclusion</Header>
+            <Header variant="h3">Conclusion</Header>
             <p>
                 Sass maps are useful to keep your code organized and precise. If
                 you have any questions, or a way to improve this, feel free to
                 tweet, comment below, or open a github issue for r/nfl. Finally,
-                Let’s go Giants and thanks for reading!
+                Let?s go Giants and thanks for reading!
             </p>
         </article>
     )

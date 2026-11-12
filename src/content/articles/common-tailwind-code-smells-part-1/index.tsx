@@ -2,7 +2,7 @@ import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <Header variant="h1">Common Tailwind Code Smells (Part 1)</Header>
+            <Header variant="h2">Common Tailwind Code Smells (Part 1)</Header>
             <p>
                 Tailwind makes it fast to build, and just as fast to create a
                 mess. When every style decision lives in the markup, bad habits
@@ -17,7 +17,7 @@ function Article() {
                 1:
             </p>
 
-            <Header variant="h2">Misusing Arbitrary Values</Header>
+            <Header variant="h3">Misusing Arbitrary Values</Header>
             <p>
                 Arbitrary values are great for one-offs, but they get abused
                 quickly. When overused, they break consistency, increase
@@ -26,21 +26,21 @@ function Article() {
                 class using @apply.
             </p>
 
-            <Header variant="h2">Classes Over Semantics</Header>
+            <Header variant="h3">Classes Over Semantics</Header>
             <p>
                 Styling a span like a button might look fine in the browser, but
                 it breaks accessibility and behavior. Use the right element for
                 the job. Tailwind styles HTML. It does not replace it.
             </p>
 
-            <Header variant="h2">Duplicate Utility Chains</Header>
+            <Header variant="h3">Duplicate Utility Chains</Header>
             <p>
                 If you are copying the same utility stack across elements, that
                 is a smell. It adds clutter and slows down future updates. If it
                 repeats, extract it into a reusable class or component.
             </p>
 
-            <Header variant="h2">Utility Creep in Logic</Header>
+            <Header variant="h3">Utility Creep in Logic</Header>
             <p>
                 Packing conditionals into class strings makes components harder
                 to read and harder to trust. If you are stacking ternaries and
@@ -48,7 +48,7 @@ function Article() {
                 or a utility like clsx or tailwind-merge.
             </p>
 
-            <Header variant="h2">Using Pixels</Header>
+            <Header variant="h3">Using Pixels</Header>
             <p>
                 Tailwind is based on rem units for a reason. They scale with
                 user settings and are more responsive. Pixels do not respond to

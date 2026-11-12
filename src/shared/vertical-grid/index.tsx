@@ -10,9 +10,9 @@ interface VerticalGridProps {
 function VerticalGrid({ header, children, footer }: VerticalGridProps) {
     return (
         <div className="vertical-grid">
-            <div className="header">{header}</div>
+            {header != null ? <div className="header">{header}</div> : null}
             <div className="content">{children}</div>
-            <div className="footer">{footer}</div>
+            {footer != null ? <div className="footer">{footer}</div> : null}
         </div>
     )
 }

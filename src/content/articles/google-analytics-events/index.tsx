@@ -3,7 +3,7 @@ import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
-            <Header variant="h1">Google Analytics Events</Header>
+            <Header variant="h2">Google Analytics Events</Header>
 
             <p className="eyebrow">Originally Published on October 10th, 2016</p>
 
@@ -16,17 +16,17 @@ function Article() {
             </p>
 
             <p>
-                , Google offers the most popular analytics services on the web, account for 83% of the market share. One of the coolest features of Google Analytics, is event tracking! With it, you can analyze sessions, flow, interaction and much more!Know whenever a button is clicked, a link is hovered, an articles clicked on, user’s progression and time on current page, when a form submitted, a comment posted, avideo played, text selection copied to clipboard, you site is bookmarked, how long the JavaScript took to load and initiate, when it’s shared on twitter, etc etc. All this information, when used currently, could tell you key areas of improvement or just how a user interacts with it.Below, we’re going to set up trackers for click, hover, seen, and load.
+                , Google offers the most popular analytics services on the web, account for 83% of the market share. One of the coolest features of Google Analytics, is event tracking! With it, you can analyze sessions, flow, interaction and much more!Know whenever a button is clicked, a link is hovered, an articles clicked on, user?s progression and time on current page, when a form submitted, a comment posted, avideo played, text selection copied to clipboard, you site is bookmarked, how long the JavaScript took to load and initiate, when it?s shared on twitter, etc etc. All this information, when used currently, could tell you key areas of improvement or just how a user interacts with it.Below, we?re going to set up trackers for click, hover, seen, and load.
             </p>
 
-            <Header variant="h2">Reporting</Header>
+            <Header variant="h3">Reporting</Header>
 
             <p>
-                When you initialize page tracking, you also appened Google’s <a
+                When you initialize page tracking, you also appened Google?s <a
                     href="http://hmphry.com/articles/reporting-events-with-google-analytics#0"
                     target="_blank"
                     rel="noopener"
-                >Universal Analytics Tracking Code</a> to your site, so there is nothing else we need to add. To report an event, you’re going to use the same function Google uses to initialize or report a pageview, the powerful <code>ga()</code> function. This function is the only way to interact with Google Analytics, accepting many parameters that tell it what to do.
+                >Universal Analytics Tracking Code</a> to your site, so there is nothing else we need to add. To report an event, you?re going to use the same function Google uses to initialize or report a pageview, the powerful <code>ga()</code> function. This function is the only way to interact with Google Analytics, accepting many parameters that tell it what to do.
             </p>
 
             <p>
@@ -49,7 +49,7 @@ function Article() {
 
             <ul>
                 <li>
-                    hitType: there are a few hit types we’ll get into at a later time, but for now we’ll just go use the “event”.
+                    hitType: there are a few hit types we?ll get into at a later time, but for now we?ll just go use the ?event?.
                 </li>
 <li>
                     eventCategory: accepts text as a value and is required. This can be anything, but usually used for vague categorization(e.g. videos).
@@ -69,10 +69,10 @@ function Article() {
                 example: https://jsfiddle.net/a16gpb0d/1/
             </p>
 
-            <Header variant="h2">The Prototype</Header>
+            <Header variant="h3">The Prototype</Header>
 
             <p>
-                To start, we’re going to build our prototype. I like to use a prototype for this, just incase if I have to any functions I want to extend to other functions.
+                To start, we?re going to build our prototype. I like to use a prototype for this, just incase if I have to any functions I want to extend to other functions.
             </p>
 
             <CodeBlock language="javascript">
@@ -101,17 +101,17 @@ function GoogleEvent(trigger, emitter, action, category, label, value, dynamic){
             </CodeBlock>
 
             <p>
-                Now we have the prototype, with a report function, and a constructor. If you’re not familiar with this setup, you can learn more by searching for JavaScript Prototypes.
+                Now we have the prototype, with a report function, and a constructor. If you?re not familiar with this setup, you can learn more by searching for JavaScript Prototypes.
             </p>
 
-            <Header variant="h3">Add Click Events</Header>
+            <Header variant="h4">Add Click Events</Header>
 
             <p>
-                There are a few ways of defining these events, but my preferred method is to create individual functions for the different event types. I’m going to use a technique called currying, as I find it a bit friendlier to read and maintain. If you’re not familiar with currying, it’s a way to evaluate a function’s arguments and is really, really cool.
+                There are a few ways of defining these events, but my preferred method is to create individual functions for the different event types. I?m going to use a technique called currying, as I find it a bit friendlier to read and maintain. If you?re not familiar with currying, it?s a way to evaluate a function?s arguments and is really, really cool.
             </p>
 
             <p>
-                To begin, we’re going to declare a function expression. This function expression will accept two parameters, emitter and action, as they are most likely to be repeated. The function expression will then return an anonymous function, which will take the place of the expression when called. The anonymous function will call the constructor and bada boom, realest events in the room. How ya doing.
+                To begin, we?re going to declare a function expression. This function expression will accept two parameters, emitter and action, as they are most likely to be repeated. The function expression will then return an anonymous function, which will take the place of the expression when called. The anonymous function will call the constructor and bada boom, realest events in the room. How ya doing.
             </p>
 
             <CodeBlock language="javascript">
@@ -144,13 +144,13 @@ defineGoogleClick("button", "button", "innerContent");`}
             </CodeBlock>
 
             <p>
-                Everytime we click a button on the page, we’ll now send an event to Google Analytics.
+                Everytime we click a button on the page, we?ll now send an event to Google Analytics.
             </p>
 
-            <Header variant="h3">Add Hover Events</Header>
+            <Header variant="h4">Add Hover Events</Header>
 
             <p>
-                To create hover events, it’s a very similar process, except instead of using “click” for both arguments, we’re going to use “hover” and “mouseenter”.
+                To create hover events, it?s a very similar process, except instead of using ?click? for both arguments, we?re going to use ?hover? and ?mouseenter?.
             </p>
 
             <CodeBlock language="javascript">
@@ -167,10 +167,10 @@ defineGoogleClick("button", "button", "innerContent");
 defineGoogleHover("button", "button", "innerContent");`}
             </CodeBlock>
 
-            <Header variant="h3">Dynamic Events</Header>
+            <Header variant="h4">Dynamic Events</Header>
 
             <p>
-                One issue with this basic setup is that you may want to know what button they clicked or hovered over. We could add call this multiple times with unique identifiers for each button, but that can be cumbersome. Instead, we’ll add the functionality to tell which button was clicked on dynamically.
+                One issue with this basic setup is that you may want to know what button they clicked or hovered over. We could add call this multiple times with unique identifiers for each button, but that can be cumbersome. Instead, we?ll add the functionality to tell which button was clicked on dynamically.
             </p>
 
             <p>
@@ -178,7 +178,7 @@ defineGoogleHover("button", "button", "innerContent");`}
             </p>
 
             <p>
-                As you’ll notice above, we already built in the dynamic parameter and leaving it as undefined. However, to accomplish our task, we’re going to need to refactor our code here a bit.
+                As you?ll notice above, we already built in the dynamic parameter and leaving it as undefined. However, to accomplish our task, we?re going to need to refactor our code here a bit.
             </p>
 
             <CodeBlock language="javascript">
@@ -250,10 +250,10 @@ defineGoogleClick("button", "button", "innerContent", 0, buttonIdReplace);
             </ul>
 
             <p>
-                Now, when the event happens, we’re searching through the dynamic object and applying the changes requested. It’s important to note that for this to work, <code>dynamic.replace</code>‘s values must be a key in <code>reportValues</code>, and that <code>dynamic.replaceValue</code>‘s value must be the name of a method of the original prototype.
+                Now, when the event happens, we?re searching through the dynamic object and applying the changes requested. It?s important to note that for this to work, <code>dynamic.replace</code>?s values must be a key in <code>reportValues</code>, and that <code>dynamic.replaceValue</code>?s value must be the name of a method of the original prototype.
             </p>
 
-            <Header variant="h3">Advanced Events</Header>
+            <Header variant="h4">Advanced Events</Header>
 
             <p>
                 Of course, the web is much more than clicks and hovers. You can gain a lot of information by tracking how often users do something on your page. For example, when a user resizes the browser.
@@ -264,7 +264,7 @@ defineGoogleClick("button", "button", "innerContent", 0, buttonIdReplace);
             </p>
 
             <p>
-                To solve this problem, we’ll store a session cookie with an ID that Google Analytics can reference. We’re going to use a standard Base64 ID, and since we’re not storing this ID anywhere on the server, there is an astronomically small chance that two users could share an ID — just a heads up.
+                To solve this problem, we?ll store a session cookie with an ID that Google Analytics can reference. We?re going to use a standard Base64 ID, and since we?re not storing this ID anywhere on the server, there is an astronomically small chance that two users could share an ID ? just a heads up.
             </p>
 
             <CodeBlock language="javascript">
@@ -306,7 +306,7 @@ defineGoogleClick("button", "button", "innerContent", 0, buttonIdReplace);`}
             </CodeBlock>
 
             <p>
-                We created <code>GoogleEvent.prototype.sessionId</code> as an immediately-invoked function expression. If an ID is stored, it’ll use the one stored. If no stored ID is found, it’ll create and store one for the session.
+                We created <code>GoogleEvent.prototype.sessionId</code> as an immediately-invoked function expression. If an ID is stored, it?ll use the one stored. If no stored ID is found, it?ll create and store one for the session.
             </p>
 
             <CodeBlock language="javascript">
@@ -335,10 +335,10 @@ new GoogleEvent($(window), "resize", "resize", "resize", "resize", 0, userIdRepl
             </CodeBlock>
 
             <p>
-                Like before, we’re going to create <code>GoogleEvent.prototype.getSessionId</code> and have it return the session ID. Now we’re going to create our object called <code>userIdReplace</code>. We’re going to define <code>userIdReplace.replace</code> as “category” and <code>userIdReplace.replaceValue</code> as “getSessionId”. Finally, since we’re only defining this event once, we don’t need to curry the function. We’ll create a new instance of the original GoogleEvent constructor.
+                Like before, we?re going to create <code>GoogleEvent.prototype.getSessionId</code> and have it return the session ID. Now we?re going to create our object called <code>userIdReplace</code>. We?re going to define <code>userIdReplace.replace</code> as ?category? and <code>userIdReplace.replaceValue</code> as ?getSessionId?. Finally, since we?re only defining this event once, we don?t need to curry the function. We?ll create a new instance of the original GoogleEvent constructor.
             </p>
 
-            <Header variant="h2">Conclusion</Header>
+            <Header variant="h3">Conclusion</Header>
 
             <p>
                 And there you have Google Events. If you have any questions, or tips on things I could do better, reach out to me on twitter <a

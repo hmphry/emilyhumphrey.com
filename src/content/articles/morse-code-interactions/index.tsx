@@ -2,7 +2,7 @@ import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <Header variant="h1">Morse Code Interactions</Header>
+            <Header variant="h2">Morse Code Interactions</Header>
 
             <p className="eyebrow">Originally Published on September 8th, 2018</p>
 
@@ -11,7 +11,7 @@ function Article() {
             </p>
 
             <p>
-                The reason why Morse code became the standard is due to its easy to remember system of dots and dashes. Instead of finding the S input, the user would just tap the responder in three short times. This made it a lot easier to be deciphered. While Morse codeâ€™s heyday is over, we can learn much from its historical applications. This script will translate user interactions into Morse code. This can be used to allow the user to navigate a site or initiate functions easily.
+                The reason why Morse code became the standard is due to its easy to remember system of dots and dashes. Instead of finding the S input, the user would just tap the responder in three short times. This made it a lot easier to be deciphered. While Morse code’s heyday is over, we can learn much from its historical applications. This script will translate user interactions into Morse code. This can be used to allow the user to navigate a site or initiate functions easily.
             </p>
 
             <p>
@@ -19,7 +19,7 @@ function Article() {
                     href="https://www.instagram.com/p/BnRxTPcA-sg/?taken-by=heyhmphry"
                     target="_blank"
                     rel="noopener"
-                >Hereâ€™s an example of it in use</a>.
+                >Here’s an example of it in use</a>.
             </p>
 
             <p>

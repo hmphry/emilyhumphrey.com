@@ -4,7 +4,7 @@ import CodeBlock from "@/shared/code-block"
 function Article() {
     return (
         <article className="article">
-            <Header variant="h1">Accessibility Review for AI-Generated UI</Header>
+            <Header variant="h2">Accessibility Review for AI-Generated UI</Header>
             <p>
                 The agent ran axe and gave a clean report: contrast fine, alt
                 text present, and closed the ticket.
@@ -34,8 +34,8 @@ function Article() {
                 Note the denominator: Deque is measuring issue <em>volume</em>,
                 not the share of WCAG success criteria that tools can touch. By
                 success-criteria count, automation looks closer to the old
-                20–30% folklore. By the bugs you actually fix on a real page,
-                automation earns its keep — and still leaves focus order,
+                20?30% folklore. By the bugs you actually fix on a real page,
+                automation earns its keep ? and still leaves focus order,
                 keyboard access, and meaningful names largely to you.
             </p>
             <p>
@@ -46,7 +46,7 @@ function Article() {
                 skip.
             </p>
 
-            <Header variant="h2">What the research says</Header>
+            <Header variant="h3">What the research says</Header>
             <p>The last two years of papers are blunt.</p>
             <p>
                 A{" "}
@@ -100,7 +100,7 @@ function Article() {
                 verified.
             </p>
 
-            <Header variant="h2">What automation covers, and what it can&apos;t</Header>
+            <Header variant="h3">What automation covers, and what it can&apos;t</Header>
             <p>
                 Use automation aggressively. Just do not confuse it with a
                 release gate on its own.
@@ -138,17 +138,17 @@ function Article() {
   await page.getByRole('button', { name: 'New referral' }).click();
   const dialog = page.getByRole('dialog', { name: 'New referral' });
 
-  // Automated pass — scoped, tagged
+  // Automated pass ? scoped, tagged
   const results = await new AxeBuilder({ page })
     .include('[role="dialog"]')
     .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
     .analyze();
   expect(results.violations).toEqual([]);
 
-  // Behavioral pass — axe will not do this for you
+  // Behavioral pass ? axe will not do this for you
   await expect(dialog).toBeFocused(); // or first focusable inside
   await page.keyboard.press('Tab');
-  // …assert focus stays inside…
+  // ?assert focus stays inside?
   await page.keyboard.press('Escape');
   await expect(page.getByRole('button', { name: 'New referral' })).toBeFocused();
 });
@@ -163,14 +163,14 @@ function Article() {
                 one that is easy to automate.
             </p>
 
-            <Header variant="h2">The checklist agents skip</Header>
+            <Header variant="h3">The checklist agents skip</Header>
             <p>
                 This is the ten-minute pass. I&apos;d paste it into the PR
                 template. Point the agent at it as MUST / SHOULD rules, then
                 verify by hand.
             </p>
 
-            <Header variant="h3">Focus order and management</Header>
+            <Header variant="h4">Focus order and management</Header>
             <p>
                 DOM order should match visual order. Watch Tailwind{" "}
                 <code>order-*</code>, <code>flex-row-reverse</code>, and grid
@@ -198,7 +198,7 @@ function Article() {
                 space so the bar cannot cover it.
             </p>
 
-            <Header variant="h3">Names and labels</Header>
+            <Header variant="h4">Names and labels</Header>
             <p>
                 Real <code>{"<label>"}</code> elements, not placeholders doing
                 double duty. Icon-only buttons need an accessible name (
@@ -220,7 +220,7 @@ function Article() {
                 / <code>legend</code>.
             </p>
 
-            <Header variant="h3">Live regions and status</Header>
+            <Header variant="h4">Live regions and status</Header>
             <p>
                 Mount the region empty <strong>before</strong> you update it.
                 Agents love this pattern:
@@ -251,7 +251,7 @@ function Article() {
                 silently.
             </p>
 
-            <Header variant="h3">Semantics before ARIA</Header>
+            <Header variant="h4">Semantics before ARIA</Header>
             <p>
                 A <code>{"<button>"}</code> is not a <code>div</code> with an{" "}
                 <code>onClick</code>. Real tables with header associations beat
@@ -268,7 +268,7 @@ function Article() {
                 roles.
             </p>
 
-            <Header variant="h3">Composite widgets</Header>
+            <Header variant="h4">Composite widgets</Header>
             <p>
                 Comboboxes, tabs, menus, and date pickers have keyboard
                 contracts defined in the ARIA Authoring Practices Guide. Prefer
@@ -280,11 +280,11 @@ function Article() {
                 the library primitive, then restyle. Do not start from a{" "}
                 <code>div</code> and reinvent arrow-key navigation. In a design
                 system, ban agent-authored composites unless they wrap an
-                approved primitive — that rule alone removes a class of
+                approved primitive ? that rule alone removes a class of
                 regressions from AI PRs.
             </p>
 
-            <Header variant="h3">Zoom, reflow, motion, color</Header>
+            <Header variant="h4">Zoom, reflow, motion, color</Header>
             <p>
                 Check 200% and 400% zoom. Reflow should keep content usable
                 without two-dimensional scrolling for vertical text blocks.
@@ -297,7 +297,7 @@ function Article() {
                 both fail the green-dot interface.
             </p>
 
-            <Header variant="h2">The workflow</Header>
+            <Header variant="h3">The workflow</Header>
             <ol className="list-decimal space-y-2 pl-6">
                 <li>
                     <p>
@@ -348,7 +348,7 @@ function Article() {
                 listed roles and names.
             </p>
 
-            <Header variant="h2">A Note on Healthcare UI</Header>
+            <Header variant="h3">A Note on Healthcare UI</Header>
             <p>
                 HHS&apos;s Section 504 says recipients of HHS funding must be
                 WCAG 2.1 AA compliant for web and mobile. In May 2026 HHS{" "}
@@ -359,7 +359,7 @@ function Article() {
                 employees, <strong>May 10, 2028</strong> for smaller ones.
             </p>
             <p>
-                Don’t wait until 2027, start now. A nurse zoomed in to read
+                Don?t wait until 2027, start now. A nurse zoomed in to read
                 small type should still be able to Tab back to where they were.
                 A patient using a screen reader should hear that the slot they
                 picked is unavailable, not discover it because the Continue
@@ -372,14 +372,14 @@ function Article() {
                 follow.
             </p>
 
-            <Header variant="h2">Closing</Header>
+            <Header variant="h3">Closing</Header>
             <p>
                 Automation catches about half the issue volume. Models catch the
                 visible half of that half when prompted well. The behavioral
                 leftover is a short checklist for us humans.
             </p>
 
-            <Header variant="h2">Sources</Header>
+            <Header variant="h3">Sources</Header>
             <ul className="list-disc space-y-2 pl-6">
                 <li>
                     <p>

@@ -2,42 +2,42 @@ import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <Header variant="h1">How Tailwind Changed The Game... Again</Header>
+            <Header variant="h2">How Tailwind Changed The Game... Again</Header>
             <p>
-                I’ve been using Tailwind CSS since v2. At first, version 4 may
+                I?ve been using Tailwind CSS since v2. At first, version 4 may
                 look simple, but it has changed how I write CSS once again. From
                 the first-class Vite plugin to the use of CSS variables for
-                configuration, the improvements are impressive. If you’re still
-                on version 3, you’re missing out on some powerful new
+                configuration, the improvements are impressive. If you?re still
+                on version 3, you?re missing out on some powerful new
                 capabilities.
             </p>
 
-            <Header variant="h2">1. Lightning CSS</Header>
+            <Header variant="h3">1. Lightning CSS</Header>
             <p>
                 First things first: PostCSS is gone. That might sound limiting.
                 But you can still add PostCSS if you truly need it. In most
                 cases, though, Lightning CSS and Vite cover 99% of real-world
                 use. The upside? Faster builds. No more waiting on PostCSS to
-                prune Tailwind’s output.
+                prune Tailwind?s output.
             </p>
             <p>
                 {`Lightning CSS brings support for modern, future-facing CSS
                 features. Features like native nesting, @propery and
-                color-mix(). These tools aren’t nice-to-haves. They’re powerful
+                color-mix(). These tools aren?t nice-to-haves. They?re powerful
                 building blocks for writing cleaner, more expressive styles
                 today.`}
             </p>
 
-            <Header variant="h2">2. First Class Vite Integration</Header>
+            <Header variant="h3">2. First Class Vite Integration</Header>
             <p>
                 Tailwind 4 works out of the box with Vite. This tight
-                integration makes use of Vite’s fast dev server, native ES
+                integration makes use of Vite?s fast dev server, native ES
                 module support, and instant HMR. Adding Tailwind CSS is now a
                 simple task. Install a few plugins, update your Vite config and
                 CSS, and you will be ready to proceed.
             </p>
 
-            <Header variant="h2">3. CSS As Configuration</Header>
+            <Header variant="h3">3. CSS As Configuration</Header>
             <p>
                 Tailwind 4 moves away from traditional config files. It uses CSS
                 variables as a main form of configuration. Define CSS variables
@@ -51,10 +51,10 @@ function Article() {
                 for dark mode or user preferences is easier. Just update the
                 variable! It also reduces rebuilds and improves interoperability
                 with other styling layers. Tailwind now sees CSS as a live and
-                adjustable runtime. It’s more than just precompiled output. It’s
+                adjustable runtime. It?s more than just precompiled output. It?s
                 a foundational shift.
             </p>
-            <Header variant="h2">4. Modern CSS</Header>
+            <Header variant="h3">4. Modern CSS</Header>
             <p>
                 Tailwind CSS 4 embraces the full power of modern CSS. It
                 supports container queries. This lets components change based on
@@ -63,7 +63,7 @@ function Article() {
             </p>
             <p>
                 Cascade layers give you control over utility, component, and
-                custom styles. Now, you don’t need to use specificity hacks.
+                custom styles. Now, you don?t need to use specificity hacks.
             </p>
             <p>
                 On the selector side, Tailwind 4 (via Lightning CSS) enables
@@ -71,17 +71,17 @@ function Article() {
                 targeting elements more expressive and conditional styling much
                 easier.
             </p>
-            <Header variant="h2">Final Thoughts</Header>
+            <Header variant="h3">Final Thoughts</Header>
             <p>
-                Tailwind 4 doesn’t reinvent the framework. It might not be as
+                Tailwind 4 doesn?t reinvent the framework. It might not be as
                 flashy as JIT and arbitrary values. But, I believe Tailwind 4
                 will go down as one of its more influential updates. It traded
                 complexity for speed and flexibility. The result is a more
                 modern, interoperable, and runtime-friendly toolset. You get
                 faster builds. Smarter theming. Cleaner code. And deeper
-                alignment with where CSS is going... not where it’s been. If
-                you’ve been holding off on upgrading from v3, now’s the time.
-                It’s worth it.
+                alignment with where CSS is going... not where it?s been. If
+                you?ve been holding off on upgrading from v3, now?s the time.
+                It?s worth it.
             </p>
         </article>
     )

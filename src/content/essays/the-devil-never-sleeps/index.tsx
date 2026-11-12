@@ -2,7 +2,7 @@ import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <Header variant="h1">
+            <Header variant="h2">
                 The Devil Never Sleeps... But He Only Wins If We Don&apos;t Do
                 Better Next Time
             </Header>

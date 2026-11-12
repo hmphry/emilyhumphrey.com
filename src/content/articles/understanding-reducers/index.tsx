@@ -2,7 +2,7 @@ import { Header } from "@hmphry/brand"
 function Article() {
     return (
         <article className="article">
-            <Header variant="h1">Understanding Reducers</Header>
+            <Header variant="h2">Understanding Reducers</Header>
             <p>
                 I&apos;ve had a lot of conversations lately where reducer came
                 up. Usually, with the question, &quot;Wait, how exactly does
