@@ -1,6 +1,7 @@
 import type { MetaDescriptor } from "react-router"
 import type { ArticleConfig } from "./index.tsx"
 import accessibilityReviewImage from "@/assets/social-images/accessibility-review-for-ai-generated-ui.png"
+import youDontKnowDevtoolsConsoleImage from "@/assets/social-images/you-dont-know-devtools-console.png"
 
 // Unset in production, so canonical and social URLs stay on emilyhumphrey.com.
 // Staging sets VITE_SITE_ORIGIN so those absolute URLs match the uploaded host.
@@ -24,6 +25,13 @@ const socialImages: Record<string, SocialImage> = {
         width: 1200,
         height: 630,
         alt: "Emily Humphrey social card titled Accessibility Review for AI-Generated UI, with the key mark and an accessibility symbol.",
+    },
+    "you-dont-know-devtools-console": {
+        src: youDontKnowDevtoolsConsoleImage,
+        type: "image/png",
+        width: 1200,
+        height: 630,
+        alt: "Emily Humphrey social card titled You Don't Know Dev Tools, Part 1 – The Console, with the key mark and a console graphic.",
     },
 }
 

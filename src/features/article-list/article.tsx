@@ -8,6 +8,7 @@ const Article = ({
     eyebrow,
     path,
     title,
+    subtitle,
     publishDate,
     description,
 }: ArticleCardProps) => (
@@ -18,6 +19,7 @@ const Article = ({
                 {title}
             </Link>
         </Header>
+        {subtitle?.trim() ? <p className="text-content-4">{subtitle}</p> : null}
         <p className="text-content-4 text-small pb-2">{publishDate}</p>
         <p>{description}</p>
         <p>

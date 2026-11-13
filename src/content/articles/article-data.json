@@ -1,5 +1,13 @@
 [
     {
+        "title": "You Don't Know Dev Tools",
+        "subtitle": "Part 1 – The Console: Elements, Events, and Promises",
+        "description": "Most of us open the Console to read whatever console.log has printed, which is a small fraction of what it can do.",
+        "publishDate": "11/12/2026",
+        "element": "you-dont-know-devtools-console",
+        "path": "/articles/you-dont-know-devtools-console"
+    },
+    {
         "title": "Accessibility Review for AI-Generated UI",
         "description": "Every AI-generated component should get reviewed targeting what the agents skip.",
         "publishDate": "11/9/2026",
@@ -165,7 +173,6 @@
     },
     {
         "title": "Reddit NFL and Sass Maps",
-        "subtitle": "How I Learned To Stop Worrying and Love The Map",
         "description": "",
         "publishDate": "7/15/2015",
         "element": "reddit-nfl-sass-maps",
