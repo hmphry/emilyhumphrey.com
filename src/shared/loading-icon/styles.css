@@ -2,7 +2,7 @@
 
 .loading-icon {
     @apply grid w-8 aspect-square border-2 box-border;
-    color: var(--pink-key);
+    color: var(--theme-primary-main);
     animation: square-turn 4s infinite linear;
 
     &::before,

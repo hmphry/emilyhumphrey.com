@@ -24,7 +24,7 @@
     p a {
         @apply text-content underline decoration-pink-key underline-offset-4;
         &:hover {
-            @apply decoration-ink;
+            @apply decoration-content;
         }
     }
 }
