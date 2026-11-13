@@ -14,5 +14,5 @@
 }
 
 .site-sidebar-link [aria-current="page"] {
-    color: var(--theme-primary-contrast);
+    color: var(--theme-primary-accent);
 }
