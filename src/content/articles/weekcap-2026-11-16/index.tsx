@@ -13,7 +13,7 @@ function LinkItem({
     label?: string
 }) {
     const heading = (
-        <Header variant="h4">
+        <Header variant="h4" component="p" className="weekcap-title">
             <a href={href}>{title}</a>
         </Header>
     )
