@@ -43,14 +43,7 @@ function Article() {
         <article className="article">
             <Header variant="h2">The Weekcap: Nov 16, 2026</Header>
             <p>
-                Welcome to the first Weekcap. Every Monday I&apos;m rounding up
-                the links from the past week that I think are worth a frontend
-                engineer&apos;s time, sorted into React and TypeScript,
-                accessibility, AI for developers, security, and the web
-                platform. Security had the heaviest week, with a critical Vite
-                dev server bug and a supply-chain campaign that was still
-                running as of Thursday, so start there if you only have a few
-                minutes.
+            Welcome to the first Weekcap. Every Monday, I'm rounding up the links from the past week that I think are worth a frontend engineer's time, sorted into React and TypeScript, agentic development, accessibility, security, and the web platform. If you only have a few minutes, start with the three featured picks: a supply-chain campaign that hijacked thousands of GitHub accounts, the Storybook 11 beta and its new tools for coding agents, and Adrian Roselli's accessibility take on the Interop 2027 proposals before voting closes Thursday.
             </p>
 
             <Header variant="h3">Featured</Header>
