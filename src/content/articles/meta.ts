@@ -1,6 +1,7 @@
 import type { MetaDescriptor } from "react-router"
 import type { ArticleConfig } from "./index.tsx"
 import accessibilityReviewImage from "@/assets/social-images/accessibility-review-for-ai-generated-ui.png"
+import weekcapNov162026Image from "@/assets/social-images/weekcap-nov-16-2026.png"
 import youDontKnowDevtoolsConsoleImage from "@/assets/social-images/you-dont-know-devtools-console.png"
 
 // Unset in production, so canonical and social URLs stay on emilyhumphrey.com.
@@ -19,6 +20,13 @@ interface SocialImage {
 }
 
 const socialImages: Record<string, SocialImage> = {
+    "weekcap-2026-11-16": {
+        src: weekcapNov162026Image,
+        type: "image/png",
+        width: 1200,
+        height: 630,
+        alt: "Emily Humphrey social card titled Thousands compromised? The Weekcap - Nov 16, 2026, with the key mark and a chain of linked figures.",
+    },
     "accessibility-review-for-ai-generated-ui": {
         src: accessibilityReviewImage,
         type: "image/png",

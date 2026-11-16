@@ -27,4 +27,17 @@
             @apply decoration-content;
         }
     }
+    .weekcap-feature {
+        @apply grid gap-1;
+    }
+    .weekcap-feature .eyebrow {
+        @apply text-content-4;
+    }
+    .weekcap-title,
+    .weekcap-feature {
+        margin-top: 10px;
+    }
+    .weekcap-feature .weekcap-title {
+        margin-top: 0;
+    }
 }

@@ -1,5 +1,12 @@
 [
     {
+        "title": "The Weekcap: Nov 16, 2026",
+        "description": "The first Weekcap: a GitHub supply-chain campaign, the Storybook 11 beta, Interop 2027 accessibility picks, and the week's best frontend links.",
+        "publishDate": "11/16/2026",
+        "element": "weekcap-2026-11-16",
+        "path": "/articles/weekcap-2026-11-16"
+    },
+    {
         "title": "You Don't Know Dev Tools",
         "subtitle": "Part 1 – The Console: Elements, Events, and Promises",
         "description": "Most of us open the Console to read whatever console.log has printed, which is a small fraction of what it can do.",
