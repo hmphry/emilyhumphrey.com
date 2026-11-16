@@ -1,12 +1,11 @@
 @import "tailwindcss";
 
-/* Faces come from @hmphry/brand/styles.css — do not load local @fontsource packages. */
+/* Faces and the type scale live in @hmphry/brand/styles.css. */
 @theme inline {
-    --font-body: "Quicksand", sans-serif;
-    --font-display: "Lora", serif;
-    --font-mono: "DM Mono", monospace;
+    --font-body: var(--font-body);
+    --font-display: var(--font-header);
+    --font-mono: var(--font-mono);
 
-    /* Major third scale — aligned with brand surface type sizes */
     --text-h1: var(--font-size-h1);
     --text-h2: var(--font-size-h2);
     --text-h3: var(--font-size-h3);

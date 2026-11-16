@@ -16,7 +16,7 @@ export function Layout({ children }: { children: ReactNode }) {
     return (
         <html
             lang="en"
-            className="bg-surface text-content font-body h-full w-full"
+            className="bg-[var(--color-bg)] text-content font-body h-full w-full"
         >
             <head>
                 <meta charSet="utf-8" />
@@ -34,7 +34,7 @@ export function Layout({ children }: { children: ReactNode }) {
                     src="//gc.zgo.at/count.js"
                 />
             </head>
-            <body className="bg-surface h-full w-full overflow-y-scroll">
+            <body className="bg-[var(--color-bg)] h-full w-full overflow-y-scroll">
                 {children}
                 <ScrollRestoration />
                 <Scripts />
