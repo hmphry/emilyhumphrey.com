@@ -1,5 +1,12 @@
 [
     {
+        "title": "CSS Anchor Positioning Is Ready for Your Tooltips",
+        "description": "CSS anchor positioning and the Popover API can replace a tooltip positioning library. Browser support as of November 2026, accessibility, and how I'd migrate a design-system tooltip.",
+        "publishDate": "11/18/2026",
+        "element": "css-anchor-positioning-tooltips",
+        "path": "/articles/css-anchor-positioning-tooltips"
+    },
+    {
         "title": "The Weekcap: Nov 16, 2026",
         "description": "The first Weekcap: a GitHub supply-chain campaign, the Storybook 11 beta, Interop 2027 accessibility picks, and the week's best frontend links.",
         "publishDate": "11/16/2026",

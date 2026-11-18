@@ -1,9 +1,13 @@
 import { Header, Sigil } from "@hmphry/brand"
+import { fallbackShareMeta } from "@/content/articles/meta.ts"
 import "../article/styles.css"
 import "./styles.css"
 
 export function meta() {
-    return [{ title: "Emily Humphrey" }]
+    return [
+        { title: "Emily Humphrey" },
+        ...fallbackShareMeta({ title: "Emily Humphrey", path: "/" }),
+    ]
 }
 
 export default function Home() {
@@ -25,7 +29,10 @@ export default function Home() {
                     code quality aren&apos;t extras to me. They&apos;re part of
                     building something well.
                 </p>
-                <section className="key-section pt-12" aria-labelledby="the-key">
+                <section
+                    className="key-section pt-12"
+                    aria-labelledby="the-key"
+                >
                     <div className="key-section__copy">
                         <Header variant="h3" id="the-key">
                             The key
@@ -36,10 +43,10 @@ export default function Home() {
                             family as a nurse. By the time he retired, New York
                             State had him down as working thirteen days a week:
                             two shifts a day Monday through Saturday, and one
-                            shift on Sunday. After my father passed, the key came
-                            into my possession. It reminds me of how hard he
-                            worked and inspires me to always do the right thing,
-                            values he instilled in me.
+                            shift on Sunday. After my father passed, the key
+                            came into my possession. It reminds me of how hard
+                            he worked and inspires me to always do the right
+                            thing, values he instilled in me.
                         </p>
                     </div>
                     <div className="key-section__mark" aria-hidden="true">

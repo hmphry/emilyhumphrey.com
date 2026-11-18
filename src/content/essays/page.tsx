@@ -1,4 +1,5 @@
 import type { ComponentType } from "react"
+import { fallbackShareMeta } from "@/content/articles/meta.ts"
 import essays, { type EssayConfig } from "./index.tsx"
 
 const modules = import.meta.glob<{ default: ComponentType }>("./*/index.tsx", {
@@ -20,22 +21,20 @@ export function meta({ data }: { data?: EssayConfig }) {
         return [{ title: "Emily Humphrey" }]
     }
 
-    const tags: ({ title: string } | { name: string; content: string })[] = [
+    return [
         { title: `${data.title} · Emily Humphrey` },
+        ...(data.description
+            ? [{ name: "description", content: data.description }]
+            : []),
+        ...fallbackShareMeta({
+            title: data.title,
+            path: data.path,
+            description: data.description,
+        }),
     ]
-
-    if (data.description) {
-        tags.push({ name: "description", content: data.description })
-    }
-
-    return tags
 }
 
-export default function EssayPage({
-    loaderData,
-}: {
-    loaderData: EssayConfig
-}) {
+export default function EssayPage({ loaderData }: { loaderData: EssayConfig }) {
     const essayModule = modules[`./${loaderData.element}/index.tsx`]
 
     if (!essayModule) {

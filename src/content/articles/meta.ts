@@ -1,6 +1,8 @@
 import type { MetaDescriptor } from "react-router"
 import type { ArticleConfig } from "./index.tsx"
 import accessibilityReviewImage from "@/assets/social-images/accessibility-review-for-ai-generated-ui.png"
+import anchorPositionIsReadyImage from "@/assets/social-images/anchor-position-is-ready.png"
+import standardSocialImage from "@/assets/social-images/standard-social-image.png"
 import weekcapNov162026Image from "@/assets/social-images/weekcap-nov-16-2026.png"
 import youDontKnowDevtoolsConsoleImage from "@/assets/social-images/you-dont-know-devtools-console.png"
 
@@ -17,6 +19,14 @@ interface SocialImage {
     width: number
     height: number
     alt: string
+}
+
+const fallbackSocialImage: SocialImage = {
+    src: standardSocialImage,
+    type: "image/png",
+    width: 1200,
+    height: 630,
+    alt: "Emily Humphrey social card with the key mark and her name.",
 }
 
 const socialImages: Record<string, SocialImage> = {
@@ -41,6 +51,13 @@ const socialImages: Record<string, SocialImage> = {
         height: 630,
         alt: "Emily Humphrey social card titled You Don't Know Dev Tools, Part 1 – The Console, with the key mark and a console graphic.",
     },
+    "css-anchor-positioning-tooltips": {
+        src: anchorPositionIsReadyImage,
+        type: "image/png",
+        width: 1200,
+        height: 630,
+        alt: "Emily Humphrey social card titled CSS Anchor Positioning Is Ready for Your Tooltips.",
+    },
 }
 
 export function canonicalUrl(path: string) {
@@ -58,20 +75,78 @@ function publishedDate(publishDate: string) {
     return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`
 }
 
+function imageUrl(image: SocialImage) {
+    return new URL(image.src, siteOrigin).href
+}
+
+function openGraphImageTags(image: SocialImage): MetaDescriptor[] {
+    const url = imageUrl(image)
+
+    return [
+        { property: "og:image", content: url },
+        { property: "og:image:secure_url", content: url },
+        { property: "og:image:type", content: image.type },
+        { property: "og:image:width", content: String(image.width) },
+        { property: "og:image:height", content: String(image.height) },
+        { property: "og:image:alt", content: image.alt },
+    ]
+}
+
+function twitterImageTags(image: SocialImage): MetaDescriptor[] {
+    return [
+        { name: "twitter:image", content: imageUrl(image) },
+        { name: "twitter:image:alt", content: image.alt },
+    ]
+}
+
+export function fallbackShareMeta({
+    title,
+    path,
+    description,
+}: {
+    title: string
+    path: string
+    description?: string
+}): MetaDescriptor[] {
+    const pageUrl = canonicalUrl(path)
+    const tags: MetaDescriptor[] = [
+        { tagName: "link", rel: "canonical", href: pageUrl },
+        { property: "og:title", content: title },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: pageUrl },
+    ]
+
+    if (description) {
+        tags.push({ property: "og:description", content: description })
+    }
+
+    tags.push(
+        { property: "og:site_name", content: siteName },
+        { property: "og:locale", content: "en_US" },
+        ...openGraphImageTags(fallbackSocialImage),
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+    )
+
+    if (description) {
+        tags.push({ name: "twitter:description", content: description })
+    }
+
+    tags.push(...twitterImageTags(fallbackSocialImage))
+
+    return tags
+}
+
 export function articlePageMeta(article: ArticleConfig): MetaDescriptor[] {
     const tags: MetaDescriptor[] = [{ title: `${article.title} · ${siteName}` }]
+    const description = article.description.trim()
 
-    if (article.description) {
-        tags.push({ name: "description", content: article.description })
+    if (description) {
+        tags.push({ name: "description", content: description })
     }
 
-    const image = socialImages[article.element]
-    if (!image || !article.description) {
-        return tags
-    }
-
+    const image = socialImages[article.element] ?? fallbackSocialImage
     const pageUrl = canonicalUrl(article.path)
-    const imageUrl = new URL(image.src, siteOrigin).href
     const published = publishedDate(article.publishDate)
 
     tags.push(
@@ -79,22 +154,26 @@ export function articlePageMeta(article: ArticleConfig): MetaDescriptor[] {
         { property: "og:title", content: article.title },
         { property: "og:type", content: "article" },
         { property: "og:url", content: pageUrl },
-        { property: "og:description", content: article.description },
+    )
+
+    if (description) {
+        tags.push({ property: "og:description", content: description })
+    }
+
+    tags.push(
         { property: "og:site_name", content: siteName },
         { property: "og:locale", content: "en_US" },
-        { property: "og:image", content: imageUrl },
-        { property: "og:image:secure_url", content: imageUrl },
-        { property: "og:image:type", content: image.type },
-        { property: "og:image:width", content: String(image.width) },
-        { property: "og:image:height", content: String(image.height) },
-        { property: "og:image:alt", content: image.alt },
+        ...openGraphImageTags(image),
         { property: "article:author", content: authorProfileUrl },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: article.title },
-        { name: "twitter:description", content: article.description },
-        { name: "twitter:image", content: imageUrl },
-        { name: "twitter:image:alt", content: image.alt },
     )
+
+    if (description) {
+        tags.push({ name: "twitter:description", content: description })
+    }
+
+    tags.push(...twitterImageTags(image))
 
     if (published) {
         tags.push({
