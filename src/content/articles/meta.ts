@@ -1,6 +1,7 @@
 import type { MetaDescriptor } from "react-router"
 import type { ArticleConfig } from "./index.tsx"
 import accessibilityReviewImage from "@/assets/social-images/accessibility-review-for-ai-generated-ui.png"
+import anchorPositionIsReadyImage from "@/assets/social-images/anchor-position-is-ready.png"
 import weekcapNov162026Image from "@/assets/social-images/weekcap-nov-16-2026.png"
 import youDontKnowDevtoolsConsoleImage from "@/assets/social-images/you-dont-know-devtools-console.png"
 
@@ -40,6 +41,13 @@ const socialImages: Record<string, SocialImage> = {
         width: 1200,
         height: 630,
         alt: "Emily Humphrey social card titled You Don't Know Dev Tools, Part 1 – The Console, with the key mark and a console graphic.",
+    },
+    "css-anchor-positioning-tooltips": {
+        src: anchorPositionIsReadyImage,
+        type: "image/png",
+        width: 1200,
+        height: 630,
+        alt: "Emily Humphrey social card titled CSS Anchor Positioning Is Ready for Your Tooltips.",
     },
 }
 
