@@ -1,5 +1,12 @@
 [
     {
+        "title": "An Intro To Burp Suite for Frontend Engineers",
+        "description": "A frontend engineer's introduction to Burp Suite Community Edition: setup, testing scope, HTTP history, and holding requests and responses to see what the server actually enforces.",
+        "publishDate": "11/20/2026",
+        "element": "intro-to-burp-suite",
+        "path": "/articles/intro-to-burp-suite"
+    },
+    {
         "title": "CSS Anchor Positioning Is Ready for Your Tooltips",
         "description": "CSS anchor positioning and the Popover API can replace a tooltip positioning library. Browser support as of November 2026, accessibility, and how I'd migrate a design-system tooltip.",
         "publishDate": "11/18/2026",
