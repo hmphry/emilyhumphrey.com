@@ -4,14 +4,16 @@ import javascript from "highlight.js/lib/languages/javascript"
 import css from "highlight.js/lib/languages/css"
 import scss from "highlight.js/lib/languages/scss"
 import xml from "highlight.js/lib/languages/xml"
+import http from "highlight.js/lib/languages/http"
 import "./styles.css"
 
 hljs.registerLanguage("javascript", javascript)
 hljs.registerLanguage("css", css)
 hljs.registerLanguage("scss", scss)
 hljs.registerLanguage("xml", xml)
+hljs.registerLanguage("http", http)
 
-export type CodeBlockLanguage = "javascript" | "css" | "scss" | "xml"
+export type CodeBlockLanguage = "javascript" | "css" | "scss" | "xml" | "http"
 
 interface CodeBlockProps {
     children: string

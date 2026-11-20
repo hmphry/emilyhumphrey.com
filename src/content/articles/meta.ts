@@ -2,6 +2,7 @@ import type { MetaDescriptor } from "react-router"
 import type { ArticleConfig } from "./index.tsx"
 import accessibilityReviewImage from "@/assets/social-images/accessibility-review-for-ai-generated-ui.png"
 import anchorPositionIsReadyImage from "@/assets/social-images/anchor-position-is-ready.png"
+import introToBurpSuiteImage from "@/assets/social-images/intro-to-burp-suite.png"
 import standardSocialImage from "@/assets/social-images/standard-social-image.png"
 import weekcapNov162026Image from "@/assets/social-images/weekcap-nov-16-2026.png"
 import youDontKnowDevtoolsConsoleImage from "@/assets/social-images/you-dont-know-devtools-console.png"
@@ -30,6 +31,13 @@ const fallbackSocialImage: SocialImage = {
 }
 
 const socialImages: Record<string, SocialImage> = {
+    "intro-to-burp-suite": {
+        src: introToBurpSuiteImage,
+        type: "image/png",
+        width: 1200,
+        height: 630,
+        alt: "Emily Humphrey social card titled An Intro To Burp Suite for Frontend Engineers, with the key mark and a Burp Suite logo graphic.",
+    },
     "weekcap-2026-11-16": {
         src: weekcapNov162026Image,
         type: "image/png",
