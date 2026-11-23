@@ -1,5 +1,12 @@
 [
     {
+        "title": "The Weekcap: Nov 23, 2026",
+        "description": "The Weekcap for Nov 23: last week's wave of outages, five critical nginx bugs, React Flow 13, a free Axe MCP Server plan, and the week's best frontend links.",
+        "publishDate": "11/23/2026",
+        "element": "weekcap-2026-11-23",
+        "path": "/articles/weekcap-2026-11-23"
+    },
+    {
         "title": "An Intro To Burp Suite for Frontend Engineers",
         "description": "A frontend engineer's introduction to Burp Suite Community Edition: setup, testing scope, HTTP history, and holding requests and responses to see what the server actually enforces.",
         "publishDate": "11/20/2026",
